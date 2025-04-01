@@ -55,4 +55,10 @@ logs/
 .Spotlight-V100
 .Trashes
 ehthumbs.db
-Thumbs.db 
+Thumbs.db
+
+# API Keys and Secrets
+.env
+.env.*
+*.pem
+*.key 
