@@ -1,0 +1,476 @@
+{
+  "sections": [
+    {
+      "id": "activities",
+      "title": "Daily Work Activities",
+      "description": "Select your main daily work activities",
+      "questions": [
+        {
+          "id": "daily_activities",
+          "type": "checkbox",
+          "question": "What are your main daily work activities?",
+          "description": "Select all activities that apply to your role",
+          "options": [
+            {
+              "value": "cw1_tasks",
+              "text": "Basic Construction Tasks",
+              "points": 10,
+              "competencies": ["basic_skills"],
+              "hint": "Uses precision measuring instruments, basic material handling, small plant operation, hand tools, oxy welding, inventory control, first aid assistance",
+              "tasks": ["Uses precision measuring instruments", "Basic material handling functions", "Operate small plant and pneumatic machinery", "Inventory and store control", "Operate a range of hand tools and oxy welding equipment", "Sheet metal soldering", "Tack welding", "Operation of mobile equipment including forklifts, hand trolleys, pallet trucks, overhead cranes and winch operation", "Ability to measure accurately", "Assists one or more tradespersons", "Has a knowledge of the construction process and understands the sequencing of construction functions", "Is able to provide first aid assistance to other employees"]
+            },
+            {
+              "value": "cw2_tasks",
+              "text": "Intermediate Construction Tasks",
+              "points": 20,
+              "competencies": ["intermediate_skills"],
+              "hint": "Calculating safe loads, specialized measurements, non-trades maintenance, materials handling",
+              "tasks": ["Calculates safe loads and stress factors", "Measures accurately using specialised equipment", "Non-trades maintenance of relevant plant and equipment", "Materials handling", "Operates machinery and equipment requiring the exercise of skill and knowledge beyond CW/ECW 1", "Uses measuring and levelling instruments", "Performs basic quality checks on the work of others", "Oxy acetylene cutting", "Anticipates and plans for constant changes to the work environment"]
+            },
+            {
+              "value": "cw3_tasks",
+              "text": "Advanced Construction Tasks",
+              "points": 30,
+              "competencies": ["advanced_skills"],
+              "hint": "Trade skills, specialized materials handling, complex machinery operation",
+              "tasks": ["Allocates functions within a WAT", "Production sequencing and materials handling of a level more advanced than CW/ECW 2", "Trade skills associated with certificated trades within the scope of this award", "Has a sound understanding of the construction process", "Specialised materials handling", "Operates machinery and equipment requiring the exercise of skill and knowledge beyond CW/ECW 2", "Performs work which is incidental or peripheral to the primary tasks and facilitates the completion of the whole task", "Sheetmetal fabrication", "System assembly", "Welding and cutting", "Mechanical installation"]
+            },
+            {
+              "value": "cw4_tasks",
+              "text": "Specialized Construction Tasks",
+              "points": 35,
+              "competencies": ["advanced_skills", "specialist_skills"],
+              "hint": "Precision trade and non-trade skills, plant and machinery operation",
+              "tasks": ["Exercises precision trade and non-trade skills using various materials and specialised techniques at a higher level than CW/ECW 3", "Operates and maintains plant and machinery", "Is able to plan construction sequencing"]
+            },
+            {
+              "value": "cw5_tasks",
+              "text": "Complex Construction Tasks",
+              "points": 40,
+              "competencies": ["advanced_skills", "specialist_skills"],
+              "hint": "Complex machinery operation, CAD/CAM operations, hydraulic/pneumatic systems",
+              "tasks": ["Exercises precision trade and/or operative skills using various materials and specialised techniques at a higher level than CW/ECW 4", "Operates and maintains complex plant and machinery", "Is able to plan complex construction sequencing", "Performs operations on a CAD/CAM terminal in the performance of routine modifications to NC/CNC programs", "Installs, repairs, maintains, tests, modifies, commissions and/or fault finds on complex machinery and equipment which utilises hydraulic and/or pneumatic principles", "Works on complex or intricate circuitry which involves examining, diagnosing and modifying systems comprising inter-connected circuits"]
+            },
+            {
+              "value": "cw6_tasks",
+              "text": "Expert Construction Tasks",
+              "points": 45,
+              "competencies": ["specialist_skills"],
+              "hint": "Complex machinery operation, CAD/CAM skills, complex electrical/electronic systems",
+              "tasks": ["Operates plant and equipment at a higher level of skill than CW/ECW 5", "Exercises high precision trade and/or operative skills using various materials and specialised techniques at a higher level than CW/ECW 5", "Implements quality control techniques", "Plans complex construction sequencing", "Works on machines or equipment which utilise complex mechanic or hydraulic and/or pneumatic circuitry and controls or a combination thereof", "Works on machinery or equipment which utilises complex electrical/electronic circuitry and controls", "Works on instruments which make up a complex control system which utilises some combination of electrical/electronic, mechanical or fluid power principles", "Applies advanced computer numerical control techniques in machining or cutting or welding or fabrication", "Exercises intermediate CAD/CAM skills in the performance of routine modifications to programs", "Works on complex or intricate interconnected electrical circuits at a level above CW/ECW 5", "Works on complex radio/communication equipment"]
+            },
+            {
+              "value": "cw7_tasks",
+              "text": "Senior Construction Tasks",
+              "points": 50,
+              "competencies": ["specialist_skills", "leadership_skills"],
+              "hint": "High precision trade skills, complex machinery operation, quality control",
+              "tasks": ["Works on plant and equipment at a higher level of skill than CW/ECW 6", "Exercises high precision trade and/or operative skills using various materials and specialised techniques at a higher level than CW/ECW 6", "Implements quality control techniques", "Plans complex construction sequencing", "Works on machines or equipment which utilise complex mechanic or hydraulic and/or pneumatic circuitry and controls or a combination thereof", "Works on machinery or equipment which utilises complex electrical/electronic circuitry and controls", "Works on instruments which make up a complex control system which utilises some combination of electrical/electronic mechanical or fluid power principles", "Applies advanced computer numerical control techniques in machining or cutting or welding or fabrication", "Exercises intermediate CAD/CAM skills in the performance of routine modifications to programs", "Working on complex or intricate interconnected electrical circuits at a level above CW/ECW6", "Working on complex radio/communication equipment"]
+            },
+            {
+              "value": "cw8_tasks",
+              "text": "Advanced Specialist Tasks",
+              "points": 55,
+              "competencies": ["specialist_skills", "leadership_skills"],
+              "hint": "Complex electrical/electronic/mechanical systems, computer integrated manufacturing",
+              "tasks": ["Works on plant and equipment at a higher level of skill than CW/ECW 7", "Exercises high precision trade and/or operative skills using various materials and specialised techniques at a higher level than CW/ECW 7", "Implements quality control programs", "Plans complex construction sequencing", "Works on combinations of machines or equipment which utilises complex electrical or electronic, mechanical or fluid power principles", "Works on instruments which make up a complex control system which utilises some combination of electrical, electronic, mechanical or fluid power principles and electronic circuitry containing complex analogue and/or digital control systems utilising integrated circuitry", "Applies computer integrated manufacturing techniques involving a higher level of computer operating and programming skills than for CW/ECW 7", "Works on various forms of machinery and equipment which are electronically controlled by complex digital and/or analogue control systems using integrated circuitry"]
+            },
+            {
+              "value": "cw9_tasks",
+              "text": "Executive Construction Tasks",
+              "points": 60,
+              "competencies": ["executive_leadership_skills"],
+              "hint": "High level diagnostic skills on complex machinery, sophisticated maintenance systems",
+              "tasks": ["Through a systems approach able to exercise high level diagnostic skills on complex forms of machinery, equipment or instruments which utilise some combination of electrical, electronic, mechanical or fluid power principles", "Set up, commission, maintain and operate sophisticated maintenance, production and test equipment and/or systems involving the application of computer operating skills at a higher level than CW/ECW8", "Works on various forms of machinery and equipment electronically controlled by complex digital and/or analogue control systems using integrated circuitry", "Works on complex electronics or instruments or communications equipment or control systems which utilise electronic principles and electronic circuitry containing complex analogue and/or digital control systems using integrated circuitry"]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "autonomy",
+      "title": "Work Autonomy",
+      "emoji": "🎯",
+      "description": "Select your level of supervision and decision-making authority",
+      "questions": [
+        {
+          "id": "supervision_level",
+          "type": "radio",
+          "question": "What level of supervision do you work under?",
+          "description": "Select the level of supervision you typically work under",
+          "options": [
+            {
+              "value": "direct",
+              "text": "Direct supervision - constant guidance needed",
+              "points": 10,
+              "competencies": ["basic_skills"],
+              "hint": "Requires constant guidance and direction from supervisor"
+            },
+            {
+              "value": "general",
+              "text": "General supervision - broad technical guidance",
+              "points": 20,
+              "competencies": ["intermediate_skills"],
+              "hint": "Works under broad technical guidance with regular supervision"
+            },
+            {
+              "value": "limited",
+              "text": "Limited supervision - clear objectives only",
+              "points": 30,
+              "competencies": ["advanced_skills"],
+              "hint": "Works with minimal supervision, only requiring clear objectives"
+            }
+          ]
+        },
+        {
+          "id": "decision_making",
+          "type": "radio",
+          "question": "What level of decision-making do you exercise?",
+          "description": "Select the level of decision-making authority you have",
+          "options": [
+            {
+              "value": "basic",
+              "text": "Basic decisions about own work",
+              "points": 10,
+              "competencies": ["basic_skills"],
+              "hint": "Makes basic decisions about own work under supervision"
+            },
+            {
+              "value": "operational",
+              "text": "Operational decisions within scope",
+              "points": 20,
+              "competencies": ["intermediate_skills"],
+              "hint": "Makes operational decisions within defined scope"
+            },
+            {
+              "value": "technical",
+              "text": "Technical decisions and problem-solving",
+              "points": 30,
+              "competencies": ["advanced_skills"],
+              "hint": "Makes technical decisions and solves complex problems"
+            },
+            {
+              "value": "strategic",
+              "text": "Strategic decisions and planning",
+              "points": 40,
+              "competencies": ["leadership_skills"],
+              "hint": "Makes strategic decisions and plans work activities"
+            },
+            {
+              "value": "executive",
+              "text": "Executive-level decisions",
+              "points": 50,
+              "competencies": ["executive_leadership_skills"],
+              "hint": "Makes high-level decisions affecting project outcomes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qualifications",
+      "title": "Qualifications & Training",
+      "emoji": "📚",
+      "questions": [
+        {
+          "id": "qual_level",
+          "text": "What is your highest trade qualification?",
+          "help_text": "Select your highest completed trade qualification",
+          "type": "radio",
+          "options": [
+            {
+              "value": "none",
+              "text": "No Formal Qualification",
+              "points": 0
+            },
+            {
+              "value": "partial",
+              "text": "Partial Trade Qualification",
+              "points": 20
+            },
+            {
+              "value": "complete",
+              "text": "Full Trade Certificate",
+              "points": 40
+            },
+            {
+              "value": "advanced",
+              "text": "Advanced Trade Qualifications",
+              "points": 60
+            }
+          ]
+        },
+        {
+          "id": "modules_completed",
+          "text": "How many appropriate modules have you completed?",
+          "help_text": "Enter the number of completed modules towards your qualification",
+          "type": "number",
+          "min": 0,
+          "max": 39,
+          "points_per_module": 2
+        },
+        {
+          "id": "qual_pathway",
+          "text": "Which qualification pathway are you following?",
+          "help_text": "Select your qualification pathway",
+          "type": "radio",
+          "options": [
+            {
+              "value": "trade",
+              "text": "Trade Certificate",
+              "points": 20
+            },
+            {
+              "value": "advanced_cert",
+              "text": "Advanced Certificate",
+              "points": 30
+            },
+            {
+              "value": "associate_diploma",
+              "text": "Associate Diploma",
+              "points": 40
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "experience",
+      "title": "Experience & Skills",
+      "emoji": "🎯",
+      "questions": [
+        {
+          "id": "experience",
+          "text": "How much relevant experience do you have in the construction industry?",
+          "help_text": "Experience level affects classification and progression through sub-levels",
+          "type": "radio",
+          "options": [
+            {
+              "value": "new",
+              "text": "New to the industry (less than 3 months)",
+              "points": 10
+            },
+            {
+              "value": "3-12m",
+              "text": "3-12 months experience",
+              "points": 20
+            },
+            {
+              "value": "1-3y",
+              "text": "1-3 years experience",
+              "points": 30
+            },
+            {
+              "value": "3-8y",
+              "text": "3-8 years experience",
+              "points": 40
+            },
+            {
+              "value": "8plus",
+              "text": "More than 8 years experience",
+              "points": 50
+            }
+          ]
+        },
+        {
+          "id": "technical_field",
+          "text": "Which technical field do you work in?",
+          "help_text": "Select your primary technical field",
+          "type": "radio",
+          "options": [
+            {
+              "value": "production_planning",
+              "text": "Production Planning",
+              "points": 20
+            },
+            {
+              "value": "technical",
+              "text": "Technical",
+              "points": 30
+            },
+            {
+              "value": "design",
+              "text": "Design",
+              "points": 20
+            }
+          ]
+        },
+        {
+          "id": "skill_stream",
+          "text": "Which skill stream do you work in?",
+          "help_text": "Select your primary skill stream",
+          "type": "radio",
+          "options": [
+            {
+              "value": "civil_construction",
+              "text": "Civil Construction",
+              "points": 20
+            },
+            {
+              "value": "engineering",
+              "text": "Engineering",
+              "points": 30
+            },
+            {
+              "value": "general_construction",
+              "text": "General Construction",
+              "points": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "responsibility",
+      "title": "Responsibility & Supervision",
+      "emoji": "👥",
+      "questions": [
+        {
+          "id": "supervision",
+          "text": "What level of supervision do you require?",
+          "help_text": "Select the level of supervision you typically work under",
+          "type": "radio",
+          "options": [
+            {
+              "value": "direct",
+              "text": "Direct Supervision",
+              "points": 10
+            },
+            {
+              "value": "general",
+              "text": "General Supervision",
+              "points": 20
+            },
+            {
+              "value": "limited",
+              "text": "Limited Supervision",
+              "points": 30
+            }
+          ]
+        },
+        {
+          "id": "supervision_of_others",
+          "text": "Do you supervise other employees?",
+          "help_text": "Select the level of employees you supervise",
+          "type": "checkbox",
+          "options": [
+            {
+              "value": "cw1",
+              "text": "CW1 Level Employees",
+              "points": 10
+            },
+            {
+              "value": "cw2",
+              "text": "CW2 Level Employees",
+              "points": 15
+            },
+            {
+              "value": "cw3",
+              "text": "CW3 Level Employees",
+              "points": 20
+            }
+          ]
+        },
+        {
+          "id": "quality_control",
+          "text": "What level of quality control responsibility do you have?",
+          "help_text": "Select your quality control responsibilities",
+          "type": "radio",
+          "options": [
+            {
+              "value": "own_work",
+              "text": "Quality of Own Work",
+              "points": 10
+            },
+            {
+              "value": "team_work",
+              "text": "Team Work Quality",
+              "points": 20
+            },
+            {
+              "value": "project_quality",
+              "text": "Project Quality Control",
+              "points": 30
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "autonomy",
+      "title": "Autonomy & Discretion",
+      "emoji": "🎯",
+      "questions": [
+        {
+          "id": "discretion",
+          "text": "What level of discretion do you exercise in your work?",
+          "help_text": "Select the level of discretion you exercise",
+          "type": "radio",
+          "options": [
+            {
+              "value": "basic",
+              "text": "Basic Discretion",
+              "points": 10
+            },
+            {
+              "value": "intermediate",
+              "text": "Intermediate Discretion",
+              "points": 20
+            },
+            {
+              "value": "advanced",
+              "text": "Advanced Discretion",
+              "points": 30
+            }
+          ]
+        },
+        {
+          "id": "planning",
+          "text": "What level of planning responsibility do you have?",
+          "help_text": "Select your planning responsibilities",
+          "type": "radio",
+          "options": [
+            {
+              "value": "task",
+              "text": "Task Planning",
+              "points": 10
+            },
+            {
+              "value": "project",
+              "text": "Project Planning",
+              "points": 20
+            },
+            {
+              "value": "complex",
+              "text": "Complex Project Planning",
+              "points": 30
+            }
+          ]
+        },
+        {
+          "id": "training",
+          "text": "What level of training responsibility do you have?",
+          "help_text": "Select your training responsibilities",
+          "type": "radio",
+          "options": [
+            {
+              "value": "assist",
+              "text": "Assist with Training",
+              "points": 10
+            },
+            {
+              "value": "provide",
+              "text": "Provide Training",
+              "points": 20
+            },
+            {
+              "value": "design",
+              "text": "Design Training Programs",
+              "points": 30
+            }
+          ]
+        }
+      ]
+    }
+  ]
+} 

@@ -1,0 +1,172 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="payrate-container">
+    <!-- Updated Total Weekly Pay section with category and classification -->
+    <div class="total-section">
+        <div class="result-item total">
+            <span class="total-info">
+                {{ category }} - {{ classification }}
+            </span>
+            <span class="total-amount">${{ "%.2f"|format(total_weekly_pay) }}</span>
+        </div>
+    </div>
+    
+    <div class="panels-container">
+        <!-- Left Panel: Base Rates (without category and classification) -->
+        <div class="panel base-rates">
+            <h2>Base Rates</h2>
+            <div class="result-item">
+                <h3>Base Weekly Rate:</h3>
+                <p>${{ "%.2f"|format(base_weekly_rate) }}</p>
+            </div>
+
+            {% if category_allowance > 0 %}
+            <div class="result-item">
+                <h3>Category Allowance:</h3>
+                <p>${{ "%.2f"|format(category_allowance) }}/week</p>
+            </div>
+            {% endif %}
+
+            {% if is_casual %}
+            <div class="result-item">
+                <h3>Casual Loading:</h3>
+                <p>${{ "%.2f"|format(casual_loading) }}</p>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- Right Panel: Additional Allowances -->
+        <div class="panel allowances">
+            <h2>Additional Allowances</h2>
+            {% if tool_allowance > 0 %}
+            <div class="result-item">
+                <h3>Tool Allowance:</h3>
+                <p>${{ "%.2f"|format(tool_allowance) }}/week</p>
+            </div>
+            {% endif %}
+
+            {% if first_aid_allowance > 0 %}
+            <div class="result-item">
+                <h3>First Aid Allowance:</h3>
+                <p>${{ "%.2f"|format(first_aid_allowance) }}/day</p>
+            </div>
+            {% endif %}
+
+            {% if special_allowance > 0 %}
+            <div class="result-item">
+                <h3>Special Allowance:</h3>
+                <p>${{ "%.2f"|format(special_allowance) }}/week</p>
+                <small>({{ special_allowance_type|replace('_', ' ')|title }})</small>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="button-container">
+        <a href="{{ url_for('payrate.payrate_page') }}" class="nav-button">Start Over</a>
+    </div>
+</div>
+
+<style>
+body {
+    background-color: #f5f5f5;
+}
+
+.payrate-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 60px;
+}
+
+.total-section {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+.total-section .result-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.total-info {
+    font-size: 1.1em;
+    color: #333;
+}
+
+.total-amount {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.panels-container {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.panel {
+    flex: 1;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+}
+
+.panel h2 {
+    color: #2C3E50;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.result-item {
+    margin-bottom: 5px;  /* Reduced spacing between items */
+    padding: 4px 0;      /* Reduced padding */
+    border-bottom: 1px solid #eee;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+.result-item h3 {
+    color: #555;
+    margin-bottom: 2px;  /* Reduced margin */
+    font-size: 1em;
+}
+
+.result-item p {
+    color: #333;
+    font-size: 1em;
+    font-weight: 500;
+    margin: 0;  /* Remove margin */
+}
+
+.nav-button {
+    background-color: #6c757d;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #5a6268;
+}
+</style>
+{% endblock %} 

@@ -1,0 +1,280 @@
+/* Add to top of search.css */
+#content {
+    margin-top: 80px;  /* Adjust based on your header height */
+}
+
+/* Content wrapper to control width */
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    min-height: 100vh;
+}
+
+/* Fixed-width container for search section */
+.search-section {
+    width: 100%;
+    position: sticky;  /* Make it sticky */
+    top: 80px;        /* Match header height */
+    z-index: 100;     /* Keep above content */
+    background: #f5f5f5;  /* Match page background */
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}
+
+/* Search container */
+.search-container {
+    margin-top: 0;
+    padding: 1rem;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.search-results {
+    position: relative;
+    top: 0;
+    padding: 1rem;
+}
+
+.search-card {
+    position: relative;
+    top: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+
+.card-content {
+    padding: 0 0.75rem;
+}
+
+/* Remove all header-related styles */
+.card-header,
+.header-main,
+.header-main h2 {
+    display: none;
+}
+
+.search-emoji {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin-right: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.5rem;
+    background: #fff;
+}
+
+#searchInput {
+    border: none;
+    outline: none;
+    width: 100%;
+    min-width: 300px;
+    font-size: 1rem;
+}
+
+.total-roles {
+    white-space: nowrap;
+    color: #666;
+    margin-left: 1rem;
+    flex-shrink: 0;
+}
+
+#rolesList {
+    width: 100%;  /* Force full width */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    min-height: 100px;  /* Add minimum height to maintain layout */
+}
+
+/* Role cards */
+.role-card {
+    width: 100%;
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.role-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.role-level {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+}
+
+.role-rates {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0.25rem 0;
+    margin-bottom: 0.25rem;  /* Reduce space before pills */
+}
+
+.role-rates p {
+    margin: 0;
+}
+
+.card-icons {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 1rem;
+    padding-right: 1em;  /* Add right padding for emojis */
+}
+
+.emoji-icons {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.close-card {
+    cursor: pointer;
+}
+
+.emoji-group {
+    font-size: 1.2rem;
+}
+
+.task-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 1em;  /* Add space after rates */
+    width: 100%;  /* Ensure full width */
+}
+
+.task-pill {
+    background: #f0f0f0;
+    padding: 0.15rem 0.5rem;
+    border-radius: 16px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.pill {
+    background: #f5f6fa;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.level {
+    color: #666;
+    margin: 0.5rem 0;
+}
+
+.card-details {
+    margin-top: 1.5rem;
+    padding: 0 0.75rem;  /* Match left padding with card-header, remove top/bottom padding */
+}
+
+.card-details.hidden {
+    display: none;
+}
+
+.section {
+    margin-bottom: 1.5rem;
+}
+
+.section h3 {
+    color: #333;
+    margin: 0 0 1rem 0;
+    padding: 0;  /* Remove any padding */
+}
+
+.section ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.section li {
+    padding: 0.5rem 0;
+    color: #666;
+}
+
+.text-highlight {
+    background-color: #00f3ff;  /* Neon blue */
+    border-radius: 2px;
+}
+
+/* No results message - add cursor pointer */
+.no-results-message {
+    text-align: center;
+    color: #666;
+    padding: 2rem;
+    font-size: 1.1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.close-card.hidden {
+    display: none;
+}
+
+/* Add to existing search.css */
+.highlight {
+    background-color: cyan;
+    padding: 0.1em 0;
+}
+
+/* Add to existing search.css */
+.indicative-tasks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* Add these new styles */
+.back-to-employees {
+    margin-bottom: 20px;
+}
+
+.back-btn {
+    color: #00539C;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+.select-role-btn {
+    background-color: #00539C;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.select-role-btn:hover {
+    background-color: #004380;
+}

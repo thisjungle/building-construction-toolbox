@@ -1,0 +1,108 @@
+{
+    "supervision_levels": [
+        {
+            "id": "direct",
+            "name": "Direct Supervision",
+            "description": "Constant supervision and guidance required",
+            "points": 1,
+            "details": {
+                "characteristics": [
+                    "Constant supervision required",
+                    "Regular guidance needed",
+                    "Work checked frequently"
+                ]
+            }
+        },
+        {
+            "id": "general",
+            "name": "General Supervision",
+            "description": "Regular supervision and guidance",
+            "points": 2,
+            "details": {
+                "characteristics": [
+                    "Regular supervision",
+                    "Periodic guidance",
+                    "Work checked periodically"
+                ]
+            }
+        },
+        {
+            "id": "limited",
+            "name": "Limited Supervision",
+            "description": "Minimal supervision required",
+            "points": 3,
+            "details": {
+                "characteristics": [
+                    "Minimal supervision",
+                    "Independent work capability",
+                    "Work checked occasionally"
+                ]
+            }
+        },
+        {
+            "id": "minimal",
+            "name": "Minimal Supervision",
+            "description": "Very little supervision needed",
+            "points": 4,
+            "details": {
+                "characteristics": [
+                    "Very little supervision",
+                    "Highly independent",
+                    "Work checked rarely"
+                ]
+            }
+        },
+        {
+            "id": "self_directed",
+            "name": "Self-Directed",
+            "description": "Works independently with minimal guidance",
+            "points": 5,
+            "details": {
+                "characteristics": [
+                    "Works independently",
+                    "Self-motivated",
+                    "Self-checks work"
+                ]
+            }
+        },
+        {
+            "id": "independent",
+            "name": "Independent",
+            "description": "Completely independent work capability",
+            "points": 6,
+            "details": {
+                "characteristics": [
+                    "Completely independent",
+                    "Self-managed",
+                    "Quality self-assured"
+                ]
+            }
+        },
+        {
+            "id": "supervisory",
+            "name": "Supervisory",
+            "description": "Provides supervision to others",
+            "points": 7,
+            "details": {
+                "characteristics": [
+                    "Supervises others",
+                    "Provides guidance",
+                    "Quality control"
+                ]
+            }
+        },
+        {
+            "id": "management",
+            "name": "Management",
+            "description": "Manages teams and projects",
+            "points": 8,
+            "details": {
+                "characteristics": [
+                    "Manages teams",
+                    "Strategic oversight",
+                    "Project management"
+                ]
+            }
+        }
+    ]
+} 

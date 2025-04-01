@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="payrate-container">
+    <div class="payrate-wrapper">
+        <div class="payrate-section">
+            <h1>Pay Rate Finder</h1>
+            
+            <!-- Progress indicator -->
+            <div class="progress-bar">
+                <div class="progress" style="width: 60%"></div>
+                <span class="progress-text">Question 3 of 5</span>
+            </div>
+
+            <!-- Question section -->
+            <div class="question-container">
+                <h2>What is your employment type?</h2>
+                <div class="options-container">
+                    <button class="option-button" data-value="Casual">
+                        Casual
+                        <span class="option-description">Higher hourly rate but no paid leave</span>
+                    </button>
+                    <button class="option-button" data-value="Permanent">
+                        Permanent
+                        <span class="option-description">Regular hours with paid leave entitlements</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="navigation-buttons">
+                <button class="nav-button back-button">Back</button>
+                <button class="nav-button next-button" disabled="disabled">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add script tag -->
+<script src="{{ url_for('static', filename='js/payrate.js') }}"></script>
+{% endblock %} 

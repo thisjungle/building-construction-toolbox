@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}Activity Selection{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/activity_selection.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="activity_selection_container">
+    <!-- Stream Selection -->
+    <div class="stream_selection" id="streamSelection">
+        <h2>Select Work Streams</h2>
+        <div class="stream_options">
+            <!-- Stream options will be dynamically populated -->
+        </div>
+    </div>
+
+    <!-- Activity Selection -->
+    <div class="activity_selection" id="activitySelection" style="display: none;">
+        <div class="activity_header">
+            <h2>Select Activities</h2>
+            <div class="activity_filters">
+                <select id="levelFilter">
+                    <option value="all">All Levels</option>
+                    <!-- Level options will be dynamically populated -->
+                </select>
+                <select id="frequencyFilter">
+                    <option value="all">All Frequencies</option>
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="monthly">Monthly</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="activity_grid" id="activityGrid">
+            <!-- Activities will be dynamically inserted here -->
+        </div>
+
+        <div class="activity_summary">
+            <h3>Selected Activities</h3>
+            <div class="selected_activities" id="selectedActivities">
+                <!-- Selected activities will be listed here -->
+            </div>
+            <div class="activity_stats">
+                <div class="stat_item">
+                    <span class="stat_label">Total Activities:</span>
+                    <span class="stat_value" id="totalActivities">0</span>
+                </div>
+                <div class="stat_item">
+                    <span class="stat_label">Primary Level:</span>
+                    <span class="stat_value" id="primaryLevel">-</span>
+                </div>
+                <div class="stat_item">
+                    <span class="stat_label">Confidence Score:</span>
+                    <span class="stat_value" id="confidenceScore">0%</span>
+                </div>
+            </div>
+            <div class="level_breakdown">
+                <h4>Level Distribution</h4>
+                <div class="level_stats" id="levelBreakdown">
+                    <!-- Level breakdown will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/activity_selection.js') }}"></script>
+{% endblock %} 

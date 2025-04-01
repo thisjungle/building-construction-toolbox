@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+
+{% block title %}Create Job Posting{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/components/layout.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/components/forms.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/components/panels.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/job_posting.css') }}">
+{% endblock %}
+
+{% block header %}
+<header class="module-header">
+    <div class="header-content">
+        <!-- Left side -->
+        <div class="header-main">
+            {% include 'components/navigation.html' %}
+            <div class="header-title">
+                <div class="header-title-content">
+                    <span class="emoji-md" data-emoji="CREATE_POSITION"></span>
+                    <span>Create Job Posting</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right side -->
+        <div class="header-actions">
+            <button class="btn btn-primary" id="saveJobPosting">
+                <span class="btn-text">Save Job Posting</span>
+            </button>
+            <button class="btn btn-ghost" id="previewJobPosting">
+                <span class="btn-text">Preview</span>
+            </button>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="job-posting-container">
+    <!-- Template Selection -->
+    <div class="template-selection">
+        <div class="section-header">
+            <span class="emoji">📄</span>
+            <h3>Select Template</h3>
+        </div>
+        <div class="template-options">
+            {% for template_id, template in templates.items() %}
+            <div class="template-option" data-template-id="{{ template_id }}">
+                <div class="template-title">{{ template.title }}</div>
+                <div class="template-description">Based on MA000020 Award</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Job Posting Editor -->
+    <div class="job-posting-editor">
+        <div class="editor-sections">
+            {% for section_id, section in templates.civil_construction.sections.items() %}
+            <div class="editor-section" data-section-id="{{ section_id }}">
+                <div class="section-header">
+                    <span class="emoji">📝</span>
+                    <h3>{{ section.title }}</h3>
+                </div>
+                <div class="section-content">
+                    <textarea class="section-editor" 
+                              data-template="{{ section.template }}"
+                              placeholder="Enter content for this section..."></textarea>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Preview Panel -->
+    <div class="preview-panel" style="display: none;">
+        <div class="preview-header">
+            <h3>Job Posting Preview</h3>
+            <button class="close-preview">&times;</button>
+        </div>
+        <div class="preview-content">
+            <!-- Preview content will be inserted here -->
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/job_posting.js') }}"></script>
+{% endblock %} 

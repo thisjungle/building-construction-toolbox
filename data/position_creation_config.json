@@ -1,0 +1,101 @@
+{
+    "sections": {
+        "employment": {
+            "title": "Employment Type",
+            "emoji": "👷",
+            "clause": "12.1",
+            "options": [
+                {
+                    "value": "full-time",
+                    "title": "Full-time",
+                    "description": "Standard weekly hours",
+                    "icon": "fa-business-time"
+                },
+                {
+                    "value": "part-time",
+                    "title": "Part-time",
+                    "description": "Reduced weekly hours",
+                    "icon": "fa-clock"
+                },
+                {
+                    "value": "casual",
+                    "title": "Casual",
+                    "description": "As needed basis",
+                    "icon": "fa-calendar-alt"
+                },
+                {
+                    "value": "daily-hire",
+                    "title": "Daily Hire",
+                    "description": "Day-to-day basis",
+                    "icon": "fa-calendar-day"
+                }
+            ]
+        },
+        "streams": {
+            "title": "Work Streams",
+            "emoji": "🏗️",
+            "options": [
+                {
+                    "value": "civil",
+                    "title": "Civil Construction",
+                    "emoji": "🚧",
+                    "hint": "Civil engineering and infrastructure work"
+                },
+                {
+                    "value": "electrical",
+                    "title": "Electrical/Electronic",
+                    "emoji": "⚡",
+                    "hint": "Electrical and electronic systems work"
+                },
+                {
+                    "value": "fabrication",
+                    "title": "Fabrication",
+                    "emoji": "🔧",
+                    "hint": "Metal fabrication and structural work"
+                },
+                {
+                    "value": "general",
+                    "title": "General Construction",
+                    "emoji": "🏗️",
+                    "hint": "General building and construction work"
+                },
+                {
+                    "value": "mechanical",
+                    "title": "Mechanical",
+                    "emoji": "⚙️",
+                    "hint": "Mechanical systems and equipment work"
+                }
+            ]
+        },
+        "activities": {
+            "title": "Activities",
+            "emoji": "🛠️"
+        },
+        "summary": {
+            "title": "Level Summary",
+            "emoji": "📊"
+        },
+        "selected": {
+            "title": "Selected Activities",
+            "emoji": "✅"
+        },
+        "requirements": {
+            "title": "Requirements",
+            "emoji": "⚠️",
+            "subsections": {
+                "safety": {
+                    "title": "Safety Requirements",
+                    "emoji": "⚠️"
+                },
+                "equipment": {
+                    "title": "Equipment Requirements",
+                    "emoji": "🔧"
+                },
+                "supervision": {
+                    "title": "Supervision Level",
+                    "emoji": "👥"
+                }
+            }
+        }
+    }
+} 

@@ -1,0 +1,258 @@
+{
+    "metadata": {
+        "award_name": "Building and Construction General On-site Award 2020",
+        "award_code": "MA000020",
+        "version": "1.0",
+        "last_updated": "2024-03-20"
+    },
+    "classifications": {
+        "CW/ECW 1": {
+            "levels": {
+                "1": {
+                    "weekly_rate": 882.80,
+                    "hourly_rate": 23.23,
+                    "description": "Entry level construction worker"
+                },
+                "2": {
+                    "weekly_rate": 902.80,
+                    "hourly_rate": 23.75,
+                    "description": "Construction worker with basic skills"
+                },
+                "3": {
+                    "weekly_rate": 922.80,
+                    "hourly_rate": 24.28,
+                    "description": "Construction worker with intermediate skills"
+                }
+            }
+        },
+        "CW/ECW 2": {
+            "weekly_rate": 942.80,
+            "hourly_rate": 24.81,
+            "description": "Intermediate construction worker"
+        },
+        "CW/ECW 3": {
+            "weekly_rate": 962.80,
+            "hourly_rate": 25.34,
+            "description": "Advanced construction worker"
+        },
+        "CW/ECW 4": {
+            "weekly_rate": 982.80,
+            "hourly_rate": 25.86,
+            "description": "Highly skilled construction worker"
+        },
+        "CW/ECW 5": {
+            "weekly_rate": 1002.80,
+            "hourly_rate": 26.39,
+            "description": "Specialist construction worker"
+        }
+    },
+    "employment_types": {
+        "full_time": {
+            "description": "Permanent full-time employee",
+            "hours_per_week": 38,
+            "loading": 0,
+            "minimum_engagement": "38 hours per week",
+            "requires_agreement": false
+        },
+        "part_time": {
+            "description": "Permanent part-time employee",
+            "hours_per_week": {
+                "minimum": 16,
+                "maximum": 38
+            },
+            "loading": 0,
+            "minimum_engagement": "16 hours per week",
+            "requires_agreement": true,
+            "agreement_requirements": [
+                "Hours of work",
+                "Pattern of hours",
+                "Rostered days off"
+            ]
+        },
+        "casual": {
+            "description": "Casual employee",
+            "loading": 25,
+            "minimum_engagement": {
+                "weekday": "4 hours",
+                "weekend": "2 hours"
+            },
+            "requires_agreement": false,
+            "conversion_rights": {
+                "eligibility": "12 months regular employment",
+                "requires_agreement": true
+            }
+        }
+    },
+    "ordinary_hours": {
+        "standard": {
+            "daily": 8,
+            "weekly": 38,
+            "spread": "6:00 AM to 6:00 PM"
+        },
+        "averaging": {
+            "allowed": true,
+            "period": "4 weeks",
+            "requires_agreement": true
+        }
+    },
+    "overtime_rules": {
+        "weekday": {
+            "first_two_hours": {
+                "rate": 1.5,
+                "requires_agreement": true
+            },
+            "after_two_hours": {
+                "rate": 2.0,
+                "requires_agreement": true
+            },
+            "maximum_daily": 10,
+            "requires_agreement": true
+        },
+        "weekend": {
+            "rate": 2.0,
+            "requires_agreement": true,
+            "minimum_engagement": "4 hours"
+        },
+        "public_holiday": {
+            "rate": 2.5,
+            "requires_agreement": true,
+            "notice_required": "24 hours"
+        },
+        "rest_requirements": {
+            "meal_break": {
+                "after_hours": 5,
+                "duration": "30 minutes",
+                "paid": false
+            },
+            "rest_break": {
+                "after_hours": 4,
+                "duration": "10 minutes",
+                "paid": true
+            }
+        }
+    },
+    "shiftwork": {
+        "definitions": {
+            "morning": {
+                "hours": "6:00 AM to 2:00 PM",
+                "loading": 15
+            },
+            "afternoon": {
+                "hours": "2:00 PM to 10:00 PM",
+                "loading": 15
+            },
+            "night": {
+                "hours": "10:00 PM to 6:00 AM",
+                "loading": 30
+            }
+        },
+        "requirements": {
+            "minimum_shift": "6 hours",
+            "maximum_shift": "8 hours",
+            "notice_of_change": "24 hours",
+            "crib_break": {
+                "duration": "20 minutes",
+                "paid": true
+            }
+        }
+    },
+    "allowances": {
+        "industry": {
+            "amount": 1.21,
+            "per": "hour",
+            "conditions": "All employees"
+        },
+        "tool": {
+            "amount": 1.21,
+            "per": "day",
+            "conditions": "When required to provide own tools",
+            "exceptions": {
+                "employer_provides": "No allowance payable",
+                "trades": {
+                    "carpenter": 1.21,
+                    "bricklayer": 1.21,
+                    "plumber": 1.21,
+                    "electrician": 1.21
+                }
+            }
+        },
+        "meal": {
+            "overtime": {
+                "amount": 16.25,
+                "conditions": "When working overtime beyond 2 hours"
+            },
+            "shiftwork": {
+                "amount": 16.25,
+                "conditions": "When working shiftwork"
+            },
+            "remote": {
+                "amount": 16.25,
+                "conditions": "When working in remote location"
+            }
+        },
+        "travel": {
+            "amount": 0.78,
+            "per": "kilometer",
+            "conditions": "When required to use own vehicle",
+            "minimum_distance": "50 kilometers"
+        },
+        "special_conditions": {
+            "confined_space": {
+                "amount": 1.21,
+                "per": "hour",
+                "conditions": "When working in confined space"
+            },
+            "height": {
+                "amount": 1.21,
+                "per": "hour",
+                "conditions": "When working at heights"
+            },
+            "extreme_weather": {
+                "amount": 1.21,
+                "per": "hour",
+                "conditions": "When working in extreme weather"
+            },
+            "remote_location": {
+                "amount": 1.21,
+                "per": "hour",
+                "conditions": "When working in remote location"
+            }
+        }
+    },
+    "leave_entitlements": {
+        "annual_leave": {
+            "weeks": 4,
+            "loading": 17.5
+        },
+        "personal_leave": {
+            "days": 10,
+            "unpaid": "2 days"
+        },
+        "public_holidays": {
+            "paid": true,
+            "rate": "ordinary rate"
+        }
+    },
+    "special_provisions": {
+        "remote_work": {
+            "allowance": 1.21,
+            "per": "hour",
+            "conditions": "Work in remote location"
+        },
+        "extreme_weather": {
+            "allowance": 1.21,
+            "per": "hour",
+            "conditions": "Work in extreme weather conditions"
+        },
+        "confined_spaces": {
+            "allowance": 1.21,
+            "per": "hour",
+            "conditions": "Work in confined space"
+        },
+        "heights": {
+            "allowance": 1.21,
+            "per": "hour",
+            "conditions": "Work at heights"
+        }
+    }
+} 

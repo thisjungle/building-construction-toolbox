@@ -1,0 +1,192 @@
+{
+    "CW/ECW 1": {
+        "civil": [
+            "Assistant powder monkey",
+            "Assistant rigger",
+            "Bitumen worker",
+            "Builders' labourer group 4",
+            "Concrete cutting or drilling machine operator",
+            "Concrete floater",
+            "Concrete formwork stripper",
+            "Concrete gang worker",
+            "Concrete gun or pump operator",
+            "Dump cart operator",
+            "Fencer",
+            "General hand",
+            "Kerb and gutter layer"
+        ],
+        "electrical": [
+            "Cable jointer",
+            "Aircon group 2",
+            "Aircon group 3",
+            "Linesperson"
+        ],
+        "fabrication": [
+            "Aluminium alloy structural worker",
+            "Bar bending machine operator",
+            "Dresser and grinder",
+            "Insulator",
+            "Ironworker on construction",
+            "Sheetmetal worker 2nd class",
+            "Steel erector",
+            "Welder 2nd class"
+        ],
+        "general": [
+            "Demolition labourer",
+            "Employee directly assisting a tradesperson",
+            "Landscape labourer",
+            "Plasterer assistant",
+            "Tradesperson's labourer"
+        ],
+        "mechanical": [
+            "Tool/material storeman",
+            "Mobile crane driver",
+            "Crane chaser"
+        ]
+    },
+    "CW/ECW 2": {
+        "civil": [
+            "Concrete batching plant operator",
+            "Concrete finisher",
+            "Foundation shaftsworker",
+            "Manhole builder",
+            "Powder monkey",
+            "Scaffolder",
+            "Steelfixer",
+            "Traffic controller",
+            "Wall builder"
+        ],
+        "electrical": [
+            "Aircon group 1"
+        ],
+        "fabrication": [
+            "Tack welder"
+        ],
+        "general": [
+            "Forklift over 4500kg",
+            "Landscaper",
+            "Storeman"
+        ],
+        "mechanical": [
+            "Tool sharpener",
+            "Spotter"
+        ]
+    },
+    "CW/ECW 3": {
+        "civil": [
+            "Bridge and wharf carpenter",
+            "Concrete finisher, powered",
+            "Concrete spreader, powered",
+            "Drainer",
+            "Form setter",
+            "Pipe layer",
+            "Renderer in pipes, tunnels or covered drains"
+        ],
+        "electrical": [
+            "Air-conditioning tradesperson",
+            "Electrical fitter",
+            "Electrical mechanic",
+            "Refrigeration mechanic",
+            "Tradesperson (radio)"
+        ],
+        "fabrication": [
+            "Boilermaker and/or structural steel tradesperson",
+            "Marker off",
+            "Sheetmetal worker 1st class",
+            "Welder 1st class",
+            "Welder special class"
+        ],
+        "general": [
+            "Bricklayer",
+            "Carpenter",
+            "Floor layer specialist",
+            "Glazier",
+            "Joiner",
+            "Painter",
+            "Plasterer",
+            "Tilelayer",
+            "Stonemason"
+        ],
+        "mechanical": [
+            "Battery fitter",
+            "Fitter",
+            "Motor mechanic",
+            "Plant mechanic",
+            "Serviceperson"
+        ]
+    },
+    "CW/ECW 4": {
+        "civil": [
+            "Concrete paver",
+            "Grader operator",
+            "Mobile concrete boom pump operator",
+            "Pile driver",
+            "Road roller operator",
+            "Scraper operator"
+        ],
+        "electrical": [
+            "Electrician special class",
+            "Instrument tradesperson"
+        ],
+        "fabrication": [
+            "Inspector",
+            "Letter cutter",
+            "Mechanical tradesperson special class"
+        ],
+        "general": [
+            "Joiner special class",
+            "Joiner-setter out",
+            "Marker-setter out",
+            "Prefab setter",
+            "Signwriter"
+        ],
+        "mechanical": [
+            "Mobile crane operator",
+            "Plant operator specialist"
+        ]
+    },
+    "CW/ECW 5": {
+        "civil": [
+            "Carver",
+            "Tunneller 2",
+            "Shaft or trench sinker"
+        ],
+        "electrical": [
+            "Special class tradesperson"
+        ],
+        "fabrication": [
+            "Special class engineering tradesperson"
+        ],
+        "general": [
+            "Refractory bricklayer"
+        ],
+        "mechanical": [
+            "Special class mechanical tradesperson"
+        ]
+    },
+    "CW/ECW 6": {
+        "electrical": [
+            "Electronics tradesperson",
+            "Instrumentation and control tradesperson"
+        ],
+        "mechanical": [
+            "Advanced mechanical tradesperson"
+        ]
+    },
+    "CW/ECW 7": {
+        "civil": [
+            "Sub-foreperson"
+        ],
+        "general": [
+            "Dogger-crane hand (fixed cranes)"
+        ]
+    },
+    "CW/ECW 8": {
+        "civil": [
+            "Carpenter-diver"
+        ],
+        "general": [
+            "Foreperson"
+        ]
+    }
+} 

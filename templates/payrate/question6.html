@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="payrate-container">
+    <div class="payrate-wrapper">
+        <div class="payrate-section">
+            <h1>Pay Rate Finder</h1>
+            
+            <!-- Progress indicator -->
+            <div class="progress-bar">
+                <div class="progress" style="width: 90%"></div>
+                <span class="progress-text">Question 6 of 7</span>
+            </div>
+
+            <!-- Question section -->
+            <div class="question-container">
+                <h2>Do you hold a first aid qualification?</h2>
+                <div class="options-container">
+                    <button class="option-button" data-value="minimum">
+                        Yes - Basic First Aid
+                    </button>
+                    <button class="option-button" data-value="higher">
+                        Yes - Advanced First Aid
+                    </button>
+                    <button class="option-button" data-value="no">
+                        No
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="navigation-buttons">
+                <button class="nav-button back-button">Back</button>
+                <button class="nav-button next-button" disabled="disabled">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add script tag -->
+<script src="{{ url_for('static', filename='js/payrate.js') }}"></script>
+{% endblock %} 

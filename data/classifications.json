@@ -1,0 +1,349 @@
+{
+  "ScheduleA": {
+    "Levels": [
+      {
+        "Level": "CW/ECW 1",
+        "Title": "Construction Worker Level 1 / Engineering Construction Worker Level 1",
+        "Description": "Works under general supervision in one or more skill streams.",
+        "Qualifications": [
+          "Successfully completed a construction skills test equivalent to the required competency standards.",
+          "Successfully completed a relevant structured training program equivalent to the required competency standards.",
+          "Successfully completed an Engineering Construction Industry Skills Certificate Level 1 or equivalent accredited training.",
+          "Obtained skills equivalent to the above through work experience, subject to competency testing."
+        ],
+        "Skills_and_Duties": [
+          "Performs work to the extent of their skills, competence, and training.",
+          "Works under general supervision either individually or in a team environment.",
+          "Exercises discretion within their level of training.",
+          "Responsible for the quality of their own work."
+        ],
+        "Indicative_Tasks": [
+          "General laboring duties.",
+          "Handling materials.",
+          "Basic operation of tools."
+        ],
+        "Broadbanded_Classifications": [
+          "Aircon group 2",
+          "Assistant powder monkey",
+          "Concrete cutting or drilling machine operator"
+        ]
+      },
+      {
+        "Level": "CW/ECW 2",
+        "Title": "Construction Worker Level 2 / Engineering Construction Worker Level 2",
+        "Description": "Works under limited supervision in one or more skill streams.",
+        "Qualifications": [
+          "Completed a Construction Skills Test equivalent to the required competency standards.",
+          "Completed an Engineering Construction Industry Certificate Level 2 consisting of 20 modules or equivalent accredited training."
+        ],
+        "Skills_and_Duties": [
+          "Interprets plans and drawings.",
+          "Allocates tasks within a WAT.",
+          "Applies quality control techniques."
+        ],
+        "Indicative_Tasks": [
+          "Non-trades maintenance of plant and equipment.",
+          "Uses measuring and levelling instruments.",
+          "Operates machinery requiring more skill than CW/ECW 1."
+        ],
+        "Broadbanded_Classifications": [
+          "Concrete batching plant operator",
+          "Geotextile/geomembrane worker level 2",
+          "Traffic controller"
+        ]
+      },
+      {
+        "Level": "CW/ECW 3",
+        "Title": "Construction Worker Level 3 / Engineering Construction Worker Level 3 (Engineering Construction Tradesperson Level 1)",
+        "Description": "A CW/ECW 3 works individually or in a team environment in one or more skill streams contained within this award.",
+        "Qualifications": [
+          "Successfully completed a relevant trade apprenticeship or its AQF equivalent.",
+          "Successfully completed, in accordance with RPL principles, a Construction Skills Test for this level.",
+          "Successfully completed the required competency standards.",
+          "Successfully completed an Engineering Construction Industry Certificate Level 3 consisting of a total of 24 appropriate modules or formally recognised equivalent accredited training.",
+          "Obtained skills equivalent to the above gained through work experience subject to competency testing to the prescribed standard."
+        ],
+        "Skills_and_Duties": [
+          "Performs work to the extent of their skills, competence and training.",
+          "May supervise one or more employees working at CW/ECW 1 or CW/ECW 2 levels.",
+          "Understands and applies quality control techniques.",
+          "Exercises good interpersonal and communication skills.",
+          "Performs measuring and calculation tasks at a higher level than CW/ECW 2.",
+          "Exercises discretion within the scope of this grade.",
+          "Performs work under limited supervision either individually or in a team environment."
+        ],
+        "Indicative_Tasks": [
+          "Allocates functions within a WAT.",
+          "Production sequencing and materials handling of a level more advanced than CW/ECW 2.",
+          "Performs trade skills associated with certificated trades.",
+          "Has a sound understanding of the construction process.",
+          "Handles specialized materials.",
+          "Operates machinery and equipment requiring the exercise of skill and knowledge beyond that of an employee at CW/ECW 2.",
+          "Sheetmetal fabrication.",
+          "System assembly.",
+          "Welding and cutting.",
+          "Mechanical installation."
+        ],
+        "Broadbanded_Classifications": [
+          "Air compressor operator",
+          "Air-conditioning tradesperson",
+          "All winch driver",
+          "Artificial stoneworker",
+          "Battery fitter",
+          "Bitumen sprayer",
+          "Boilermaker and/or structural steel tradesperson",
+          "Bricklayer",
+          "Bridge and wharf carpenter",
+          "Carpenter",
+          "Caster",
+          "Concrete finisher, powered",
+          "Concrete spreader, powered",
+          "Crawler tractor with power operated attachments (up to and including 2000kg shipping mass)",
+          "Crusher operator aggregate (dimension stone quarries)",
+          "Drainer",
+          "Dumper, rear and bottom (up to and including 2 cubic metres struck capacity)",
+          "Electric motor attendant",
+          "Electrical fitter",
+          "Electrical mechanic",
+          "Fitter",
+          "Fixer",
+          "Floor layer specialist",
+          "Floorsander",
+          "Forklift driver",
+          "Form setter",
+          "Gardener",
+          "Geotextile/geomembrane worker level 3",
+          "Glazier",
+          "Hand sprayer, lance type",
+          "Joiner",
+          "Locksmith",
+          "Machinist",
+          "Marble and slateworker",
+          "Marker off",
+          "Mobile concrete line pump operator",
+          "Mobile hydraulic platform operator",
+          "Motor mechanic",
+          "Operator, drilling machine (up to and including 155 mm diameter)",
+          "Operator, pneumatic tyred tractor with power operated attachments (up to and including 15 kW net engine power)",
+          "Operators of other cranes up to and including 5 ton",
+          "Painter (including Artworker, Spraypainter, Shotblaster, and Sandblaster)",
+          "Paviour (including segmental paving)",
+          "Pipe layer (any kind of pipes)",
+          "Plant mechanic",
+          "Plasterer",
+          "Prefab tradesperson",
+          "Qualified/trade cook",
+          "Quarryworker (dimension stone quarries)",
+          "Refrigeration mechanic",
+          "Renderer in pipes, tunnels, or covered drains",
+          "Rigger",
+          "Dogger",
+          "Roller, vibrating (under 4 ton)",
+          "Roof fixer",
+          "Rooftiler (including Roof Slater)",
+          "Second driver—Navvy and dragline or dredge-type excavator",
+          "Serviceperson",
+          "Sheetmetal worker 1st class",
+          "Shophand",
+          "Slate ridge or roof fixer",
+          "Stonemason",
+          "Tilelayer",
+          "Timberperson",
+          "Tradesperson (radio)",
+          "Tradesperson (precast concrete manufacture)",
+          "Tradesperson landscaper",
+          "Trenching machine (small Ditch-Witch type)",
+          "Welder 1st class",
+          "Welder special class"
+        ]
+      },
+      {
+        "Level": "CW/ECW 4",
+        "Title": "Construction Worker Level 4 / Engineering Construction Worker Level 4",
+        "Description": "A CW/ECW 4 performs advanced tasks and may oversee or mentor lower-level workers.",
+        "Qualifications": [
+          "Successfully completed a relevant trade apprenticeship or its AQF equivalent.",
+          "Successfully completed an Engineering Construction Industry Certificate Level 4 consisting of a total of 32 appropriate modules or formally recognised equivalent accredited training.",
+          "Obtained skills equivalent to the above through work experience, subject to competency testing."
+        ],
+        "Skills_and_Duties": [
+          "Performs work with significant independence, exercising initiative and judgement within their skills and training.",
+          "May supervise and provide technical guidance to CW/ECW 1, 2, and 3 employees.",
+          "Prepares work programs or schedules and interprets detailed plans.",
+          "Monitors and maintains quality control systems."
+        ],
+        "Indicative_Tasks": [
+          "Operation of complex machinery and equipment.",
+          "Maintenance and repair tasks requiring advanced trade skills.",
+          "Interpreting blueprints, preparing estimates, and allocating tasks.",
+          "Supervising construction site activities or leading a small team."
+        ],
+        "Broadbanded_Classifications": [
+          "Advanced plant operator (e.g., grader, excavator over 5 tons).",
+          "Advanced rigging or scaffolding tasks.",
+          "Electrical tradesperson with supervisory responsibilities.",
+          "Mechanical fitter handling specialized installations."
+        ]
+      },
+      {
+        "Level": "CW/ECW 5",
+        "Title": "Construction Worker Level 5 / Engineering Construction Worker Level 5",
+        "Description": "A CW/ECW 5 performs highly skilled tasks requiring advanced technical knowledge and leadership abilities.",
+        "Qualifications": [
+          "Successfully completed advanced trade certifications or equivalent AQF qualifications.",
+          "Demonstrated competency in supervisory or management responsibilities.",
+          "Obtained skills through significant industry experience and competency testing."
+        ],
+        "Skills_and_Duties": [
+          "Responsible for leading teams or projects and ensuring compliance with safety and quality standards.",
+          "Exercises advanced judgement and technical expertise.",
+          "Supervises and trains employees at lower classifications.",
+          "Manages complex operational tasks, troubleshooting, and problem-solving."
+        ],
+        "Indicative_Tasks": [
+          "Supervising large-scale construction or engineering projects.",
+          "Overseeing installation or maintenance of specialized systems (e.g., HVAC, advanced electrical systems).",
+          "Leading safety inspections and risk management procedures.",
+          "Advanced welding, machining, or fabrication tasks."
+        ],
+        "Broadbanded_Classifications": [
+          "Senior plant operator.",
+          "Advanced construction supervisor.",
+          "Specialized tradesperson (e.g., advanced welder or plumber).",
+          "Project foreperson for civil or engineering tasks."
+        ]
+      },
+      {
+        "Level": "CW/ECW 6",
+        "Title": "Construction Worker Level 6 / Engineering Construction Worker Level 6",
+        "Description": "A CW/ECW 6 is an expert-level worker capable of managing complex projects or systems and providing high-level supervision.",
+        "Qualifications": [
+          "Successfully completed advanced AQF certifications (Level 6 or equivalent).",
+          "Extensive experience in construction or engineering project management.",
+          "Demonstrated ability to oversee large teams and manage resources efficiently."
+        ],
+        "Skills_and_Duties": [
+          "Leads complex projects or multiple teams, ensuring adherence to budgets and timelines.",
+          "Acts as a technical expert, advising on advanced methods and technologies.",
+          "Develops and implements advanced quality assurance and safety systems.",
+          "Collaborates with other stakeholders, including engineers, architects, and clients."
+        ],
+        "Indicative_Tasks": [
+          "Managing multi-disciplinary teams on major construction sites.",
+          "Overseeing installation and commissioning of large systems (e.g., power plants, industrial facilities).",
+          "Developing and delivering training programs for advanced skills.",
+          "Preparing detailed project reports, budgets, and schedules."
+        ],
+        "Broadbanded_Classifications": [
+          "Project manager or coordinator.",
+          "Senior construction supervisor or foreperson.",
+          "Lead technical advisor for engineering systems.",
+          "Specialist operator of complex industrial machinery."
+        ]
+      },
+      {
+        "Level": "CW/ECW 7",
+        "Title": "Construction Worker Level 7 / Engineering Construction Worker Level 7",
+        "Description": "A CW/ECW 7 performs specialized tasks requiring expert technical knowledge and is capable of managing advanced technical projects.",
+        "Qualifications": [
+          "Advanced trade or technical qualifications (AQF Level 6 or equivalent).",
+          "Extensive industry experience in advanced construction or engineering operations.",
+          "Demonstrated competency in managing specialized teams and systems."
+        ],
+        "Skills_and_Duties": [
+          "Performs highly specialized tasks with minimal supervision.",
+          "Leads critical operations requiring precision and advanced technical expertise.",
+          "Monitors and ensures compliance with complex safety and operational standards.",
+          "Supervises and mentors employees in advanced technical roles."
+        ],
+        "Indicative_Tasks": [
+          "Advanced rigging or heavy lifting operations.",
+          "Supervising critical infrastructure construction projects.",
+          "Managing the installation and testing of high-tech equipment or systems.",
+          "Troubleshooting and resolving advanced technical issues on-site."
+        ],
+        "Broadbanded_Classifications": [
+          "Senior technical advisor for major construction projects.",
+          "Advanced plant operator for specialized machinery.",
+          "Team leader for high-risk operations (e.g., heavy lifts, confined spaces).",
+          "Supervisor for advanced structural or mechanical works."
+        ]
+      },
+      {
+        "Level": "CW/ECW 8",
+        "Title": "Construction Worker Level 8 / Engineering Construction Worker Level 8",
+        "Description": "A CW/ECW 8 is a senior-level worker who oversees complex engineering or construction operations, often coordinating multiple teams and systems.",
+        "Qualifications": [
+          "Advanced qualifications (AQF Level 7 or equivalent) or significant industry experience.",
+          "Demonstrated ability to lead large teams or manage multi-disciplinary projects.",
+          "Comprehensive understanding of advanced construction or engineering practices."
+        ],
+        "Skills_and_Duties": [
+          "Leads the execution of complex construction or engineering projects.",
+          "Coordinates cross-disciplinary teams, ensuring operational efficiency.",
+          "Develops and implements advanced quality control systems.",
+          "Advises on innovative methods or technologies to improve project outcomes."
+        ],
+        "Indicative_Tasks": [
+          "Managing the construction of high-rise buildings or large-scale industrial facilities.",
+          "Overseeing the commissioning of advanced engineering systems.",
+          "Collaborating with engineers and architects on project design and execution.",
+          "Ensuring compliance with national and international standards for safety and quality."
+        ],
+        "Broadbanded_Classifications": [
+          "Construction superintendent for large projects.",
+          "Senior project engineer for specialized systems.",
+          "Coordinator for multi-team construction or engineering operations.",
+          "Advisor for complex technical challenges in infrastructure projects."
+        ]
+      },
+      {
+        "Level": "CW/ECW 9",
+        "Title": "Construction Worker Level 9 / Engineering Construction Worker Level 9",
+        "Description": "A CW/ECW 9 represents the highest level of technical expertise and leadership within the construction and engineering sectors.",
+        "Qualifications": [
+          "Elite qualifications (AQF Level 8 or equivalent) or substantial experience managing high-level projects.",
+          "Expert knowledge of advanced construction and engineering systems.",
+          "Proven leadership in handling large-scale or high-risk operations."
+        ],
+        "Skills_and_Duties": [
+          "Directs large-scale construction or engineering projects.",
+          "Provides expert technical consultation to internal and external stakeholders.",
+          "Manages resources, budgets, and schedules for complex projects.",
+          "Develops strategies to mitigate risks and ensure project success."
+        ],
+        "Indicative_Tasks": [
+          "Overseeing the construction of landmark projects (e.g., bridges, stadiums, power plants).",
+          "Managing multi-million-dollar projects with international standards.",
+          "Leading innovation in construction or engineering methodologies.",
+          "Representing the company in high-level negotiations or consultations."
+        ],
+        "Broadbanded_Classifications": [
+          "Project director for large-scale operations.",
+          "Senior consultant for advanced engineering solutions.",
+          "Head of construction or engineering for complex multi-disciplinary projects.",
+          "Technical expert in high-risk or high-precision environments."
+        ]
+      }
+    ]
+  },
+  "work_categories": {
+    "general_building_and_construction": {
+      "description": "Activities including building erection, demolition, and renovation."
+    },
+    "civil_construction": {
+      "description": "Earthmoving, plant operation, and related activities."
+    },
+    "engineering_construction": {
+      "electrical_electronic": {
+        "description": "Work on electrical devices and systems."
+      },
+      "mechanical": {
+        "description": "Work on mechanical systems and machinery."
+      },
+      "fabrication": {
+        "description": "Fabrication and metalwork activities."
+      }
+    }
+}
+}

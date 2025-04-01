@@ -1,0 +1,250 @@
+{% extends "base.html" %}
+
+{% block title %}Employee Details - {{ employee.name }}{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/employee_details.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Employee Details Header -->
+<div class="details-header">
+    <div class="employee-profile">
+        <div class="profile-avatar">
+            {% if employee.photo %}
+            <img src="{{ url_for('static', filename='uploads/' + employee.photo) }}" alt="{{ employee.name }}">
+            {% else %}
+            <div class="profile-initials">{{ employee.name[0]|upper }}</div>
+            {% endif %}
+        </div>
+        <div class="profile-info">
+            <h2>{{ employee.name }}</h2>
+            <div class="profile-meta">
+                <span class="meta-item">
+                    <span class="meta-icon">📅</span>
+                    Joined: {{ employee.start_date }}
+                </span>
+                <span class="meta-item">
+                    <span class="meta-icon">🏗️</span>
+                    {{ employee.employment_type }}
+                </span>
+                {% if employee.current_classification %}
+                <span class="meta-item">
+                    <span class="meta-icon">📊</span>
+                    {{ employee.current_classification }}
+                </span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <!-- Module Tabs -->
+    <div class="module-tabs">
+        <button class="tab-btn active" data-tab="profile">
+            <span class="tab-icon">👤</span>
+            Profile
+        </button>
+        <button class="tab-btn" data-tab="levels">
+            <span class="tab-icon">📊</span>
+            Award Levels
+        </button>
+        <button class="tab-btn" data-tab="allowances">
+            <span class="tab-icon">💰</span>
+            Allowances
+        </button>
+        <button class="tab-btn" data-tab="training">
+            <span class="tab-icon">📚</span>
+            Training
+        </button>
+        <button class="tab-btn" data-tab="documents">
+            <span class="tab-icon">📄</span>
+            Documents
+        </button>
+    </div>
+</div>
+
+<!-- Main Content Area -->
+<div class="module-content-area">
+    <!-- Profile Tab Content (default active) -->
+    <div class="tab-content active" id="profile-content" data-tab="profile">
+        <div class="content-wrapper">
+            <h3>Employee Profile</h3>
+            <div class="profile-details">
+                <div class="detail-group">
+                    <label>Full Name</label>
+                    <p>{{ employee.name }}</p>
+                </div>
+                <div class="detail-group">
+                    <label>Email</label>
+                    <p>{{ employee.email }}</p>
+                </div>
+                <div class="detail-group">
+                    <label>Phone</label>
+                    <p>{{ employee.phone }}</p>
+                </div>
+                <div class="detail-group">
+                    <label>Employment Type</label>
+                    <p>{{ employee.employment_type }}</p>
+                </div>
+                <div class="detail-group">
+                    <label>Start Date</label>
+                    <p>{{ employee.start_date }}</p>
+                </div>
+                {% if employee.current_classification %}
+                <div class="detail-group">
+                    <label>Current Classification</label>
+                    <p>{{ employee.current_classification }}</p>
+                </div>
+                {% endif %}
+                <div class="detail-group">
+                    <label>Status</label>
+                    <p class="status-badge {{ 'active' if employee.status == 'Active' else 'inactive' }}">
+                        {{ employee.status }}
+                    </p>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn-primary" id="editProfileBtn">Edit Profile</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Levels Tab Content -->
+    <div class="tab-content" id="levels-content" data-tab="levels">
+        <div class="content-wrapper">
+            <h3>Award Levels</h3>
+            
+            <div class="levels-container">
+                <main class="main-content">
+                    <!-- Form Panel -->
+                    <section class="form-panel">
+                        <form id="classificationForm" data-employee-id="{{ employee.id }}">
+                            <div class="error-message" style="display: none;">
+                                <h3>Error: Loading form...</h3>
+                                <p>Please wait while we attempt to load the classification form.</p>
+                                <button type="button" class="btn-primary" id="loadDefaultQuestionsBtn">Load Default Questions</button>
+                            </div>
+                            
+                            <div id="questionsContainer">
+                                <!-- Questions will be loaded here via JavaScript -->
+                                <div class="loading-indicator">
+                                    <p>Loading classification questions...</p>
+                                </div>
+                            </div>
+                            
+                            <div class="form-actions" style="display: none;">
+                                <button type="submit" class="btn-primary">Calculate Classification</button>
+                            </div>
+                        </form>
+                    </section>
+
+                    <!-- Results Panel -->
+                    <aside class="results-panel">
+                        <div class="results-content">
+                            <h3>📋 Classification Result</h3>
+                            <div class="level-result">
+                                <div class="level-badge" id="currentLevel">
+                                    {% if employee.current_classification %}
+                                        {{ employee.current_classification }}
+                                    {% else %}
+                                        N/A
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="confidence-meter">
+                                    <div class="confidence-label">Confidence:</div>
+                                    <div class="confidence-bar">
+                                        <div class="confidence-value" data-confidence="0"></div>
+                                    </div>
+                                    <div class="confidence-percentage">0%</div>
+                                </div>
+                            </div>
+                            
+                            <div class="level-reasoning" id="levelReasoning">
+                                <p>Complete the form to receive a classification.</p>
+                            </div>
+                            
+                            <div class="result-actions">
+                                <button id="printResultBtn" class="btn-secondary" disabled>Print Result</button>
+                                <button id="saveResultBtn" class="btn-secondary" disabled>Save as PDF</button>
+                            </div>
+                        </div>
+                    </aside>
+                </main>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Allowances Tab Content -->
+    <div class="tab-content" id="allowances-content" data-tab="allowances">
+        <div class="content-wrapper">
+            <h3>Allowances</h3>
+            <p class="placeholder-text">Allowances module is coming soon.</p>
+        </div>
+    </div>
+    
+    <!-- Training Tab Content -->
+    <div class="tab-content" id="training-content" data-tab="training">
+        <div class="content-wrapper">
+            <h3>Training Records</h3>
+            <p class="placeholder-text">Training module is coming soon.</p>
+        </div>
+    </div>
+    
+    <!-- Documents Tab Content -->
+    <div class="tab-content" id="documents-content" data-tab="documents">
+        <div class="content-wrapper">
+            <h3>Employee Documents</h3>
+            <p class="placeholder-text">Documents module is coming soon.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<!-- Levels module -->
+<script type="module" src="{{ url_for('static', filename='js/modules/levels-utils.js') }}"></script>
+<script type="module" src="{{ url_for('static', filename='js/modules/levels-ui.js') }}"></script>
+<script type="module" src="{{ url_for('static', filename='js/modules/levels-export.js') }}"></script>
+<script type="module" src="{{ url_for('static', filename='js/modules/levels-core.js') }}"></script>
+<script type="module" src="{{ url_for('static', filename='js/levels.js') }}"></script>
+
+<!-- Embedded levels handler -->
+<script type="module" src="{{ url_for('static', filename='js/embedded_levels.js') }}"></script>
+
+<!-- Debug tools -->
+<script src="{{ url_for('static', filename='js/debug_levels.js') }}"></script>
+
+<!-- Main page script -->
+<script src="{{ url_for('static', filename='js/employee_details.js') }}"></script>
+
+<script>
+// Disable conflicting controllers to prevent clashes
+window.EmployeeDetailController = null;
+window.detailController = null;
+
+// Ensure classification form is displayed when found
+document.addEventListener('DOMContentLoaded', () => {
+    const classificationForm = document.getElementById('classificationForm');
+    if (classificationForm) {
+        classificationForm.style.display = 'block';
+        console.log('Classification form displayed');
+    }
+    
+    // Make sure the tab content is shown when clicked
+    const awardLevelsTab = document.querySelector('button[data-tab="levels"]');
+    if (awardLevelsTab) {
+        awardLevelsTab.addEventListener('click', () => {
+            const levelsContent = document.querySelector('#levels-content .content-wrapper');
+            if (levelsContent) {
+                levelsContent.style.display = 'block';
+                console.log('Award levels content displayed on tab click');
+            }
+        });
+    }
+});
+</script>
+{% endblock %} 

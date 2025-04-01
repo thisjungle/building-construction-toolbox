@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="payrate-container">
+    <div class="payrate-wrapper">
+        <div class="payrate-section">
+            <h1>Pay Rate Finder</h1>
+            
+            <!-- Progress indicator -->
+            <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+                <span class="progress-text">Question 5 of 6</span>
+            </div>
+
+            <!-- Question section -->
+            <div class="question-container">
+                <h2>Which tool allowance category applies?</h2>
+                <div class="options-container">
+                    <button class="option-button" data-value="High-Level" data-amount="38.67">
+                        High-Level Trades ($38.67)
+                        <span class="option-description">Artificial Stoneworker, Carpenter, Joiner, Carver, Bridge/Wharf Carpenter, Floor Sander, Letter Cutter, Marble/Slate Worker, Stonemason, Tilelayer</span>
+                    </button>
+                    <button class="option-button" data-value="Mid-Level" data-amount="31.99">
+                        Mid-Level Trades ($31.99)
+                        <span class="option-description">Caster, Fixer, Floorlayer Specialist, Plasterer</span>
+                    </button>
+                    <button class="option-button" data-value="Specialized-Bricklaying" data-amount="27.45">
+                        Specialized Bricklaying Trades ($27.45)
+                        <span class="option-description">Refractory Bricklayer, Bricklayer</span>
+                    </button>
+                    <button class="option-button" data-value="Construction-Sector" data-amount="20.25">
+                        Construction Sector Trades ($20.25)
+                        <span class="option-description">Roof Tiler, Slate-Ridger, Roof Fixer, Metals and Engineering Construction Tradespersons</span>
+                    </button>
+                    <button class="option-button" data-value="Entry-Level" data-amount="9.28">
+                        Entry-Level Trades ($9.28)
+                        <span class="option-description">Signwriter, Painter, Glazier</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="navigation-buttons">
+                <button class="nav-button back-button">Back</button>
+                <button class="nav-button next-button" disabled="disabled">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add script tag -->
+<script src="{{ url_for('static', filename='js/payrate.js') }}"></script>
+{% endblock %} 

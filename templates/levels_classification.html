@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+
+{% block title %}Classification Levels{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/levels_classification.css') }}">
+{% endblock %}
+
+{% block header %}
+<header class="module-header">
+    <div class="header-content">
+        <!-- Left side -->
+        <div class="header-main">
+            {% include 'components/navigation.html' %}
+            <div class="header-title">
+                <div class="header-title-content">
+                    <span class="emoji-md" data-emoji="LEVELS"></span>
+                    <span>Classification Levels</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle section -->
+        <div class="header-middle">
+            <div class="name-input-container">
+                <input type="text" 
+                       class="employee-name-input" 
+                       placeholder="Enter employee name..." 
+                       value="{{ employee_name if employee_name else '' }}">
+            </div>
+            <div class="total-amount-container">
+                <span class="total-label">Level:</span>
+                <span class="total-value" id="headerTotalAmount">-</span>
+            </div>
+        </div>
+
+        <!-- Right side -->
+        <div class="header-actions">
+            <button class="btn btn-ghost">
+                <span class="btn-text">Download PDF</span>
+            </button>
+            <button class="help-button" onclick="openModal('helpModal')">
+                <span class="emoji-md" data-emoji="HELP"></span>
+            </button>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <!-- Form Panel -->
+    <div class="form-panel">
+        <div id="loadingSpinner" class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading classification levels...</p>
+        </div>
+        <div id="classificationForm" style="display: none;">
+            {% for section in sections %}
+            <div class="question-group" data-section="{{ section.id }}">
+                <div class="group-header">
+                    <span class="emoji-md" data-emoji="{{ section.emoji }}"></span>
+                    <h2 class="group-title">{{ section.title }}</h2>
+                </div>
+                {% for question in section.questions %}
+                <div class="level-question">
+                    <div class="question-title">
+                        {{ question.text }}
+                    </div>
+                    <div class="options-container">
+                        {% if question.type == 'radio' %}
+                            {% for option in question.options %}
+                            <label class="option-content">
+                                <div class="option-row-1">
+                                    <input type="radio" 
+                                           name="{{ question.id }}" 
+                                           value="{{ option.value }}" 
+                                           class="radio-input"
+                                           data-points="{{ option.points }}">
+                                    <span class="option-title">{{ option.text }}</span>
+                                </div>
+                                {% if option.hint %}
+                                <div class="option-row-2">
+                                    <span class="option-emoji" data-emoji="HINT"></span>
+                                    <span class="hint">{{ option.hint }}</span>
+                                </div>
+                                {% endif %}
+                            </label>
+                            {% endfor %}
+                        {% elif question.type == 'checkbox' %}
+                            {% for option in question.options %}
+                            <label class="option-content">
+                                <div class="option-row-1">
+                                    <input type="checkbox" 
+                                           name="{{ question.id }}" 
+                                           value="{{ option.value }}" 
+                                           class="checkbox-input"
+                                           data-points="{{ option.points }}">
+                                    <span class="option-title">{{ option.text }}</span>
+                                </div>
+                                {% if option.hint %}
+                                <div class="option-row-2">
+                                    <span class="option-emoji" data-emoji="HINT"></span>
+                                    <span class="hint">{{ option.hint }}</span>
+                                </div>
+                                {% endif %}
+                            </label>
+                            {% endfor %}
+                        {% elif question.type == 'number' %}
+                            <div class="number-input-container">
+                                <input type="number" 
+                                       name="{{ question.id }}" 
+                                       class="number-input"
+                                       min="{{ question.min }}"
+                                       max="{{ question.max }}"
+                                       data-points-per-unit="{{ question.points_per_module }}">
+                                {% if question.help_text %}
+                                <span class="input-tooltip">{{ question.help_text }}</span>
+                                {% endif %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+    <!-- Results Panel -->
+    <div class="results-panel">
+        <div class="classification-summary">
+            <div class="results-header">
+                <span class="emoji-md">📋</span>
+                <h3>Summary</h3>
+            </div>
+            <div class="level-badge">
+                <span class="level-number">-</span>
+            </div>
+            <div class="confidence-meter">
+                <div class="confidence-label">Confidence Level</div>
+                <div class="confidence-bar">
+                    <div class="confidence-value" style="width: 0%"></div>
+                </div>
+                <div class="confidence-percentage">0%</div>
+            </div>
+            <div class="level-reasoning">
+                <p>Complete the form to see your classification</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="note-section">
+    <p>
+        <span class="emoji-md" data-emoji="HINT"></span>
+        Classifications are based on the Building and Construction General On-site Award. This tool provides guidance only and should be verified against the official award document.
+    </p>
+</div>
+
+<!-- Help Modal -->
+<div id="helpModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>
+                <span class="emoji-md" data-emoji="LEVELS"></span>
+                Classification Help
+            </h2>
+            <button class="close-button" onclick="closeModal('helpModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="help-section">
+                <h3><i class="fas fa-info-circle"></i> Introduction</h3>
+                <p>The Building and Construction Industry Award uses a comprehensive classification system that defines employee roles, responsibilities, and pay rates based on skills, qualifications, and experience. This system ensures fair and consistent remuneration across the industry.</p>
+                <p>The classification system ranges from CW/ECW 1 (entry level) to ECW 9 (advanced specialist), with each level building upon the previous one in terms of skills, responsibilities, and expertise.</p>
+            </div>
+
+            <div class="help-section">
+                <h3><i class="fas fa-tools"></i> How to Use This Tool</h3>
+                <p>This tool helps you:</p>
+                <ul>
+                    <li>Find the appropriate classification level for a position</li>
+                    <li>Understand the skills and responsibilities required for each level</li>
+                    <li>Determine the correct pay rate based on classification</li>
+                    <li>Identify training requirements for advancement</li>
+                </ul>
+                <p>Click on any classification level to view detailed information about requirements, skills, and responsibilities.</p>
+            </div>
+
+            <div class="help-section">
+                <h3><i class="fas fa-gavel"></i> Important Note</h3>
+                <p>This tool provides guidance only. Always verify classifications against the official award document and consult with relevant authorities for specific cases.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/config/emoji.js') }}"></script>
+<script src="{{ url_for('static', filename='js/levelsClassificationForm.js') }}"></script>
+{% endblock %}

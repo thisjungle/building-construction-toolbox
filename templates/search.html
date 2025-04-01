@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/search.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="search-wrapper">
+    <div class="search-container">
+        <div class="search-box">
+            <span class="search-emoji">🔍</span>
+            <input type="search" 
+                   id="searchInput" 
+                   placeholder="Search roles and tasks (minimum 4 characters)..." 
+                   autocomplete="off">
+        </div>
+        <div class="total-roles">
+            Total roles: <span id="totalRoles"></span>
+        </div>
+    </div>
+</div>
+
+<div id="rolesList">
+    {% for role in roles %}
+    {% set stream = role.level.split(' - ')[1] if ' - ' in role.level else '' %}
+    <div class="role-card" data-stream="{{ stream }}">
+        <div class="card-header">
+            <div class="header-main">
+                <h2>{{ role.title }}</h2>
+                <div class="role-level">{{ role.level }}</div>
+                <div class="role-rates">
+                    <p>Minimum Rates: ${{ role.weekly_rate }} per week (${{ role.hourly_rate }}/hr)</p>
+                </div>
+                <div class="task-pills">
+                    {% for task in role.tasks %}
+                        <span class="task-pill">{{ task }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="card-icons">
+                <span class="emoji-icons hidden">
+                    <span>👷</span>
+                    <span>📋</span>
+                </span>
+                <span class="close-card hidden">❌</span>
+            </div>
+        </div>
+        <div class="card-details hidden">
+            <div class="section">
+                <h3>Skills & Duties</h3>
+                <ul class="bullet-list">
+                    {% for skill in role.skills %}
+                        <li class="task-item">{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="section">
+                <h3>Qualifications</h3>
+                <ul class="bullet-list">
+                    {% for qual in role.qualifications %}
+                        <li class="task-item">{{ qual }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="role-actions">
+            {% if from_employee == 'true' %}
+                <button class="select-role-btn" onclick="selectRole('{{ role.title }}', '{{ employee_id }}')">
+                    Select This Role
+                </button>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/search.js') }}"></script>
+{% if from_employee == 'true' %}
+<script>
+function selectRole(roleTitle, employeeId) {
+    fetch('/employees/update-role', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            employee_id: employeeId,
+            role: roleTitle
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            window.location.href = '/employees';
+        } else {
+            alert('Error updating role: ' + data.error);
+        }
+    })
+    .catch(error => {
+        alert('Error: ' + error);
+    });
+}
+</script>
+{% endif %}
+{% endblock %}

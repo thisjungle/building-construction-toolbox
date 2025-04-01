@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+
+{% block title %}Weekly Allowances{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/allowances_form.css') }}">
+{% endblock %}
+
+{% block header %}
+<header class="module-header">
+    <div class="header-content">
+        <!-- Left side -->
+        <div class="header-main">
+            {% include 'components/navigation.html' %}
+            <div class="header-title">
+                <div class="header-title-content">
+                    <span class="emoji-md" data-emoji="ALLOWANCES"></span>
+                    <span>Allowances</span>
+                </div>
+            </div>
+        </div>
+
+         <!-- Middle section -->
+         <div class="header-middle">
+            <div class="name-input-container">
+                <input type="text" 
+                       class="employee-name-input" 
+                       placeholder="Enter employee name..." 
+                       value="{{ employee_name if employee_name else '' }}">
+            </div>
+            <div class="total-amount-container">
+                <span class="total-label">Total:</span>
+                <span class="total-value" id="headerTotalAmount">-</span>
+            </div>
+        </div>
+
+        <!-- Right side -->
+        <div class="header-actions">
+            <button class="btn btn-ghost">
+                <span class="btn-text">Download PDF</span>
+            </button>
+            <button class="help-button" onclick="openModal('helpModal')">
+                <span class="emoji-md" data-emoji="HELP"></span>
+            </button>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <!-- Form Panel -->
+    <div class="form-panel">
+        <div id="loadingSpinner" class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Loading allowances...</p>
+        </div>
+        <div id="allowancesForm" style="display: none;">
+            <!-- Industry Allowances -->
+            <div class="question-group">
+                <div class="group-header">
+                    <span class="emoji-md" data-emoji="INDUSTRY"></span>
+                    <h2 class="group-title">Industry Allowances</h2>
+                </div>
+                {% for item in allowances_config.industry %}
+                <div class="allowance-question">
+                    <div class="options-container">
+                        {% for option in item.options %}
+                        {{ allowance_option('industry', option, loop.index) }}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Tool Allowances -->
+            <div class="question-group">
+                <div class="group-header">
+                    <span class="emoji-md" data-emoji="TOOL_ALLOWANCE"></span>
+                    <h2 class="group-title">Tool Allowances</h2>
+                </div>
+                {% for item in allowances_config.tools %}
+                <div class="allowance-question">
+                    <div class="options-container">
+                        {% for option in item.options %}
+                        {{ allowance_option('tools', option, loop.index) }}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- First Aid Allowances -->
+            <div class="question-group">
+                <div class="group-header">
+                    <span class="emoji-md" data-emoji="FIRST_AID"></span>
+                    <h2 class="group-title">First Aid Allowances</h2>
+                </div>
+                {% for item in allowances_config.first_aid %}
+                <div class="allowance-question">
+                    <div class="options-container">
+                        {% for option in item.options %}
+                        {{ allowance_option('first_aid', option, loop.index) }}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Other Allowances -->
+            <div class="question-group">
+                <div class="group-header">
+                    <span class="emoji-md" data-emoji="OTHER"></span>
+                    <h2 class="group-title">Other Allowances</h2>
+                </div>
+                {% for item in allowances_config.other %}
+                <div class="allowance-question">
+                    <div class="options-container">
+                        {% for option in item.options %}
+                        {{ allowance_option('other', option, loop.index, 'checkbox') }}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    
+    <!-- Results Panel -->
+    <div class="results-panel">
+        <div class="results-content">
+            <div class="results-header">
+                <span class="emoji-md">📋</span>
+                <h3>Summary</h3>
+            </div>
+            <div class="results-body" id="allowancesList">
+                <p class="no-allowances">No allowances selected</p>
+            </div>
+            <div class="total-section">
+                <h4>Total Weekly Allowances</h4>
+                <span class="amount" id="resultsTotalAmount">$0.00</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="note-section">
+    <p><span class="emoji-md" data-emoji="WARNING"></span> Some allowances may not be incorporated into this calculator yet. Mick to add Mult-Storey, Meal, Travel.</p>
+</div>
+{% endblock %}
+
+{% block modals %}
+<div id="helpModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>
+                <span class="emoji-md" data-emoji="ALLOWANCES"></span>
+                Allowances Help
+            </h2>
+            <span class="close-button" onclick="closeModal('helpModal')">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="help-section">
+                <h3><i class="fas fa-info-circle"></i> Introduction</h3>
+                <p>The Building and Construction Industry Award provides various allowances to compensate employees for specific work conditions, expenses, or requirements. These allowances are in addition to the base rate of pay and help ensure fair compensation for additional costs or conditions of work.</p>
+                <p>This tool helps you calculate the applicable allowances based on your work conditions and requirements.</p>
+            </div>
+
+            <div class="help-section">
+                <h3><i class="fas fa-tools"></i> How to Use This Tool</h3>
+                <p>This tool helps you:</p>
+                <ul>
+                    <li>Calculate applicable allowances based on work conditions</li>
+                    <li>Understand different types of allowances available</li>
+                    <li>Determine the correct amount for each allowance</li>
+                    <li>Get a total of all applicable allowances</li>
+                </ul>
+                <p>Select the relevant options and enter required information to calculate your allowances.</p>
+            </div>
+
+            <div class="help-section">
+                <h3><i class="fas fa-gavel"></i> Important Note</h3>
+                <p>This tool provides guidance only. Always verify allowances against the official award document and consult with relevant authorities for specific cases.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/allowanceForm.js') }}"></script>
+{% endblock %}
+
+{% macro allowance_option(name, option, index, type='radio') %}
+<label class="option-content" data-period="{{ option.period }}">
+    <div class="option-row-1">
+        {% if type == 'radio' %}
+        <input type="radio" 
+               name="{{ name }}" 
+               value="{{ option.value }}" 
+               class="radio-input"
+               {% if (name in ['tools', 'first_aid']) and option.title == 'None' %}checked{% endif %}>
+        {% else %}
+        <input type="checkbox" 
+               name="{{ name }}_{{ index }}" 
+               value="{{ option.value }}" 
+               class="checkbox-input">
+        {% endif %}
+        <span class="option-title">{{ option.title }}</span>
+        <span class="option-amount">
+            <span class="amount-value">${{ "%.2f"|format(option.value) }}</span>
+            <span class="period-text">{{ option.period }}</span>
+        </span>
+    </div>
+    {% if option.hint and option.title != 'None' %}
+    <div class="option-row-2">
+        <span class="option-emoji emoji-hint"></span>
+        <span class="hint">{{ option.hint }}</span>
+    </div>
+    {% endif %}
+</label>
+{% endmacro %} 

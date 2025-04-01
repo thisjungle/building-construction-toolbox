@@ -1,0 +1,670 @@
+{
+    "experience_weights": {
+        "0-3m": 10,
+        "3-6m": 20,
+        "6-12m": 30,
+        "1-2y": 40,
+        "2-5y": 50,
+        "5y+": 60
+    },
+    "qualification_weights": {
+        "none": 0,
+        "partial": 20,
+        "complete": 40,
+        "advanced": 60
+    },
+    "section_weights": {
+        "qualifications": 0.25,
+        "experience": 0.25,
+        "responsibility": 0.25,
+        "autonomy": 0.25
+    },
+    "confidence_thresholds": {
+        "low": 50,
+        "medium": 75,
+        "high": 90
+    },
+    "progression_rules": {
+        "CW1": "3m",
+        "CW2": "6m",
+        "CW3": "12m",
+        "CW4": "24m",
+        "CW5": "36m",
+        "CW6": "48m",
+        "CW7": "60m",
+        "CW8": "72m",
+        "CW9": "84m"
+    },
+    "level_requirements": {
+        "CW1": {
+            "min_points": 0,
+            "required_sections": ["experience"],
+            "required_certs": ["site_induction"],
+            "required_competencies": ["basic_safety"],
+            "description": "Entry level construction worker",
+            "module_requirements": 16,
+            "supervision": "general",
+            "responsibilities": [
+                "Basic tasks under general supervision",
+                "Site safety awareness",
+                "Tool and equipment handling",
+                "Basic material handling",
+                "Quality control of own work",
+                "Works from instructions and procedures"
+            ]
+        },
+        "CW2": {
+            "min_points": 20,
+            "required_sections": ["experience", "qualifications"],
+            "required_certs": ["site_induction", "basic_tools"],
+            "required_competencies": ["basic_trade"],
+            "description": "Developing construction worker",
+            "module_requirements": 20,
+            "supervision": "limited",
+            "responsibilities": [
+                "Works under limited supervision",
+                "Interprets plans and drawings",
+                "Assists with on-the-job training",
+                "Coordinates work in team environment",
+                "Quality control of own work",
+                "Works from complex instructions"
+            ]
+        },
+        "CW3": {
+            "min_points": 40,
+            "required_sections": ["experience", "qualifications", "responsibility", "autonomy"],
+            "required_certs": ["trade_cert"],
+            "required_competencies": ["fault_finding", "drawing_interpretation"],
+            "description": "Tradesperson level",
+            "module_requirements": 24,
+            "supervision": "limited",
+            "responsibilities": [
+                "Works under limited supervision",
+                "May supervise CW1/CW2 employees",
+                "Understands and applies quality control",
+                "Exercises discretion within scope",
+                "Performs incidental work",
+                "Assists with training"
+            ]
+        },
+        "CW4": {
+            "min_points": 60,
+            "required_sections": ["experience", "qualifications", "responsibility", "technical_skills", "autonomy"],
+            "required_certs": ["trade_cert", "advanced_cert"],
+            "required_competencies": ["advanced_trade", "supervision"],
+            "description": "Advanced tradesperson",
+            "module_requirements": 27,
+            "supervision": "limited",
+            "responsibilities": [
+                "Works under limited supervision",
+                "Exercises advanced trade skills",
+                "Provides guidance and assistance",
+                "Implements quality control",
+                "Plans construction sequencing",
+                "Operates and maintains plant"
+            ]
+        },
+        "CW5": {
+            "min_points": 80,
+            "required_sections": ["experience", "qualifications", "responsibility", "technical_skills", "autonomy"],
+            "required_certs": ["trade_cert", "advanced_cert", "specialist_cert"],
+            "required_competencies": ["project_management", "technical_leadership"],
+            "description": "Special class tradesperson",
+            "module_requirements": 30,
+            "supervision": "limited",
+            "responsibilities": [
+                "Works under limited supervision",
+                "Provides technical guidance",
+                "Assists in training",
+                "Implements quality control",
+                "Plans complex construction",
+                "Works on complex systems"
+            ]
+        },
+        "CW6": {
+            "min_points": 90,
+            "required_sections": ["experience", "qualifications", "responsibility", "technical_skills", "autonomy"],
+            "required_certs": ["trade_cert", "advanced_cert", "specialist_cert"],
+            "required_competencies": ["advanced_technical", "training"],
+            "description": "Special class tradesperson level II",
+            "module_requirements": 33,
+            "supervision": "limited",
+            "responsibilities": [
+                "Works under limited supervision",
+                "Provides trade guidance",
+                "Provides training",
+                "Implements quality control",
+                "Works on complex systems",
+                "Advanced CAD/CAM skills"
+            ]
+        },
+        "CW7": {
+            "min_points": 95,
+            "required_sections": ["experience", "qualifications", "responsibility", "technical_skills", "autonomy"],
+            "required_certs": ["trade_cert", "advanced_cert", "specialist_cert"],
+            "required_competencies": ["advanced_technical", "training", "supervision"],
+            "description": "Special class tradesperson level III",
+            "module_requirements": 34.5,
+            "supervision": "limited",
+            "responsibilities": [
+                "Works under limited supervision",
+                "Provides training",
+                "Prepares complex reports",
+                "Contributes to work design",
+                "Assists in WAT supervision",
+                "Provides trade guidance"
+            ]
+        },
+        "CW8": {
+            "min_points": 98,
+            "required_sections": ["experience", "qualifications", "responsibility", "technical_skills", "autonomy"],
+            "required_certs": ["trade_cert", "advanced_cert", "specialist_cert"],
+            "required_competencies": ["advanced_technical", "training", "supervision", "planning"],
+            "description": "Advanced tradesperson level I",
+            "module_requirements": 36,
+            "supervision": "limited",
+            "responsibilities": [
+                "Works under limited supervision",
+                "Designs training programs",
+                "Prepares technical reports",
+                "Contributes to work design",
+                "Undertakes quality control",
+                "Provides trade guidance"
+            ]
+        },
+        "CW9": {
+            "min_points": 100,
+            "required_sections": ["experience", "qualifications", "responsibility", "technical_skills", "autonomy"],
+            "required_certs": ["trade_cert", "advanced_cert", "specialist_cert"],
+            "required_competencies": ["advanced_technical", "training", "supervision", "planning", "diagnostics"],
+            "description": "Advanced tradesperson level II",
+            "module_requirements": 39,
+            "supervision": "limited",
+            "responsibilities": [
+                "Works under limited supervision",
+                "Provides technical guidance",
+                "Prepares technical reports",
+                "Diagnoses complex systems",
+                "Sets up and commissions equipment",
+                "Works on complex control systems"
+            ]
+        }
+    },
+    "award_mapping": {
+        "B.1": {
+            "award_description": "New entrant level - Less than 3 months experience in the industry",
+            "min_experience": "0-3m",
+            "classification": "CW1"
+        },
+        "B.2": {
+            "award_description": "Basic trade skills with 3-12 months experience",
+            "min_experience": "3-6m",
+            "classification": "CW2"
+        },
+        "B.3": {
+            "award_description": "Intermediate trade skills with 1-2 years experience",
+            "min_experience": "1-2y",
+            "classification": "CW3"
+        },
+        "B.4": {
+            "award_description": "Advanced trade skills with 2-5 years experience",
+            "min_experience": "2-5y",
+            "classification": "CW4"
+        },
+        "B.5": {
+            "award_description": "Expert level with 5+ years experience",
+            "min_experience": "5y+",
+            "classification": "CW5"
+        }
+    },
+    "progression_requirements": {
+        "CW1_to_CW2": {
+            "min_time": "3m",
+            "required_competencies": ["basic_safety", "hand_tools", "power_tools"],
+            "performance_criteria": ["consistent_attendance", "follows_instructions", "safety_conscious"]
+        },
+        "CW2_to_CW3": {
+            "min_time": "12m",
+            "required_competencies": ["trade_cert", "fault_finding", "drawing_interpretation"],
+            "performance_criteria": ["works_independently", "quality_work", "team_contribution"]
+        },
+        "CW3_to_CW4": {
+            "min_time": "24m",
+            "required_competencies": ["advanced_electrical", "supervision", "complex_installations"],
+            "performance_criteria": ["leads_teams", "solves_problems", "mentors_others"]
+        },
+        "CW4_to_CW5": {
+            "min_time": "36m",
+            "required_competencies": ["project_management", "technical_leadership", "specialist_skills"],
+            "performance_criteria": ["manages_projects", "develops_solutions", "business_impact"]
+        }
+    },
+    "electrical_competencies": {
+        "basic_electrical": {
+            "description": "Fundamental electrical skills",
+            "skills": [
+                "Cable selection and installation",
+                "Basic circuit testing",
+                "Power tool operation",
+                "Safety equipment use"
+            ]
+        },
+        "intermediate_electrical": {
+            "description": "Standard electrical work",
+            "skills": [
+                "Circuit fault finding",
+                "Switchboard work",
+                "Motor controls",
+                "Basic PLC understanding"
+            ]
+        },
+        "advanced_electrical": {
+            "description": "Complex electrical systems",
+            "skills": [
+                "3-phase systems",
+                "Industrial controls",
+                "Advanced diagnostics",
+                "System commissioning"
+            ]
+        },
+        "specialist_electrical": {
+            "description": "Specialized electrical work",
+            "skills": [
+                "High voltage systems",
+                "Hazardous areas",
+                "Complex automation",
+                "Energy management"
+            ]
+        }
+    },
+    "question_groups": {
+        "qualifications": {
+            "title": "Qualifications & Certifications",
+            "emoji": "📚",
+            "questions": [
+                {
+                    "id": "qual_level",
+                    "title": "What is your highest trade qualification?",
+                    "tooltip": "Select your highest completed trade qualification",
+                    "options": [
+                        {
+                            "value": "none",
+                            "label": "No Formal Qualification",
+                            "points": 0,
+                            "certifications": ["site_induction"]
+                        },
+                        {
+                            "value": "partial",
+                            "label": "Partial Trade Qualification",
+                            "points": 20,
+                            "certifications": ["site_induction", "basic_tools"]
+                        },
+                        {
+                            "value": "complete",
+                            "label": "Full Trade Certificate",
+                            "points": 40,
+                            "certifications": ["trade_cert"]
+                        },
+                        {
+                            "value": "advanced",
+                            "label": "Advanced Trade Qualifications",
+                            "points": 60,
+                            "certifications": ["trade_cert", "advanced_cert"]
+                        }
+                    ]
+                },
+                {
+                    "id": "specialized_certs",
+                    "title": "Which specialized certifications do you hold?",
+                    "tooltip": "Select all applicable certifications for your trade",
+                    "type": "checkbox",
+                    "options": [
+                        {
+                            "value": "safety_cert",
+                            "label": "Safety Certification",
+                            "points": 5
+                        },
+                        {
+                            "value": "specialized_equipment",
+                            "label": "Specialized Equipment",
+                            "points": 15
+                        },
+                        {
+                            "value": "advanced_systems",
+                            "label": "Advanced Systems",
+                            "points": 15
+                        },
+                        {
+                            "value": "quality_control",
+                            "label": "Quality Control",
+                            "points": 10
+                        }
+                    ]
+                }
+            ]
+        },
+        "experience": {
+            "title": "Experience",
+            "emoji": "⚒️",
+            "questions": [
+                {
+                    "id": "exp_years",
+                    "title": "How many years of experience do you have?",
+                    "tooltip": "Select your total years of experience in the trade",
+                    "options": [
+                        {
+                            "value": "0-3m",
+                            "label": "0-3 months",
+                            "points": 10,
+                            "award_level": "B.1"
+                        },
+                        {
+                            "value": "3-6m",
+                            "label": "3-6 months",
+                            "points": 20,
+                            "award_level": "B.2"
+                        },
+                        {
+                            "value": "6-12m",
+                            "label": "6-12 months",
+                            "points": 30,
+                            "award_level": "B.2"
+                        },
+                        {
+                            "value": "1-2y",
+                            "label": "1-2 years",
+                            "points": 40,
+                            "award_level": "B.3"
+                        },
+                        {
+                            "value": "2-5y",
+                            "label": "2-5 years",
+                            "points": 50,
+                            "award_level": "B.4"
+                        },
+                        {
+                            "value": "5y+",
+                            "label": "5+ years",
+                            "points": 60,
+                            "award_level": "B.5"
+                        }
+                    ]
+                }
+            ]
+        },
+        "technical_skills": {
+            "title": "Technical Competencies",
+            "emoji": "🔧",
+            "questions": [
+                {
+                    "id": "installation_skills",
+                    "title": "Installation Competencies",
+                    "tooltip": "Select all installation types you are competent in",
+                    "type": "checkbox",
+                    "options": [
+                        {
+                            "value": "basic_installation",
+                            "label": "Basic Installation",
+                            "points": 5,
+                            "competencies": ["basic_trade"]
+                        },
+                        {
+                            "value": "standard_installation",
+                            "label": "Standard Installation",
+                            "points": 10,
+                            "competencies": ["intermediate_trade"]
+                        },
+                        {
+                            "value": "complex_installation",
+                            "label": "Complex Installation",
+                            "points": 15,
+                            "competencies": ["advanced_trade"]
+                        },
+                        {
+                            "value": "specialized_installation",
+                            "label": "Specialized Installation",
+                            "points": 20,
+                            "competencies": ["specialist_trade"]
+                        }
+                    ]
+                },
+                {
+                    "id": "technical_systems",
+                    "title": "Technical Systems Experience",
+                    "tooltip": "Select all technical systems you are competent with",
+                    "type": "checkbox",
+                    "options": [
+                        {
+                            "value": "basic_systems",
+                            "label": "Basic Systems",
+                            "points": 5,
+                            "competencies": ["basic_trade"]
+                        },
+                        {
+                            "value": "standard_systems",
+                            "label": "Standard Systems",
+                            "points": 10,
+                            "competencies": ["intermediate_trade"]
+                        },
+                        {
+                            "value": "complex_systems",
+                            "label": "Complex Systems",
+                            "points": 15,
+                            "competencies": ["advanced_trade"]
+                        },
+                        {
+                            "value": "specialized_systems",
+                            "label": "Specialized Systems",
+                            "points": 20,
+                            "competencies": ["specialist_trade"]
+                        }
+                    ]
+                }
+            ]
+        },
+        "responsibility": {
+            "title": "Responsibility Level",
+            "emoji": "👥",
+            "questions": [
+                {
+                    "id": "supervision",
+                    "title": "What level of supervision do you require?",
+                    "tooltip": "Select the level of supervision you typically work under",
+                    "options": [
+                        {
+                            "value": "direct",
+                            "label": "Direct Supervision",
+                            "points": 10,
+                            "award_level": "B.1"
+                        },
+                        {
+                            "value": "general",
+                            "label": "General Supervision",
+                            "points": 20,
+                            "award_level": "B.2"
+                        },
+                        {
+                            "value": "limited",
+                            "label": "Limited Supervision",
+                            "points": 30,
+                            "award_level": "B.3"
+                        },
+                        {
+                            "value": "minimal",
+                            "label": "Minimal/Supervises Others",
+                            "points": 40,
+                            "award_level": "B.4"
+                        }
+                    ]
+                },
+                {
+                    "id": "complexity",
+                    "title": "What is the complexity of work you handle?",
+                    "tooltip": "Select the typical complexity level of tasks you perform",
+                    "options": [
+                        {
+                            "value": "basic",
+                            "label": "Basic Tasks",
+                            "points": 10
+                        },
+                        {
+                            "value": "standard",
+                            "label": "Standard Trade Work",
+                            "points": 20
+                        },
+                        {
+                            "value": "complex",
+                            "label": "Complex Systems",
+                            "points": 30
+                        },
+                        {
+                            "value": "specialized",
+                            "label": "Specialized/Advanced",
+                            "points": 40
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "technical_fields": {
+        "production_planning": {
+            "description": "Production planning, including scheduling, work study, and estimating materials",
+            "weight": 0.3
+        },
+        "technical": {
+            "description": "Technical, including inspection, quality control, supplier evaluation, laboratory, non-destructive testing",
+            "weight": 0.4
+        },
+        "design": {
+            "description": "Design and draughting and like work",
+            "weight": 0.3
+        }
+    },
+    "supervision_levels": {
+        "general": {
+            "description": "Applies to a person who receives general instructions, usually covering only the broader technical aspects of the work",
+            "characteristics": [
+                "May be subject to progress checks but usually confined to ensuring satisfactory progress",
+                "Has assignments reviewed on completion",
+                "Although technically competent and well experienced, may receive more detailed instructions on occasion"
+            ]
+        },
+        "limited": {
+            "description": "Applies to a person who receives only limited instructions normally confined to a clear statement of objectives",
+            "characteristics": [
+                "Work usually measured in terms of achievement of stated objectives",
+                "Fully competent and very experienced in a technical sense",
+                "Requires little guidance in the performance of work"
+            ]
+        }
+    },
+    "skill_streams": {
+        "civil_construction": {
+            "description": "Includes all related skills involved in earthmoving, plant operation and associated activity",
+            "weight": 0.3
+        },
+        "engineering": {
+            "description": "Engineering streams including electrical/electronic, mechanical, and fabrication",
+            "weight": 0.4,
+            "sub_streams": {
+                "electrical_electronic": "Design, assembly, manufacture, installation, modification, testing, fault finding, commissioning, maintenance and service of all electrical and electronic devices systems",
+                "mechanical": "Design, assembly, manufacture, installation, modification, testing, fault finding, commissioning, maintenance and service of all mechanical equipment",
+                "fabrication": "Fabrication, forging, founding, structural steel erection, electroplating, metal spinning, metal polishing, sheet metal work"
+            }
+        },
+        "general_construction": {
+            "description": "All fields of work principally concerned with general building and construction",
+            "weight": 0.3
+        }
+    },
+    "award_mappings": {
+        "CW1": {
+            "daily_work_activities": ["cw1_basic_tasks", "cw1_plant_operation", "cw1_quality"],
+            "required_sections": ["experience"],
+            "required_certifications": ["site_induction"],
+            "module_requirements": {"minimum": 16},
+            "supervision_level": "direct"
+        },
+        "CW2": {
+            "daily_work_activities": ["cw2_advanced_tasks", "cw2_quality_control"],
+            "required_sections": ["experience", "qualifications"],
+            "required_certifications": ["site_induction", "basic_tools"],
+            "module_requirements": {"minimum": 20},
+            "supervision_level": "general"
+        },
+        "CW3": {
+            "daily_work_activities": ["cw3_trade_skills", "cw3_technical_work"],
+            "required_sections": ["experience", "qualifications", "responsibility", "autonomy"],
+            "required_certifications": ["trade_cert"],
+            "module_requirements": {"minimum": 24},
+            "supervision_level": "limited"
+        },
+        "CW4": {
+            "daily_work_activities": ["cw4_precision_skills", "cw4_plant_maintenance"],
+            "required_sections": ["experience", "qualifications", "responsibility", "technical_skills", "autonomy"],
+            "required_certifications": ["trade_cert", "advanced_cert"],
+            "module_requirements": {"minimum": 27},
+            "supervision_level": "limited"
+        },
+        "CW5": {
+            "daily_work_activities": ["cw5_complex_tasks", "cw5_planning"],
+            "required_sections": ["experience", "qualifications", "responsibility", "technical_skills", "autonomy"],
+            "required_certifications": ["trade_cert", "advanced_cert", "specialist_cert"],
+            "module_requirements": {"minimum": 30},
+            "supervision_level": "limited"
+        },
+        "CW6": {
+            "daily_work_activities": ["cw6_advanced_technical", "cw6_quality_control"],
+            "required_sections": ["experience", "qualifications", "responsibility", "technical_skills", "autonomy"],
+            "required_certifications": ["trade_cert", "advanced_cert", "specialist_cert"],
+            "module_requirements": {"minimum": 33},
+            "supervision_level": "limited"
+        },
+        "CW7": {
+            "daily_work_activities": ["cw7_high_precision", "cw7_complex_systems"],
+            "required_sections": ["experience", "qualifications", "responsibility", "technical_skills", "autonomy"],
+            "required_certifications": ["trade_cert", "advanced_cert", "specialist_cert"],
+            "module_requirements": {"minimum": 34.5},
+            "supervision_level": "limited"
+        },
+        "CW8": {
+            "daily_work_activities": ["cw8_advanced_systems", "cw8_quality_programs"],
+            "required_sections": ["experience", "qualifications", "responsibility", "technical_skills", "autonomy"],
+            "required_certifications": ["trade_cert", "advanced_cert", "specialist_cert"],
+            "module_requirements": {"minimum": 36},
+            "supervision_level": "limited"
+        },
+        "CW9": {
+            "daily_work_activities": ["cw9_diagnostic", "cw9_complex_control"],
+            "required_sections": ["experience", "qualifications", "responsibility", "technical_skills", "autonomy"],
+            "required_certifications": ["trade_cert", "advanced_cert", "specialist_cert"],
+            "module_requirements": {"minimum": 39},
+            "supervision_level": "limited"
+        }
+    },
+    "progression_requirements": {
+        "CW1_to_CW2": {
+            "min_points": 51,
+            "required_sections": ["qualifications", "experience", "daily_work"],
+            "required_competencies": ["intermediate_skills"],
+            "daily_work_evidence": [
+                "Demonstrated ability to work with limited supervision",
+                "Proven quality control application",
+                "Experience with complex instructions",
+                "Team coordination experience"
+            ]
+        },
+        "CW2_to_CW3": {
+            "min_points": 101,
+            "required_sections": ["qualifications", "experience", "daily_work"],
+            "required_competencies": ["trade_skills"],
+            "daily_work_evidence": [
+                "Trade-level work performance",
+                "Supervision experience",
+                "Advanced technical skills",
+                "Quality control implementation"
+            ]
+        }
+    }
+} 

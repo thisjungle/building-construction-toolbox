@@ -1,0 +1,43 @@
+{
+    "employment_types": [
+        {
+            "id": "full_time",
+            "name": "Full Time",
+            "description": "Permanent full-time employment",
+            "hours_per_week": 38,
+            "details": {
+                "characteristics": [
+                    "Regular weekly hours",
+                    "Permanent employment",
+                    "Entitled to all benefits"
+                ]
+            }
+        },
+        {
+            "id": "part_time",
+            "name": "Part Time",
+            "description": "Permanent part-time employment",
+            "hours_per_week": 20,
+            "details": {
+                "characteristics": [
+                    "Regular weekly hours",
+                    "Permanent employment",
+                    "Pro-rata benefits"
+                ]
+            }
+        },
+        {
+            "id": "casual",
+            "name": "Casual",
+            "description": "Casual employment with irregular hours",
+            "hours_per_week": null,
+            "details": {
+                "characteristics": [
+                    "Irregular hours",
+                    "No guaranteed hours",
+                    "Casual loading"
+                ]
+            }
+        }
+    ]
+} 

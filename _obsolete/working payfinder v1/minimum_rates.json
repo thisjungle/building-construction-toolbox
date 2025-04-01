@@ -1,0 +1,52 @@
+{
+  "minimum_rates": {
+    "CW/ECW 9": {
+      "weekly_rate": 1207.80,
+      "hourly_rate": 31.78
+    },
+    "CW/ECW 8": {
+      "weekly_rate": 1186.90,
+      "hourly_rate": 31.23
+    },
+    "CW/ECW 7": {
+      "weekly_rate": 1158.70,
+      "hourly_rate": 30.49
+    },
+    "CW/ECW 6": {
+      "weekly_rate": 1126.50,
+      "hourly_rate": 29.64
+    },
+    "CW/ECW 5": {
+      "weekly_rate": 1097.30,
+      "hourly_rate": 28.88
+    },
+    "CW/ECW 4": {
+      "weekly_rate": 1064.80,
+      "hourly_rate": 28.02
+    },
+    "CW/ECW 3": {
+      "weekly_rate": 1032.30,
+      "hourly_rate": 27.17
+    },
+    "CW/ECW 2": {
+      "weekly_rate": 1003.10,
+      "hourly_rate": 26.40
+    },
+    "CW/ECW 1 - Level d": {
+      "weekly_rate": 983.30,
+      "hourly_rate": 25.88
+    },
+    "CW/ECW 1 - Level c": {
+      "weekly_rate": 966.00,
+      "hourly_rate": 25.42
+    },
+    "CW/ECW 1 - Level b": {
+      "weekly_rate": 953.20,
+      "hourly_rate": 25.08
+    },
+    "CW/ECW 1 - Level a": {
+      "weekly_rate": 934.80,
+      "hourly_rate": 24.60
+    }
+  }
+}

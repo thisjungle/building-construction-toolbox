@@ -1,0 +1,108 @@
+{
+    "autonomy_levels": [
+        {
+            "id": "basic",
+            "name": "Basic Autonomy",
+            "description": "Limited decision-making authority",
+            "points": 1,
+            "details": {
+                "characteristics": [
+                    "Follows detailed instructions",
+                    "Limited decision-making",
+                    "Regular guidance needed"
+                ]
+            }
+        },
+        {
+            "id": "standard",
+            "name": "Standard Autonomy",
+            "description": "Moderate decision-making authority",
+            "points": 2,
+            "details": {
+                "characteristics": [
+                    "Follows general guidelines",
+                    "Some independent decisions",
+                    "Periodic guidance"
+                ]
+            }
+        },
+        {
+            "id": "advanced",
+            "name": "Advanced Autonomy",
+            "description": "Significant decision-making authority",
+            "points": 3,
+            "details": {
+                "characteristics": [
+                    "Works within broad guidelines",
+                    "Independent decision-making",
+                    "Occasional guidance"
+                ]
+            }
+        },
+        {
+            "id": "high",
+            "name": "High Autonomy",
+            "description": "Extensive decision-making authority",
+            "points": 4,
+            "details": {
+                "characteristics": [
+                    "Sets own guidelines",
+                    "Extensive decision-making",
+                    "Minimal guidance"
+                ]
+            }
+        },
+        {
+            "id": "full",
+            "name": "Full Autonomy",
+            "description": "Complete decision-making authority",
+            "points": 5,
+            "details": {
+                "characteristics": [
+                    "Develops guidelines",
+                    "Complete decision-making",
+                    "Self-directed"
+                ]
+            }
+        },
+        {
+            "id": "strategic",
+            "name": "Strategic Autonomy",
+            "description": "Strategic decision-making authority",
+            "points": 6,
+            "details": {
+                "characteristics": [
+                    "Sets strategic direction",
+                    "Strategic decision-making",
+                    "Leads others"
+                ]
+            }
+        },
+        {
+            "id": "executive",
+            "name": "Executive Autonomy",
+            "description": "Executive decision-making authority",
+            "points": 7,
+            "details": {
+                "characteristics": [
+                    "Executive decision-making",
+                    "Organizational leadership",
+                    "Strategic planning"
+                ]
+            }
+        },
+        {
+            "id": "director",
+            "name": "Director Autonomy",
+            "description": "Board-level decision-making authority",
+            "points": 8,
+            "details": {
+                "characteristics": [
+                    "Board-level decisions",
+                    "Organizational direction",
+                    "Long-term strategy"
+                ]
+            }
+        }
+    ]
+} 

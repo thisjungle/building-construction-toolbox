@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+{% block body_class %}no-main-header{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/home.css') }}">
+<style>
+.feature-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid var(--gray-200);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.feature-card:hover .card-icon span[class^="emoji-"] {
+    animation: float 2s ease-in-out infinite;
+}
+
+.feature-card:hover .card-btn {
+    animation: glow 2s ease-in-out infinite;
+}
+
+.feature-card:hover h3 {
+    animation: shimmer 2s ease-in-out infinite;
+}
+</style>
+{% endblock %}
+
+{% block header %}
+<header class="module-header">
+    <div class="header-content">
+        <!-- Left side -->
+        <div class="header-main">
+            {% include 'components/navigation.html' %}
+            <div class="header-title home-title">
+                <div class="header-title-content">
+                    <span class="emoji-md" data-emoji="LOGO"></span>
+                    <span>Building and Construction Toolbox</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right side -->
+        <div class="header-actions">
+            <button class="help-button" onclick="openModal('helpModal')">
+                <span class="emoji-md" data-emoji="HELP"></span>
+            </button>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="module-container home-container">
+    <div class="card-grid">
+        <!-- Quick Award Guide Card -->
+       
+
+        <!-- Pay Levels Card -->
+        <div class="feature-card">
+            <div class="card-icon">
+                <span class="emoji-md" data-emoji="PAY_LEVELS"></span>
+            </div>
+            <div class="card-content">
+                <h3>Pay Levels</h3>
+                <p>Configure and manage employee classification levels.</p>
+                <a href="{{ url_for('levels_classification.levels_classification') }}" class="card-btn">
+                    Manage Levels
+                </a>
+            </div>
+        </div>
+
+        <!-- Allowances Card -->
+        <div class="feature-card">
+            <div class="card-icon">
+                <span class="emoji-md" data-emoji="ALLOWANCES"></span>
+            </div>
+            <div class="card-content">
+                <h3>Allowances</h3>
+                <p>Calculate and manage employee allowances.</p>
+                <a href="{{ url_for('allowances.index') }}" class="card-btn">
+                    Manage Allowances
+                </a>
+            </div>
+        </div>
+
+        <!-- Create Position Card -->
+        <div class="feature-card">
+            <div class="card-icon">
+                <span class="emoji-md" data-emoji="CREATE_POSITION"></span>
+            </div>
+            <div class="card-content">
+                <h3>Create a Position</h3>
+                <p>Create detailed job positions with classifications.</p>
+                <a href="{{ url_for('position_creation') }}" class="card-btn">
+                    Create Position
+                </a>
+            </div>
+        </div>
+
+        <!-- Pay Calculator Card -->
+        <div class="feature-card">
+            <div class="card-icon">
+                <span class="emoji-md" data-emoji="PAY_CALCULATOR"></span>
+            </div>
+            <div class="card-content">
+                <h3>Pay Calculator</h3>
+                <p>Calculate employee pay with allowances.</p>
+                <a href="{{ url_for('pay_calc.index') }}" class="card-btn">
+                    Calculate Pay
+                </a>
+            </div>
+        </div>
+        <div class="feature-card">
+            <div class="card-icon">
+                <span class="emoji-md" data-emoji="AWARD_DUMMIES"></span>
+            </div>
+            <div class="card-content">
+                <h3>Quick Award Guide</h3>
+                <p>Learn the basics of the Building and Construction Award.</p>
+                <a href="{{ url_for('award_primer.index') }}" class="card-btn">
+                    Start Guide
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block modals %}
+<div id="helpModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>
+                <span class="emoji-md" data-emoji="LOGO"></span>
+                Building and Construction Toolbox Help
+            </h2>
+            <button class="close-button" onclick="closeModal('helpModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="help-section">
+                <h3><i class="fas fa-info-circle"></i> Introduction</h3>
+                <p>Welcome to the Building and Construction Toolbox! This comprehensive suite of tools helps you manage various aspects of employee management and compliance with the Building and Construction Industry Award.</p>
+            </div>
+
+            <div class="help-section">
+                <h3><i class="fas fa-tools"></i> Available Tools</h3>
+                <ul>
+                    <li><strong>Quick Award Guide:</strong> Learn the basics of the Building and Construction Award</li>
+                    <li><strong>Pay Levels:</strong> Configure and manage employee classification levels</li>
+                    <li><strong>Allowances:</strong> Calculate and manage employee allowances</li>
+                    <li><strong>Create Position:</strong> Create detailed job positions with classifications</li>
+                    <li><strong>Pay Calculator:</strong> Calculate employee pay with allowances</li>
+                </ul>
+            </div>
+
+            <div class="help-section">
+                <h3><i class="fas fa-gavel"></i> Important Note</h3>
+                <p>These tools provide guidance only. Always verify calculations and classifications against the official award document and consult with relevant authorities for specific cases.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/config/emoji.js') }}"></script>
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %} 

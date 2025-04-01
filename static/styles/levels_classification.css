@@ -1,0 +1,144 @@
+/* ===========================================
+   Levels Classification Layout
+   ========================================== */
+
+/* Main Layout */
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-lg);
+    margin: 0 auto;
+    padding: 0;
+    max-width: var(--container-width);
+}
+
+/* Form Panel */
+.form-panel {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+/* Results Panel */
+.results-panel {
+    width: 400px;
+    background: white;
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--border-radius);
+    margin-left: var(--spacing-lg);
+}
+
+.results-content,
+.classification-summary {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    gap: var(--spacing-md);
+}
+
+/* Results Header */
+.results-header {
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.results-header h3 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+    margin: 0;
+}
+
+/* Level Badge */
+.level-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: var(--spacing-md) 0;
+}
+
+.level-number {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-bold);
+    color: var(--primary-color);
+}
+
+/* Confidence Meter */
+.confidence-meter {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.confidence-label {
+    font-size: var(--font-size-sm);
+    color: var(--gray-700);
+}
+
+.confidence-bar {
+    height: 8px;
+    background: var(--gray-200);
+    border-radius: var(--border-radius-pill);
+    overflow: hidden;
+}
+
+.confidence-value {
+    height: 100%;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.confidence-percentage {
+    font-size: var(--font-size-sm);
+    color: var(--gray-700);
+    text-align: right;
+}
+
+/* Level Reasoning */
+.level-reasoning {
+    margin-top: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--gray-50);
+    border-radius: var(--border-radius);
+}
+
+.level-reasoning p {
+    margin: 0;
+    color: var(--gray-700);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+}
+
+/* Responsive Layout */
+@media (max-width: 992px) {
+    .results-panel {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-panel,
+    .results-panel {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content {
+        padding: 0;
+    }
+    
+    .form-panel,
+    .results-panel {
+        border-radius: 0;
+    }
+} 

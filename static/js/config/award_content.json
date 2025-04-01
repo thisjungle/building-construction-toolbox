@@ -1,0 +1,178 @@
+{
+    "sections": [
+        {
+            "id": "welcome",
+            "title": "Welcome to Your Award Guide",
+            "content": "Let's explore the Building and Construction General On-site Award together. This quick guide will help you understand your rights and responsibilities in just a few minutes.",
+            "key_points": [
+                "Interactive 2-3 minute guide",
+                "Clear, simple explanations",
+                "Key points highlighted for easy reference"
+            ],
+            "quiz": {
+                "question": "What will you learn from this guide?",
+                "options": [
+                    "How to cook a perfect steak",
+                    "Your rights and responsibilities under the Building Award",
+                    "How to drive a forklift",
+                    "The history of construction"
+                ],
+                "correct": 1,
+                "explanation": "This guide will help you understand your rights and responsibilities under the Building and Construction Award."
+            }
+        },
+        {
+            "id": "what_is_award",
+            "title": "What is the Building Award?",
+            "content": "The Building and Construction Award is your essential guide to fair work conditions in the construction industry. It sets the minimum standards for pay, work hours, breaks, and other important employment conditions.",
+            "key_points": [
+                "Legal document setting minimum standards",
+                "Covers most construction workers",
+                "Updated regularly to stay current"
+            ],
+            "quiz": {
+                "question": "What does the Building Award set?",
+                "options": [
+                    "Maximum standards only",
+                    "Minimum standards for work conditions",
+                    "Building design guidelines",
+                    "Safety equipment specifications"
+                ],
+                "correct": 1,
+                "explanation": "The Award sets minimum standards for pay, hours, breaks, and other working conditions."
+            }
+        },
+        {
+            "id": "who_is_covered",
+            "title": "Who Does the Award Cover?",
+            "content": "This award applies to most workers in the building, engineering, and civil construction industry. Whether you're a tradesperson, laborer, or specialist, understanding your coverage is crucial.",
+            "key_points": [
+                "Construction workers and trades",
+                "Civil construction workers",
+                "On-site engineering staff",
+                "Support and maintenance roles"
+            ],
+            "quiz": {
+                "question": "Which workers are covered by this award?",
+                "options": [
+                    "Only office workers",
+                    "Only supervisors",
+                    "Most construction industry workers",
+                    "Only part-time employees"
+                ],
+                "correct": 2,
+                "explanation": "The award covers most workers in the building, engineering, and civil construction industry."
+            }
+        },
+        {
+            "id": "employment_types",
+            "title": "Types of Employment",
+            "content": "The award recognizes different types of employment to suit various work arrangements. Each type comes with specific entitlements and conditions.",
+            "key_points": [
+                "Full-time (38 hours/week)",
+                "Part-time (regular hours, pro-rata benefits)",
+                "Casual (higher rates, flexible hours)",
+                "Daily hire employees"
+            ],
+            "quiz": {
+                "question": "How many hours per week is considered full-time?",
+                "options": [
+                    "35 hours",
+                    "37 hours",
+                    "38 hours",
+                    "40 hours"
+                ],
+                "correct": 2,
+                "explanation": "Under the award, full-time employment is 38 hours per week."
+            }
+        },
+        {
+            "id": "classification_levels",
+            "title": "Classification Levels",
+            "content": "Your classification level determines your pay rate and reflects your skills, qualifications, and responsibilities. Understanding these levels helps you track your career progression.",
+            "key_points": [
+                "Level 1: New entrants and basic skills",
+                "Levels 2-4: Trade qualified and experienced",
+                "Levels 5-9: Advanced skills and supervision",
+                "Each level has specific requirements"
+            ],
+            "quiz": {
+                "question": "What do classification levels determine?",
+                "options": [
+                    "Only your work location",
+                    "Your pay rate and skill recognition",
+                    "Your lunch break duration",
+                    "Your vacation time"
+                ],
+                "correct": 1,
+                "explanation": "Classification levels determine your pay rate and reflect your skills, qualifications, and responsibilities."
+            }
+        },
+        {
+            "id": "allowances",
+            "title": "Common Allowances",
+            "content": "Allowances provide additional payment for specific working conditions, skills, or responsibilities. These are important extras on top of your base pay.",
+            "key_points": [
+                "Tool allowance for your own equipment",
+                "Industry allowance for conditions",
+                "First aid allowance if qualified",
+                "Special skill allowances"
+            ],
+            "quiz": {
+                "question": "What are allowances?",
+                "options": [
+                    "Base salary only",
+                    "Additional payments for specific conditions or skills",
+                    "Overtime payments",
+                    "Annual leave payments"
+                ],
+                "correct": 1,
+                "explanation": "Allowances are additional payments for specific working conditions, skills, or responsibilities."
+            }
+        },
+        {
+            "id": "hours_breaks",
+            "title": "Working Hours and Breaks",
+            "content": "The award sets clear rules about working hours, overtime, and break entitlements to ensure safe and fair working conditions for everyone.",
+            "key_points": [
+                "Standard hours: 38 per week",
+                "Overtime rates after standard hours",
+                "Required meal and rest breaks",
+                "Weekend and public holiday rates"
+            ],
+            "quiz": {
+                "question": "When do overtime rates apply?",
+                "options": [
+                    "Never",
+                    "After standard hours are worked",
+                    "Only on weekends",
+                    "Only during lunch breaks"
+                ],
+                "correct": 1,
+                "explanation": "Overtime rates apply after you've worked your standard hours (38 hours per week)."
+            }
+        },
+        {
+            "id": "next_steps",
+            "title": "What's Next?",
+            "content": "Now that you understand the basics, you can use our other tools to manage classifications, calculate allowances, and create compliant job posts.",
+            "key_points": [
+                "Use our Classification tool",
+                "Calculate your allowances",
+                "Create compliant job posts",
+                "Stay updated with changes"
+            ],
+            "quiz": {
+                "question": "What tools are available to help you?",
+                "options": [
+                    "Only a calculator",
+                    "Classification, allowances, and job posting tools",
+                    "Just a notepad",
+                    "None of the above"
+                ],
+                "correct": 1,
+                "explanation": "You can use our Classification tool, Allowances calculator, and Job Post creator to help manage your employment needs."
+            }
+        }
+    ]
+} 

@@ -1,0 +1,730 @@
+{
+  "streams": {
+    "general": {
+      "name": "General Construction",
+      "description": "General building and construction activities including erection of new structures, demolition, pre-construction, and fitout activities",
+      "levels": {
+        "cw1": {
+          "activities": [
+            {
+              "id": "gen_basic_tools",
+              "name": "Basic Hand Tools Operation",
+              "level": "CW1",
+              "points": 1,
+              "frequency": "daily",
+              "description": "Operation of basic hand tools and precision measuring instruments",
+              "indicative_tasks": [
+                "uses precision measuring instruments",
+                "basic material handling functions",
+                "operate small plant and pneumatic machinery",
+                "inventory and store control",
+                "operate a range of hand tools and oxy welding equipment",
+                "has a knowledge of the construction process and understands the sequencing of construction functions",
+                "is able to provide first aid assistance to other employees",
+                "sheet metal soldering",
+                "tack welding",
+                "operation of mobile equipment including forklifts, hand trolleys, pallet trucks, overhead cranes and winch operation",
+                "ability to measure accurately",
+                "assists one or more tradespersons"
+              ],
+              "safety_requirements": ["Basic PPE", "Tool safety training", "First Aid Certificate"],
+              "equipment_requirements": ["Hand tools", "Measuring instruments", "Mobile equipment", "First aid kit"],
+              "supervision_level": "General supervision",
+              "cross_stream": true
+            },
+            {
+              "id": "gen_material_handling",
+              "name": "Material Handling & Storage",
+              "level": "CW1",
+              "points": 1,
+              "frequency": "daily",
+              "description": "Basic material handling and inventory control",
+              "indicative_tasks": [
+                "Inventory and store control",
+                "Basic material handling functions",
+                "Operation of mobile equipment including forklifts, hand trolleys",
+                "Pallet trucks operation",
+                "Overhead cranes operation",
+                "Winch operation"
+              ],
+              "safety_requirements": ["Manual handling training", "Forklift license if required"],
+              "equipment_requirements": ["Mobile equipment", "Storage equipment"],
+              "supervision_level": "General supervision",
+              "cross_stream": true
+            },
+            {
+              "id": "gen_basic_welding",
+              "name": "Basic Welding & Metal Work",
+              "level": "CW1",
+              "points": 1,
+              "frequency": "daily",
+              "description": "Basic welding and metal work tasks",
+              "indicative_tasks": [
+                "Operate oxy welding equipment",
+                "Sheet metal soldering",
+                "Tack welding"
+              ],
+              "safety_requirements": ["Welding safety training", "Hot work permit"],
+              "equipment_requirements": ["Welding equipment", "PPE"],
+              "supervision_level": "Direct supervision",
+              "cross_stream": true
+            },
+            {
+              "id": "gen_first_aid",
+              "name": "First Aid Support",
+              "level": "CW1",
+              "points": 1,
+              "frequency": "as needed",
+              "description": "Provide first aid assistance",
+              "indicative_tasks": [
+                "Provide first aid assistance to other employees",
+                "Maintain first aid supplies",
+                "Report incidents"
+              ],
+              "safety_requirements": ["First Aid Certificate"],
+              "equipment_requirements": ["First aid kit"],
+              "supervision_level": "General supervision",
+              "cross_stream": true
+            }
+          ]
+        },
+        "cw2": {
+          "activities": [
+            {
+              "id": "gen_advanced_measurement",
+              "name": "Advanced Measurement & Calculations",
+              "level": "CW2",
+              "points": 2,
+              "frequency": "daily",
+              "description": "Advanced measurement and calculation tasks",
+              "indicative_tasks": [
+                "calculates safe loads and stress factors",
+                "measures accurately using specialised equipment",
+                "non-trades maintenance of relevant plant and equipment",
+                "anticipates and plans for constant changes to the work environment",
+                "materials handling",
+                "operates machinery and equipment requiring the exercise of skill and knowledge beyond that of an employee at CW/ECW 1 (level d)",
+                "uses measuring and levelling instruments",
+                "performs basic quality checks on the work of others",
+                "oxy acetylene cutting"
+              ],
+              "safety_requirements": ["Equipment safety training", "Quality control procedures training"],
+              "equipment_requirements": ["Specialized measuring equipment", "Inspection tools"],
+              "supervision_level": "Limited supervision",
+              "cross_stream": true
+            },
+            {
+              "id": "gen_quality_control",
+              "name": "Quality Control",
+              "level": "CW2",
+              "points": 2,
+              "frequency": "daily",
+              "description": "Basic quality control and inspection",
+              "indicative_tasks": [
+                "Performs basic quality checks on the work of others",
+                "Identifies basic faults in materials and equipment",
+                "Reports quality issues"
+              ],
+              "safety_requirements": ["Quality control procedures training"],
+              "equipment_requirements": ["Inspection tools"],
+              "supervision_level": "Limited supervision",
+              "cross_stream": true
+            }
+          ]
+        },
+        "cw3": {
+          "activities": [
+            {
+              "id": "gen_production_sequencing",
+              "name": "Production Sequencing",
+              "level": "CW3",
+              "points": 3,
+              "frequency": "daily",
+              "description": "Production sequencing and advanced materials handling",
+              "indicative_tasks": [
+                "allocates functions within a WAT",
+                "production sequencing and materials handling of a level more advanced than CW/ECW 2",
+                "trade skills associated with certificated trades within the scope of this award",
+                "has a sound understanding of the construction process",
+                "specialised materials handling",
+                "operates machinery and equipment requiring the exercise of skill and knowledge beyond that of an employee at CW/ECW 2",
+                "performs work which is incidental or peripheral to the primary tasks and facilitates the completion of the whole task",
+                "sheetmetal fabrication",
+                "system assembly",
+                "welding and cutting",
+                "mechanical installation"
+              ],
+              "safety_requirements": ["Advanced safety procedures", "Trade-specific safety requirements"],
+              "equipment_requirements": ["Production equipment", "Trade-specific tools"],
+              "supervision_level": "Minimal supervision",
+              "cross_stream": true
+            },
+            {
+              "id": "gen_trade_skills",
+              "name": "Trade Skills Application",
+              "level": "CW3",
+              "points": 3,
+              "frequency": "daily",
+              "description": "Application of certified trade skills",
+              "indicative_tasks": [
+                "Trade skills associated with certificated trades",
+                "Performs work incidental or peripheral to primary tasks",
+                "Mechanical installation"
+              ],
+              "safety_requirements": ["Trade-specific safety requirements"],
+              "equipment_requirements": ["Trade-specific tools"],
+              "supervision_level": "Minimal supervision",
+              "cross_stream": false
+            }
+          ]
+        },
+        "cw4": {
+          "activities": [
+            {
+              "id": "gen_complex_systems",
+              "name": "Complex Systems Operation",
+              "level": "CW4",
+              "points": 4,
+              "frequency": "daily",
+              "description": "Operation of complex systems and equipment",
+              "indicative_tasks": [
+                "exercises precision trade and non-trade skills using various materials and specialised techniques at a higher level than CW/ECW 3",
+                "operates and maintains plant and machinery",
+                "is able to plan construction sequencing"
+              ],
+              "safety_requirements": ["Advanced systems training", "Complex system safety procedures"],
+              "equipment_requirements": ["Complex system tools", "Specialized maintenance equipment"],
+              "supervision_level": "Self-directed",
+              "cross_stream": true
+            }
+          ]
+        },
+        "cw5": {
+          "activities": [
+            {
+              "id": "gen_advanced_control",
+              "name": "Advanced Control Systems",
+              "level": "CW5",
+              "points": 5,
+              "frequency": "daily",
+              "description": "Work with advanced control systems",
+              "indicative_tasks": [
+                "exercises precision trade and/or operative skills using various materials and specialised techniques at a higher level than CW/ECW 4",
+                "operates and maintains complex plant and machinery",
+                "is able to plan complex construction sequencing",
+                "performs operations on a CAD/CAM terminal in the performance of routine modifications to NC/CNC programs",
+                "installs, repairs and maintains, tests, modifies, commissions and/or fault finds on complex machinery and equipment which utilises hydraulic and/or pneumatic principles",
+                "works on complex or intricate circuitry which involves examining, diagnosing and modifying systems comprising inter-connected circuits"
+              ],
+              "safety_requirements": ["Control systems safety", "CAD/CAM safety procedures"],
+              "equipment_requirements": ["Control system tools", "CAD/CAM equipment"],
+              "supervision_level": "Self-directed",
+              "cross_stream": true
+            }
+          ]
+        },
+        "cw6": {
+          "activities": [
+            {
+              "id": "gen_specialist_work",
+              "name": "Specialist Technical Work",
+              "level": "CW6",
+              "points": 6,
+              "frequency": "daily",
+              "description": "Specialist technical work and systems",
+              "indicative_tasks": [
+                "operates plant and equipment at a higher level of skill than CW/ECW 5",
+                "exercises high precision trade and/or operative skills using various materials and specialised techniques at a higher level than CW/ECW 5",
+                "implements quality control techniques",
+                "plans complex construction sequencing",
+                "works on machines or equipment which utilise complex mechanic or hydraulic and/or pneumatic circuitry and controls or a combination thereof",
+                "works on machinery or equipment which utilises complex electrical/electronic circuitry and controls",
+                "works on instruments which make up a complex control system which utilises some combination of electrical/electronic, mechanical or fluid power principles",
+                "applies advanced computer numerical control techniques in machining or cutting or welding or fabrication",
+                "exercises intermediate CAD/CAM skills in the performance of routine modifications to programs",
+                "works on complex or intricate interconnected electrical circuits at a level above CW/ECW 5",
+                "works on complex radio/communication equipment"
+              ],
+              "safety_requirements": ["Specialist safety procedures", "Advanced system safety"],
+              "equipment_requirements": ["Specialist equipment", "Advanced control systems"],
+              "supervision_level": "Independent",
+              "cross_stream": true
+            }
+          ]
+        },
+        "cw7": {
+          "activities": [
+            {
+              "id": "gen_supervision",
+              "name": "Team Supervision",
+              "level": "CW7",
+              "points": 7,
+              "frequency": "daily",
+              "description": "Supervision of work teams and complex projects",
+              "indicative_tasks": [
+                "works on plant and equipment at a higher level of skill than CW/ECW 6",
+                "exercises high precision trade and/or operative skills using various materials and specialised techniques at a higher level than CW/ECW 6",
+                "implements quality control techniques",
+                "plans complex construction sequencing",
+                "works on machines or equipment which utilise complex mechanic or hydraulic and/or pneumatic circuitry and controls or a combination thereof",
+                "works on machinery or equipment which utilises complex electrical/electronic circuitry and controls",
+                "works on instruments which make up a complex control system which utilises some combination of electrical/electronic mechanical or fluid power principles",
+                "applies advanced computer numerical control techniques in machining or cutting or welding or fabrication",
+                "exercises intermediate CAD/CAM skills in the performance of routine modifications to programs",
+                "working on complex or intricate interconnected electrical circuits at a level above CW/ECW6",
+                "working on complex radio/communication equipment"
+              ],
+              "safety_requirements": ["Supervisor safety training", "Complex system supervision"],
+              "equipment_requirements": ["Project management tools", "Complex system equipment"],
+              "supervision_level": "Supervisory",
+              "cross_stream": true
+            }
+          ]
+        },
+        "cw8": {
+          "activities": [
+            {
+              "id": "gen_management",
+              "name": "Project Management",
+              "level": "CW8",
+              "points": 8,
+              "frequency": "daily",
+              "description": "Management of construction projects",
+              "indicative_tasks": [
+                "works on plant and equipment at a higher level of skill than CW/ECW 7",
+                "exercises high precision trade and/or operative skills using various materials and specialised techniques at a higher level than CW/ECW 7",
+                "implements quality control programs",
+                "plans complex construction sequencing",
+                "works on combinations of machines or equipment which utilise complex electrical or electronic, mechanical or fluid power principles",
+                "works on instruments which make up a complex control system which utilises some combination of electrical, electronic, mechanical or fluid power principles and electronic circuitry containing complex analogue and/or digital control systems utilising integrated circuitry",
+                "applies computer integrated manufacturing techniques involving a higher level of computer operating and programming skills than for CW/ECW 7",
+                "works on various forms of machinery and equipment which are electronically controlled by complex digital and/or analogue control systems using integrated circuitry"
+              ],
+              "safety_requirements": ["Management safety responsibilities", "Complex system management"],
+              "equipment_requirements": ["Project management systems", "Complex system equipment"],
+              "supervision_level": "Management",
+              "cross_stream": true
+            }
+          ]
+        }
+      }
+    },
+    "electrical": {
+      "name": "Electrical/Electronic",
+      "description": "Electrical and electronic systems work including design, assembly, installation, testing, and maintenance",
+      "levels": {
+        "cw1_cw2": {
+          "activities": [
+            {
+              "id": "elec_basic_wiring",
+              "name": "Basic electrical wiring",
+              "level": "CW1",
+              "points": 1,
+              "description": "Perform basic electrical wiring tasks",
+              "indicative_tasks": ["basic electrical wiring", "simple circuit testing"]
+            },
+            {
+              "id": "elec_maintenance",
+              "name": "Basic electrical maintenance",
+              "level": "CW2",
+              "points": 2,
+              "description": "Perform basic maintenance on electrical systems",
+              "indicative_tasks": ["basic fault finding", "routine maintenance"]
+            }
+          ]
+        },
+        "cw3_cw4": {
+          "activities": [
+            {
+              "id": "elec_installation",
+              "name": "Electrical installation",
+              "level": "CW3",
+              "points": 3,
+              "description": "Install and modify electrical systems",
+              "indicative_tasks": ["installation of electrical systems", "modification of existing systems"]
+            },
+            {
+              "id": "elec_complex_systems",
+              "name": "Complex electrical systems",
+              "level": "CW4",
+              "points": 4,
+              "description": "Work on complex electrical systems and controls",
+              "indicative_tasks": ["complex electrical systems", "control systems"]
+            }
+          ]
+        },
+        "cw5_cw6": {
+          "activities": [
+            {
+              "id": "elec_advanced_systems",
+              "name": "Advanced electrical systems",
+              "level": "CW5",
+              "points": 5,
+              "description": "Design and implement advanced electrical systems",
+              "indicative_tasks": ["designs electrical systems", "implements complex controls"]
+            },
+            {
+              "id": "elec_specialist",
+              "name": "Specialist electrical work",
+              "level": "CW6",
+              "points": 6,
+              "description": "Perform specialist electrical work and diagnostics",
+              "indicative_tasks": ["specialist diagnostics", "complex system maintenance"]
+            }
+          ]
+        },
+        "cw7_cw8": {
+          "activities": [
+            {
+              "id": "elec_supervision",
+              "name": "Electrical supervision",
+              "level": "CW7",
+              "points": 7,
+              "description": "Supervise electrical work and teams",
+              "indicative_tasks": ["supervises electrical work", "coordinates electrical teams"]
+            },
+            {
+              "id": "elec_management",
+              "name": "Electrical management",
+              "level": "CW8",
+              "points": 8,
+              "description": "Manage electrical projects and teams",
+              "indicative_tasks": ["manages electrical projects", "leads electrical teams"]
+            }
+          ]
+        }
+      }
+    },
+    "mechanical": {
+      "name": "Mechanical",
+      "description": "Mechanical equipment and machinery work including design, assembly, installation, testing, and maintenance",
+      "levels": {
+        "cw1_cw2": {
+          "activities": [
+            {
+              "id": "mech_basic_maintenance",
+              "name": "Basic mechanical maintenance",
+              "level": "CW1",
+              "points": 1,
+              "description": "Perform basic maintenance tasks",
+              "indicative_tasks": ["non-trades maintenance of relevant plant and equipment"]
+            },
+            {
+              "id": "mech_equipment_operation",
+              "name": "Equipment operation",
+              "level": "CW2",
+              "points": 2,
+              "description": "Operate mechanical equipment",
+              "indicative_tasks": ["operates machinery and equipment requiring skill and knowledge"]
+            }
+          ]
+        },
+        "cw3_cw4": {
+          "activities": [
+            {
+              "id": "mech_installation",
+              "name": "Mechanical installation",
+              "level": "CW3",
+              "points": 3,
+              "description": "Install and modify mechanical systems",
+              "indicative_tasks": ["mechanical installation", "system modification"]
+            },
+            {
+              "id": "mech_complex_systems",
+              "name": "Complex mechanical systems",
+              "level": "CW4",
+              "points": 4,
+              "description": "Work on complex mechanical systems",
+              "indicative_tasks": ["complex mechanical systems", "fluid power systems"]
+            }
+          ]
+        },
+        "cw5_cw6": {
+          "activities": [
+            {
+              "id": "mech_advanced_systems",
+              "name": "Advanced mechanical systems",
+              "level": "CW5",
+              "points": 5,
+              "description": "Design and implement advanced mechanical systems",
+              "indicative_tasks": ["designs mechanical systems", "implements complex machinery"]
+            },
+            {
+              "id": "mech_specialist",
+              "name": "Specialist mechanical work",
+              "level": "CW6",
+              "points": 6,
+              "description": "Perform specialist mechanical work and diagnostics",
+              "indicative_tasks": ["specialist diagnostics", "complex system maintenance"]
+            }
+          ]
+        },
+        "cw7_cw8": {
+          "activities": [
+            {
+              "id": "mech_supervision",
+              "name": "Mechanical supervision",
+              "level": "CW7",
+              "points": 7,
+              "description": "Supervise mechanical work and teams",
+              "indicative_tasks": ["supervises mechanical work", "coordinates mechanical teams"]
+            },
+            {
+              "id": "mech_management",
+              "name": "Mechanical management",
+              "level": "CW8",
+              "points": 8,
+              "description": "Manage mechanical projects and teams",
+              "indicative_tasks": ["manages mechanical projects", "leads mechanical teams"]
+            }
+          ]
+        }
+      }
+    },
+    "fabrication": {
+      "name": "Fabrication",
+      "description": "Metal fabrication and welding work including fabrication, forging, founding, and structural steel erection",
+      "levels": {
+        "cw1_cw2": {
+          "activities": [
+            {
+              "id": "fab_basic_welding",
+              "name": "Basic welding",
+              "level": "CW1",
+              "points": 1,
+              "description": "Perform basic welding tasks",
+              "indicative_tasks": ["tack welding", "basic metal fabrication"]
+            },
+            {
+              "id": "fab_metal_work",
+              "name": "Metal work",
+              "level": "CW2",
+              "points": 2,
+              "description": "Perform metal work tasks",
+              "indicative_tasks": ["sheet metal work", "metal polishing"]
+            }
+          ]
+        },
+        "cw3_cw4": {
+          "activities": [
+            {
+              "id": "fab_structural",
+              "name": "Structural fabrication",
+              "level": "CW3",
+              "points": 3,
+              "description": "Perform structural fabrication work",
+              "indicative_tasks": ["structural steel erection", "complex fabrication"]
+            },
+            {
+              "id": "fab_complex",
+              "name": "Complex fabrication",
+              "level": "CW4",
+              "points": 4,
+              "description": "Work on complex fabrication projects",
+              "indicative_tasks": ["complex fabrication", "specialized welding"]
+            }
+          ]
+        },
+        "cw5_cw6": {
+          "activities": [
+            {
+              "id": "fab_advanced",
+              "name": "Advanced fabrication",
+              "level": "CW5",
+              "points": 5,
+              "description": "Design and implement advanced fabrication work",
+              "indicative_tasks": ["designs fabrication work", "implements complex structures"]
+            },
+            {
+              "id": "fab_specialist",
+              "name": "Specialist fabrication",
+              "level": "CW6",
+              "points": 6,
+              "description": "Perform specialist fabrication work",
+              "indicative_tasks": ["specialist fabrication", "complex structural work"]
+            }
+          ]
+        },
+        "cw7_cw8": {
+          "activities": [
+            {
+              "id": "fab_supervision",
+              "name": "Fabrication supervision",
+              "level": "CW7",
+              "points": 7,
+              "description": "Supervise fabrication work and teams",
+              "indicative_tasks": ["supervises fabrication work", "coordinates fabrication teams"]
+            },
+            {
+              "id": "fab_management",
+              "name": "Fabrication management",
+              "level": "CW8",
+              "points": 8,
+              "description": "Manage fabrication projects and teams",
+              "indicative_tasks": ["manages fabrication projects", "leads fabrication teams"]
+            }
+          ]
+        }
+      }
+    },
+    "civil": {
+      "name": "Civil Construction",
+      "description": "Civil engineering and infrastructure work including earthworks, drainage, and site preparation",
+      "levels": {
+        "cw1": {
+          "activities": [
+            {
+              "id": "civil_cw1_1",
+              "name": "Basic earthworks",
+              "level": "CW1",
+              "points": 1,
+              "frequency": "Regular",
+              "description": "Performing basic earthworks tasks under direct supervision",
+              "indicative_tasks": [
+                "Digging trenches",
+                "Moving soil and materials",
+                "Basic site preparation",
+                "Assisting with equipment operation"
+              ],
+              "safety_requirements": ["PPE", "Site safety training"],
+              "equipment_requirements": ["Basic hand tools", "Safety equipment"],
+              "supervision_level": "Direct supervision"
+            }
+          ]
+        },
+        "cw2": {
+          "activities": [
+            {
+              "id": "civil_cw2_1",
+              "name": "Plant operation",
+              "level": "CW2",
+              "points": 2,
+              "frequency": "Regular",
+              "description": "Operating basic plant equipment under direct supervision",
+              "indicative_tasks": [
+                "Operating basic plant equipment",
+                "Basic maintenance of equipment",
+                "Following safety procedures",
+                "Reporting equipment issues"
+              ],
+              "safety_requirements": ["Plant operation training", "PPE"],
+              "equipment_requirements": ["Basic plant equipment"],
+              "supervision_level": "Direct supervision"
+            }
+          ]
+        },
+        "cw3": {
+          "activities": [
+            {
+              "id": "civil_cw3_1",
+              "name": "Earthworks",
+              "level": "CW3",
+              "points": 3,
+              "frequency": "Regular",
+              "description": "Performing earthworks tasks with routine supervision",
+              "indicative_tasks": [
+                "Complex trenching operations",
+                "Site grading and leveling",
+                "Drainage installation",
+                "Basic surveying assistance"
+              ],
+              "safety_requirements": ["Advanced site safety training", "PPE"],
+              "equipment_requirements": ["Advanced plant equipment", "Surveying tools"],
+              "supervision_level": "Routine supervision"
+            }
+          ]
+        },
+        "cw4": {
+          "activities": [
+            {
+              "id": "civil_cw4_1",
+              "name": "Complex civil operations",
+              "level": "CW4",
+              "points": 4,
+              "frequency": "Regular",
+              "description": "Performing complex civil operations with routine supervision",
+              "indicative_tasks": [
+                "Operating advanced plant equipment",
+                "Complex earthworks operations",
+                "Site coordination",
+                "Quality control checks"
+              ],
+              "safety_requirements": ["Advanced safety training", "PPE"],
+              "equipment_requirements": ["Advanced plant equipment", "Quality control tools"],
+              "supervision_level": "Routine supervision"
+            }
+          ]
+        },
+        "cw5": {
+          "activities": [
+            {
+              "id": "civil_cw5_1",
+              "name": "Advanced civil operations",
+              "level": "CW5",
+              "points": 5,
+              "frequency": "Regular",
+              "description": "Performing advanced civil operations with general supervision",
+              "indicative_tasks": [
+                "Complex site management",
+                "Advanced equipment operation",
+                "Team coordination",
+                "Quality assurance"
+              ],
+              "safety_requirements": ["Advanced safety management", "PPE"],
+              "equipment_requirements": ["Advanced plant equipment", "Management tools"],
+              "supervision_level": "General supervision"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "unknown_stream": {
+    "name": "General Activities",
+    "description": "General activities across all streams",
+    "levels": {
+      "cw1_cw2": {
+        "activities": [
+          {
+            "id": "gen_basic_tools",
+            "name": "Use basic hand tools",
+            "level": "CW1",
+            "points": 1,
+            "description": "Operate basic hand tools and equipment",
+            "indicative_tasks": ["uses precision measuring instruments", "basic material handling functions"]
+          }
+        ]
+      }
+    }
+  },
+  "metadata": {
+    "supervision_levels": [
+      "Direct supervision",
+      "General supervision",
+      "Limited supervision",
+      "Minimal supervision",
+      "Self-directed",
+      "Independent",
+      "Supervisory",
+      "Management"
+    ],
+    "frequencies": [
+      "daily",
+      "weekly",
+      "monthly",
+      "as needed"
+    ],
+    "safety_categories": [
+      "Basic PPE",
+      "Tool safety",
+      "Equipment operation",
+      "Specialized procedures",
+      "Supervisory responsibilities",
+      "Management responsibilities"
+    ],
+    "cross_stream_indicators": {
+      "true": "This activity appears in multiple streams",
+      "false": "This activity is stream-specific"
+    }
+  }
+} 

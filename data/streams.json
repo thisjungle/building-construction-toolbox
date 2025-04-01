@@ -1,0 +1,99 @@
+{
+    "streams": {
+        "title": "What sectors will the employee be working in?",
+        "emoji": "🏗️",
+        "description": "Select the work stream that best describes the position",
+        "options": [
+            {
+                "value": "civil",
+                "title": "Civil Construction",
+                "emoji": "🚧",
+                "description": "Civil engineering and infrastructure work",
+                "best_for": "Road construction, bridges, and major infrastructure projects",
+                "key_benefit": "Specialized civil construction allowance applies",
+                "watch_out": "Must follow civil construction safety standards",
+                "award_references": [
+                    {
+                        "clause": "4.2",
+                        "text": "Civil construction work means the construction, alteration, maintenance or repair of civil and/or mechanical engineering projects, structures or works."
+                    }
+                ],
+                "tooltip": {
+                    "hint": "Civil engineering and infrastructure work"
+                }
+            },
+            {
+                "value": "electrical",
+                "title": "Electrical/Electronic",
+                "emoji": "⚡",
+                "description": "Electrical and electronic systems work",
+                "best_for": "Power systems, control systems, and electrical installations",
+                "key_benefit": "Engineering construction allowance applies",
+                "watch_out": "Requires electrical safety certifications",
+                "award_references": [
+                    {
+                        "clause": "4.4",
+                        "text": "Electrical work means the installation, maintenance, repair or testing of electrical equipment or systems."
+                    }
+                ],
+                "tooltip": {
+                    "hint": "Electrical and electronic systems work"
+                }
+            },
+            {
+                "value": "fabrication",
+                "title": "Fabrication",
+                "emoji": "🔧",
+                "description": "Metal fabrication and structural work",
+                "best_for": "Metal structures, welding, and custom fabrication",
+                "key_benefit": "Engineering construction allowance applies",
+                "watch_out": "Requires welding certifications and safety training",
+                "award_references": [
+                    {
+                        "clause": "4.3",
+                        "text": "Metal fabrication work means the fabrication, assembly, erection, installation, maintenance, repair or dismantling of metal structures."
+                    }
+                ],
+                "tooltip": {
+                    "hint": "Metal fabrication and structural work"
+                }
+            },
+            {
+                "value": "general",
+                "title": "General Construction",
+                "emoji": "🏗️",
+                "description": "General building and construction work",
+                "best_for": "Building construction and general site work",
+                "key_benefit": "Standard construction allowance applies",
+                "watch_out": "Must follow building codes and standards",
+                "award_references": [
+                    {
+                        "clause": "4.6",
+                        "text": "General building work means the construction, alteration, maintenance or repair of buildings and structures."
+                    }
+                ],
+                "tooltip": {
+                    "hint": "General building and construction work"
+                }
+            },
+            {
+                "value": "mechanical",
+                "title": "Mechanical",
+                "emoji": "⚙️",
+                "description": "Mechanical systems and equipment work",
+                "best_for": "Plant equipment, machinery, and mechanical systems",
+                "key_benefit": "Engineering construction allowance applies",
+                "watch_out": "Requires mechanical safety training",
+                "award_references": [
+                    {
+                        "clause": "4.5",
+                        "text": "Mechanical work means the installation, maintenance, repair or testing of mechanical equipment or systems."
+                    }
+                ],
+                "tooltip": {
+                    "hint": "Mechanical systems and equipment work"
+                }
+            }
+        ]
+    }
+} 

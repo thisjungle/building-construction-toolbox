@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="payrate-container">
+    <div class="payrate-wrapper">
+        <div class="payrate-section">
+            <h1>Pay Rate Finder</h1>
+            
+            <!-- Progress indicator -->
+            <div class="progress-bar">
+                <div class="progress" style="width: 40%"></div>
+                <span class="progress-text">Question 2 of 5</span>
+            </div>
+
+            <!-- Question section -->
+            <div class="question-container">
+                <h2>What is your role level?</h2>
+                <div class="options-container">
+                    <button class="option-button" data-value="Level_1">
+                        Level 1
+                    </button>
+                    <button class="option-button" data-value="Level_2">
+                        Level 2
+                    </button>
+                    <button class="option-button" data-value="Level_3">
+                        Level 3
+                    </button>
+                    <button class="option-button" data-value="Level_4">
+                        Level 4
+                    </button>
+                    <button class="option-button" data-value="Level_5">
+                        Level 5
+                    </button>
+                    <button class="option-button" data-value="Level_6">
+                        Level 6
+                    </button>
+                    <button class="option-button" data-value="Level_7">
+                        Level 7
+                    </button>
+                    <button class="option-button" data-value="Level_8">
+                        Level 8
+                    </button>
+                    <button class="option-button" data-value="Level_9">
+                        Level 9
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="navigation-buttons">
+                <button class="nav-button back-button">Back</button>
+                <button class="nav-button next-button" disabled="disabled">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add script tag -->
+<script src="{{ url_for('static', filename='js/payrate.js') }}"></script>
+{% endblock %} 

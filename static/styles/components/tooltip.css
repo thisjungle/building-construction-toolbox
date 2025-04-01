@@ -1,0 +1,178 @@
+/* ===========================================
+   Tooltip Component Styles
+   ========================================== */
+
+/* Tooltip Container */
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip Trigger */
+.tooltip-trigger {
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    font-size: var(--emoji-size-sm);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    color: var(--gray-600);
+    position: relative;
+    cursor: pointer;
+}
+
+.tooltip-trigger::before {
+    content: "Click";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gray-800);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+    margin-bottom: 4px;
+}
+
+.tooltip-trigger:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Hide "Click" text when tooltip is active */
+.tooltip-trigger.tooltip-active::before {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Tooltip Content */
+.tooltip {
+    display: none;
+    background: white;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+    z-index: 9999;
+    min-width: 300px;
+    max-width: 400px;
+}
+
+/* Tooltip Title */
+.tooltip-title {
+    margin: 0 0 var(--spacing-sm) 0;
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-900);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-semibold);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+/* Tooltip Sections */
+.tooltip-section {
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--gray-100);
+}
+
+.tooltip-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.tooltip-section strong {
+    color: var(--gray-800);
+    font-weight: var(--font-semibold);
+    display: block;
+    margin-bottom: var(--spacing-xs);
+}
+
+.tooltip-section p {
+    margin: 0;
+    color: var(--gray-700);
+    font-size: var(--font-size-sm);
+    line-height: 1.4;
+}
+
+/* Award References */
+.award-references {
+    margin-top: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.award-reference {
+    padding: var(--spacing-xs);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--border-radius);
+    background: var(--gray-50);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    cursor: help;
+    transition: background-color 0.2s;
+    position: relative;
+}
+
+.award-reference:hover {
+    background: var(--gray-100);
+}
+
+.award-reference strong {
+    display: block;
+    color: var(--gray-800);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-xs);
+}
+
+.award-reference p {
+    margin: 0;
+    color: var(--gray-600);
+    font-size: var(--font-size-sm);
+}
+
+/* Style the custom tooltip */
+[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 12px;
+    background: rgba(17, 24, 39, 0.95);
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    max-width: 300px;
+    z-index: 1001;
+    margin-bottom: 8px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(4px);
+    animation: tooltipFadeIn 0.2s ease-out;
+}
+
+/* Animations */
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, 5px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+} 

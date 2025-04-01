@@ -1,0 +1,262 @@
+{% extends "base.html" %}
+{% block body_class %}no-main-header{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/employees.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/levels.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/modules/levels-module.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/components/forms.css') }}">
+{% endblock %}
+
+{% block content %}
+<!-- Loading Spinner -->
+<div id="loadingSpinner">
+    <div class="spinner"></div>
+</div>
+
+<!-- Fixed Header -->
+<div class="module-header employees-header">
+    <div class="module-header-content employees-header-content">
+        <!-- Left Side -->
+        <div class="module-header-title employees-header-title">
+            <button class="back-nav-btn" onclick="handleBackNavigation()" title="Back to Home">
+                <span>🧍</span>
+            </button>
+            <div class="header-text">Employees</div>
+        </div>
+        <!-- Right Side -->
+        <div class="module-header-right employees-header-right">
+            <div class="search-wrapper">
+                <input type="search" class="search-input" id="employeeSearch" placeholder="Search employees..." autocomplete="off">
+            </div>
+            <div class="header-actions">
+                <button class="add-btn btn-primary" id="addEmployeeBtn">
+                    <span>+</span> Add Employee
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="module-container employees-container">
+    <!-- Employee Table -->
+    <section class="table-section">
+        <table id="employeesTable" class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Employment Type</th>
+                    <th>Industry Sector</th>
+                    <th>Award Level</th>
+                    <th>Allowances</th>
+                    <th class="actions-column">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for employee in employees %}
+                <tr data-employee-id="{{ employee.id }}">
+                    <td>{{ employee.name }}</td>
+                    <td>{{ employee.employment_type }}</td>
+                    <td>{{ employee.industry_sector }}</td>
+                    <td class="award-level">
+                        {% if employee.current_classification %}
+                            <a href="{{ url_for('levels.configure_levels', employee_id=employee.id) }}" class="level-link">
+                                {{ employee.current_classification }}
+                            </a>
+                        {% else %}
+                            <button class="btn-configure" data-href="{{ url_for('levels.configure_levels', employee_id=employee.id) }}" onclick="window.location.href=this.dataset.href">
+                                Configure
+                            </button>
+                        {% endif %}
+                    </td>
+                    <td class="allowances-cell">
+                        {% if employee.allowances_total is not none and employee.allowances_total > 0 %}
+                            <a href="{{ url_for('allowances.configure_allowances', employee_id=employee.id) }}" class="allowance-link">
+                                ${{ "%.2f"|format(employee.allowances_total) }}
+                            </a>
+                        {% else %}
+                            <button class="btn-configure" data-href="{{ url_for('allowances.configure_allowances', employee_id=employee.id) }}" onclick="window.location.href=this.dataset.href">
+                                Configure
+                            </button>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <div class="employee-actions">
+                            <a href="{{ url_for('employees_bp.employee_details', employee_id=employee.id) }}" class="action-btn view-btn" title="View Employee Details">
+                                <span class="action-icon">👤</span>
+                                <span class="action-text">Details</span>
+                            </a>
+                            <button class="action-btn edit-btn" data-id="{{ employee.id }}" title="Edit Employee">
+                                <span class="action-icon">✏️</span>
+                                <span class="action-text">Edit</span>
+                            </button>
+                            <button class="action-btn delete-btn" data-id="{{ employee.id }}" title="Delete Employee">
+                                <span class="action-icon">🗑️</span>
+                                <span class="action-text">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Empty state template -->
+    <template id="emptyState">
+        <div class="empty-state">
+            <div class="empty-state-icon">👷</div>
+            <h3>No Employees Found</h3>
+            <p>Get started by adding your first employee</p>
+            <button class="btn-primary" id="addFirstEmployeeBtn">
+                <span class="icon-plus">+</span>Add Employee
+            </button>
+        </div>
+    </template>
+
+    <!-- Skeleton loading template -->
+    <template id="skeletonLoader">
+        <div class="skeleton-row">
+            <div class="skeleton-cell" style="width: 25%"></div>
+            <div class="skeleton-cell" style="width: 15%"></div>
+            <div class="skeleton-cell" style="width: 20%"></div>
+            <div class="skeleton-cell" style="width: 15%"></div>
+            <div class="skeleton-cell" style="width: 15%"></div>
+            <div class="skeleton-cell" style="width: 10%"></div>
+        </div>
+    </template>
+</div>
+
+<!-- Employee Detail View -->
+<div class="employee_detail_view" id="employeeDetailView">
+    <!-- Detail Navigation -->
+    <div class="detail-nav">
+        <button class="detail-back-btn" id="detailBackBtn">&larr;</button>
+        <h2 class="detail-employee-name" id="detailEmployeeName">Employee Name</h2>
+    </div>
+    
+    <!-- Detail Tabs -->
+    <div class="detail-tabs">
+        <div class="detail-tab active" data-tab="basic">Basic Info</div>
+        <div class="detail-tab" data-tab="award-levels">Award Levels</div>
+        <div class="detail-tab" data-tab="allowances">Allowances</div>
+    </div>
+    
+    <!-- Detail Content -->
+    <div class="detail-content">
+        <!-- Basic Info Panel -->
+        <div class="detail-panel active" id="basicPanel" data-panel="basic">
+            <div class="detail-info-list">
+                <div class="detail-info-item">
+                    <div class="detail-info-label">Full Name</div>
+                    <div class="detail-info-value" id="detailFullName"></div>
+                </div>
+                <div class="detail-info-item">
+                    <div class="detail-info-label">Employment Type</div>
+                    <div class="detail-info-value" id="detailEmploymentType"></div>
+                </div>
+                <div class="detail-info-item">
+                    <div class="detail-info-label">Industry Sector</div>
+                    <div class="detail-info-value" id="detailIndustrySector"></div>
+                </div>
+                <div class="detail-info-item">
+                    <div class="detail-info-label">Current Classification</div>
+                    <div class="detail-info-value" id="detailClassification"></div>
+                </div>
+                <div class="detail-info-item">
+                    <div class="detail-info-label">Total Allowances</div>
+                    <div class="detail-info-value" id="detailAllowancesTotal"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Award Levels Panel -->
+        <div class="detail-panel" id="awardLevelsPanel" data-panel="award-levels">
+            <div id="awardLevelsContent">
+                <!-- This will be loaded via AJAX -->
+                <div class="loading-placeholder">Loading award levels...</div>
+            </div>
+        </div>
+        
+        <!-- Allowances Panel -->
+        <div class="detail-panel" id="allowancesPanel" data-panel="allowances">
+            <div id="allowancesContent">
+                <!-- This will be loaded via AJAX -->
+                <div class="loading-placeholder">Loading allowances...</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="employeeModal">
+    <div class="modal-content">
+        <h3 id="modalTitle">Add New Employee</h3>
+        <form id="employeeForm" class="form" novalidate>
+            <div class="form-group">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" class="form-input" id="name" required
+                       placeholder="Enter employee's full name">
+                <div class="form-error">Please enter the employee's name</div>
+            </div>
+            <div class="form-group">
+                <label for="employmentType" class="form-label">Employment Type</label>
+                <select class="form-select" id="employmentType" required>
+                    <option value="">Select employment type</option>
+                    <option value="Full-Time Weekly">Full-Time Weekly</option>
+                    <option value="Part-Time Weekly">Part-Time Weekly</option>
+                    <option value="Casual">Casual</option>
+                </select>
+                <div class="form-error">Please select an employment type</div>
+            </div>
+            <div class="form-group">
+                <label for="industrySector" class="form-label">Industry Sector</label>
+                <select class="form-select" id="industrySector" required>
+                    <option value="">Select industry sector</option>
+                    <option value="General Building">General Building</option>
+                    <option value="Civil Construction">Civil Construction</option>
+                    <option value="Metal Engineering">Metal Engineering</option>
+                </select>
+                <div class="form-error">Please select an industry sector</div>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn-secondary" id="cancelEmployeeBtn">Cancel</button>
+                <button type="submit" class="btn-primary" id="submitEmployeeBtn">Add Employee</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal" id="deleteModal">
+    <div class="modal-content">
+        <h3>Delete Employee</h3>
+        <p>Are you sure you want to delete <span id="deleteEmployeeName"></span>?</p>
+        <p class="text-danger">This action cannot be undone.</p>
+        <div class="modal-actions">
+            <button type="button" class="btn-secondary" id="cancelDeleteBtn">Cancel</button>
+            <button type="button" class="btn-danger" id="confirmDeleteBtn">Delete</button>
+        </div>
+    </div>
+</div>
+
+<!-- Unsaved Changes Modal -->
+<div id="unsavedChangesModal" class="modal">
+    <div class="modal-content">
+        <h3>Unsaved Changes</h3>
+        <p>You have unsaved changes. What would you like to do?</p>
+        <div class="modal-actions">
+            <button id="saveChangesBtn" class="btn-primary">Save Changes</button>
+            <button id="discardChangesBtn" class="btn-secondary">Discard Changes</button>
+            <button id="cancelNavBtn" class="btn-text">Cancel</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/employees.js') }}"></script>
+<script src="{{ url_for('static', filename='js/employee_detail.js') }}"></script>
+{% endblock %} 

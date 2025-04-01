@@ -1,0 +1,74 @@
+{
+  "employment_clauses": {
+    "employment_type": {
+      "clause_number": "12.1",
+      "title": "Type of Employment",
+      "description": "The type of employment must be clearly stated, indicating whether the position is for full-time, part-time, casual, or daily hire",
+      "applies_to": ["all"],
+      "is_mandatory": true,
+      "options": [
+        "Full-time",
+        "Part-time",
+        "Casual",
+        "Daily hire"
+      ]
+    },
+    "employer_identification": {
+      "clause_number": "12.2",
+      "title": "Employer Identification",
+      "description": "The employer's name must be clearly stated for casual employment positions",
+      "applies_to": ["casual"],
+      "is_mandatory": true,
+      "validation": {
+        "min_length": 2,
+        "max_length": 150,
+        "allowed_chars": "alphanumeric, &-'."
+      }
+    },
+    "work_streams": {
+      "clause_number": "14.3",
+      "title": "Work Streams",
+      "description": "The position must specify the relevant work streams that define the scope of work",
+      "applies_to": ["all"],
+      "is_mandatory": true
+    },
+    "activities": {
+      "clause_number": "14.4",
+      "title": "Activities and Tasks",
+      "description": "The position must detail the specific activities and tasks to be performed",
+      "applies_to": ["all"],
+      "is_mandatory": true,
+      "subsections": {
+        "frequency": {
+          "clause_number": "14.4.2",
+          "title": "Activity Frequency",
+          "description": "Each activity must specify its frequency (daily, weekly, or monthly)"
+        }
+      }
+    },
+    "requirements": {
+      "clause_number": "14.5",
+      "title": "Position Requirements",
+      "description": "The position must specify safety, equipment, and supervision requirements",
+      "applies_to": ["all"],
+      "is_mandatory": true,
+      "subsections": {
+        "safety": {
+          "clause_number": "14.5.1",
+          "title": "Safety Requirements",
+          "description": "Mandatory safety requirements for the position"
+        },
+        "equipment": {
+          "clause_number": "14.5.2",
+          "title": "Equipment Requirements",
+          "description": "Required equipment and tools for the position"
+        },
+        "supervision": {
+          "clause_number": "14.5.3",
+          "title": "Supervision Level",
+          "description": "Required level of supervision for the position"
+        }
+      }
+    }
+  }
+} 

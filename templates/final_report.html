@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Final Report{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/final_report.css') }}">
+{% endblock %}
+
+{% block header %}
+<header class="site-header">
+    <nav class="main-nav">
+        <div class="container">
+            <a href="/" class="nav-logo">Building Construction Employee Helper</a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/employees" class="nav-link">Employees</a></li>
+                <li><a href="/allowances" class="nav-link">Allowances</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+{% endblock %}
+
+{% block content %}
+    <main class="container">
+        <div class="report-container">
+            <h1>Pay Calculation Report</h1>
+            
+            <div class="pay-breakdown">
+                <div class="pay-item">
+                    <span class="pay-label">Base Weekly Rate:</span>
+                    <span class="pay-amount">${{ "%.2f"|format(weekly_rate - casual_loading) }}</span>
+                </div>
+
+                {% if casual_loading > 0 %}
+                <div class="pay-item">
+                    <span class="pay-label">Casual Loading (25%):</span>
+                    <span class="pay-amount">${{ "%.2f"|format(casual_loading) }}</span>
+                </div>
+                {% endif %}
+
+                <div class="pay-total">
+                    <span class="pay-label">Total Weekly Pay:</span>
+                    <span class="pay-amount">${{ "%.2f"|format(weekly_rate) }}</span>
+                </div>
+            </div>
+
+            <div class="report-actions">
+                <a href="{{ url_for('start_calculator') }}" class="button">Start New Calculation</a>
+            </div>
+        </div>
+    </main>
+{% endblock %}
+
+{% block footer %}
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; 2023 Building Construction Employee Helper. All rights reserved.</p>
+    </div>
+</footer>
+{% endblock %} 

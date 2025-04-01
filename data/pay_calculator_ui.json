@@ -1,0 +1,158 @@
+{
+    "metadata": {
+        "version": "1.0",
+        "last_updated": "2024-03-20"
+    },
+    "form_layout": {
+        "sections": [
+            {
+                "id": "employee_info",
+                "title": "Employee Information",
+                "fields": [
+                    {
+                        "id": "name",
+                        "type": "text",
+                        "label": "Employee Name",
+                        "required": true,
+                        "placeholder": "Enter employee name"
+                    },
+                    {
+                        "id": "classification",
+                        "type": "select",
+                        "label": "Classification Level",
+                        "required": true,
+                        "options": "classifications"
+                    },
+                    {
+                        "id": "employment_type",
+                        "type": "select",
+                        "label": "Employment Type",
+                        "required": true,
+                        "options": "employment_types"
+                    }
+                ]
+            },
+            {
+                "id": "hours_worked",
+                "title": "Hours Worked",
+                "fields": [
+                    {
+                        "id": "week_starting",
+                        "type": "date",
+                        "label": "Week Starting",
+                        "required": true
+                    },
+                    {
+                        "id": "ordinary_hours",
+                        "type": "number",
+                        "label": "Ordinary Hours",
+                        "required": true,
+                        "min": 0,
+                        "max": 38,
+                        "step": 0.5
+                    },
+                    {
+                        "id": "overtime_hours",
+                        "type": "number",
+                        "label": "Overtime Hours",
+                        "required": true,
+                        "min": 0,
+                        "step": 0.5
+                    }
+                ]
+            },
+            {
+                "id": "allowances",
+                "title": "Allowances",
+                "fields": [
+                    {
+                        "id": "industry_allowance",
+                        "type": "select",
+                        "label": "Industry Allowance",
+                        "options": "allowances.industry"
+                    },
+                    {
+                        "id": "tool_allowance",
+                        "type": "select",
+                        "label": "Tool Allowance",
+                        "options": "allowances.tools"
+                    }
+                ]
+            }
+        ]
+    },
+    "summary_layout": {
+        "sections": [
+            {
+                "id": "base_pay",
+                "label": "Base Pay",
+                "format": "currency"
+            },
+            {
+                "id": "overtime",
+                "label": "Overtime",
+                "format": "currency"
+            },
+            {
+                "id": "allowances",
+                "label": "Allowances",
+                "format": "currency"
+            },
+            {
+                "id": "total",
+                "label": "Total Pay",
+                "format": "currency",
+                "highlight": true
+            }
+        ]
+    },
+    "form_styles": {
+        "input": {
+            "padding": "0.75rem",
+            "border": "1px solid #ddd",
+            "border-radius": "4px",
+            "font-size": "1rem"
+        },
+        "select": {
+            "padding": "0.75rem",
+            "border": "1px solid #ddd",
+            "border-radius": "4px",
+            "font-size": "1rem"
+        },
+        "radio": {
+            "margin-right": "0.5rem"
+        },
+        "section": {
+            "margin-bottom": "2rem",
+            "padding-bottom": "1.5rem",
+            "border-bottom": "1px solid #eee"
+        }
+    },
+    "summary_styles": {
+        "section": {
+            "padding": "1rem 0",
+            "border-bottom": "1px solid #eee"
+        },
+        "highlight": {
+            "font-weight": "bold",
+            "color": "#2c5282"
+        }
+    },
+    "buttons": {
+        "calculate": {
+            "text": "Calculate Pay",
+            "class": "btn-primary",
+            "icon": "💰"
+        },
+        "reset": {
+            "text": "Reset",
+            "class": "btn-secondary",
+            "icon": "🔄"
+        },
+        "help": {
+            "text": "Help",
+            "class": "btn-secondary",
+            "icon": "❓"
+        }
+    }
+} 

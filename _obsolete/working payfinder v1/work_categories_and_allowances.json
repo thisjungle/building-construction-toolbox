@@ -1,0 +1,227 @@
+{
+    "work_categories": {
+      "general_building_and_construction": {
+        "description": "Activities including building erection, demolition, and renovation.",
+        "allowance": {
+          "amount": 61.94,
+          "clause": "Clause 22.1(a)",
+          "stream": "General Construction"
+        }
+      },
+      "civil_construction": {
+        "description": "Earthmoving, plant operation, and related activities.",
+        "allowance": {
+          "amount": 61.94,
+          "clause": "Clause 22.1(a)"
+        }
+      },
+      "residential_building_and_construction": {
+        "description": "Single or dual occupancy residential buildings, non-multistorey.",
+        "allowance": {
+          "amount": 49.55,
+          "clause": "Clause 22.1(b)",
+          "stream": "General Construction"
+        }
+      },
+      "multistorey_building_construction": {
+    "description": "Buildings with five or more storeys.",
+    "allowance": {
+        "amount": 61.94,
+        "range": "$0.71/hour to $2.06/hour",
+        "details": [
+            { "floors": "1-15", "rate": 0.71 },
+            { "floors": "16-30", "rate": 0.84 },
+            { "floors": "31-45", "rate": 1.30 },
+            { "floors": "46-60", "rate": 1.68 },
+            { "floors": "61+", "rate": 2.06 }
+        ],
+        "clause": "Clause 23.3(e)",
+        "stream": "General Construction"
+    }
+      },
+      "engineering_construction": {
+      "description": "Working with electric devices and systems, mechanical systems and machinery, or fabrication and metalwork activities.",
+      "streams": {
+        "electrical_electronic": {
+          "description": "Involves design, assembly, installation, testing, fault finding, commissioning, maintenance, and service of electrical/electronic devices, systems, and controls (e.g., PLCs, motors, generators).",
+          "allowance": {
+            "amount": 61.94,
+            "clause": "Clause 22.1(a)"
+          },
+          "stream": "Electrical/Electronic"
+        },
+        "mechanical": {
+          "description": "Covers the design, assembly, installation, and servicing of mechanical equipment and systems, including fluid power systems and CNC-controlled tools.",
+          "allowance": {
+            "amount": 61.94,
+            "clause": "Clause 22.1(a)"
+          },
+          "stream": "Mechanical"
+        },
+        "fabrication": {
+          "description": "Includes structural steel fabrication, forging, founding, and related tasks using metals, composites, and advanced materials. This may also involve CNC machinery.",
+          "allowance": {
+            "amount": 61.94,
+            "clause": "Clause 22.1(a)"
+          },
+          "stream": "Fabrication"
+        }
+    }
+
+    },
+    "additional_allowances": {
+      "tools": {
+        "description": "Allowance for maintaining and supplying standard tools of trade.",
+        "categories": [
+          {
+            "name": "High-Level Trades",
+            "allowance_amount": 38.67,
+            "applicable_trades": [
+              "Artificial Stoneworker",
+              "Carpenter and/or Joiner",
+              "Carpenter-Diver",
+              "Carver",
+              "Bridge and Wharf Carpenter",
+              "Floor Sander",
+              "Letter Cutter",
+              "Marble and Slate Worker",
+              "Stonemason or Tilelayer"
+            ]
+          },
+          {
+            "name": "Mid-Level Trades",
+            "allowance_amount": 31.99,
+            "applicable_trades": [
+              "Caster",
+              "Fixer",
+              "Floorlayer Specialist",
+              "Plasterer"
+            ]
+          },
+          {
+            "name": "Specialized Bricklaying Trades",
+            "allowance_amount": 27.45,
+            "applicable_trades": [
+              "Refractory Bricklayer",
+              "Bricklayer"
+            ]
+          },
+          {
+            "name": "Construction Sector Trades",
+            "allowance_amount": 20.25,
+            "applicable_trades": [
+              "Roof Tiler",
+              "Slate-Ridger",
+              "Roof Fixer",
+              "Tradespersons in the Metals and Engineering Construction Sector"
+            ]
+          },
+          {
+            "name": "Entry-Level Trades",
+            "allowance_amount": 9.28,
+            "applicable_trades": [
+              "Signwriter",
+              "Painter",
+              "Glazier"
+            ]
+          }
+        ],
+        "reimbursement": {
+          "loss_or_damage": {
+            "description": "Reimbursement for tools lost or damaged under specific conditions.",
+            "maximum_amount": 2242.00,
+            "conditions": [
+              "Loss by theft or fire.",
+              "Accidental loss at the worksite."
+            ]
+          },
+          "special_tools": {
+            "description": "Reimbursement or supply of tools beyond standard trade tools required by the employer."
+          },
+          "protective_clothing_or_equipment": {
+            "description": "Reimbursement for protective clothing or equipment required by legislation or employer policy.",
+            "steel_toe_boots": {
+              "description": "Reimbursement for steel toe-capped safety boots.",
+              "replacement_frequency": "Every six months or earlier as agreed."
+            }
+          }
+        },
+        "adjustment_mechanism": {
+          "description": "Expense-related allowances, including tool allowances, are adjusted based on the Consumer Price Index (CPI).",
+          "reference_clause": "B.2.2"
+        },
+        "reference_clause": "Clause 21.1"
+      },
+      "first_aid": {
+        "description": "Allowance for employees holding a first aid qualification.",
+        "rates": {
+          "minimum": 3.72,
+          "higher": 5.88
+        },
+        "clause": "Clause 23.6"
+      },
+      "meal": {
+        "description": "Allowance for meals during overtime work.",
+        "rates": [
+          {
+            "type": "All employees",
+            "rate": 18.51,
+            "conditions": "Payable for employees working at least 1.5 hours of overtime after ordinary hours.",
+            "clause": "Clause 21.2(a)"
+          },
+          {
+            "type": "Operator employees",
+            "rate": 18.51,
+            "conditions": "Payable after completion of each 4 hours of overtime.",
+            "clause": "Clause 21.2(c)"
+          }
+        ]
+      },
+      "underground_work": {
+        "description": "Allowance for employees working underground.",
+        "rates": {
+          "weekly": 18.58,
+          "daily": 4.13
+        },
+        "conditions": "Weekly rate applies for all purposes. Daily rate applies if working underground for no more than 4 shifts per week.",
+        "clause": "Clause 23.2"
+      },
+      "air_conditioning_and_refrigeration": {
+        "description": "Allowance for air-conditioning tradespersons and refrigeration mechanics.",
+        "rate": 81.55,
+        "conditions": "Compensation for peculiarities of their work.",
+        "clause": "Clause 23.7"
+      },
+      "electrician_licence": {
+        "description": "Allowance for electrical tradespersons holding an appropriate license.",
+        "rate": 33.03,
+        "clause": "Clause 23.8"
+      },
+      "laser_safety_officer": {
+        "description": "Allowance for employees designated as laser safety officers.",
+        "rate": 3.64,
+        "conditions": "Payable per day for performing related duties.",
+        "clause": "Clause 23.4"
+      },
+      "carpenter_diver": {
+        "description": "Allowance for employees performing work as carpenter-divers.",
+        "rate": 1.22,
+        "conditions": "Payable per hour.",
+        "clause": "Clause 23.5"
+      },
+      "in_charge_of_plant": {
+        "description": "Allowance for employees designated as in charge of a plant.",
+        "rate": 48.52,
+        "clause": "Clause 23.9"
+      },
+      "fares_and_travel_patterns": {
+        "description": "Allowance for employees traveling to construction sites.",
+        "rate": 21.94,
+        "conditions": "Payable per day.",
+        "clause": "Clause 26.1"
+      }
+    }
+  }
+}
+
+  

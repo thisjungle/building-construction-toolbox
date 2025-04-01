@@ -1,0 +1,70 @@
+{
+    "templates": {
+        "civil_construction": {
+            "title": "Civil Construction Template",
+            "sections": {
+                "company_info": {
+                    "title": "Company Information",
+                    "template": "[Company Name] - [Location]\n[About Us]"
+                },
+                "responsibilities": {
+                    "title": "Key Responsibilities",
+                    "template": "• Assist in the planning and execution of civil construction projects\n• Conduct site inspections and ensure work is performed according to specifications\n• Coordinate with subcontractors and site personnel\n• Monitor project progress and report to the Project Manager\n• Ensure compliance with safety regulations and site procedures\n• Assist with the preparation of project documentation and reports"
+                },
+                "essential_requirements": {
+                    "title": "Essential Requirements",
+                    "template": "• Bachelor's degree in Civil Engineering or a related field\n• Minimum of [Number] years of experience in civil construction projects\n• Strong understanding of civil engineering principles and practices\n• Ability to read and interpret engineering drawings and specifications\n• Valid driver's license\n• Construction Induction Card (White Card)"
+                },
+                "desirable_requirements": {
+                    "title": "Desirable Requirements",
+                    "template": "• Experience with specific civil works such as earthworks, drainage, or road construction\n• Proficiency in project management software\n• Excellent communication and problem-solving skills"
+                },
+                "salary_benefits": {
+                    "title": "Salary & Benefits",
+                    "template": "[Insert salary range or specific salary details. Ensure base rate meets or exceeds the minimum for the relevant classification as per Clause 19 and the Pay Guide 8. Include any benefits such as superannuation, vehicle allowance, or professional development opportunities. Consider mentioning the Industry Allowance if applicable under Clause 24 and the Pay Guide 8.]"
+                },
+                "project_details": {
+                    "title": "Project Details",
+                    "template": "[Project Details] (If applicable, e.g., \"This role will be based on our [Project Name] project located in [Location].\")"
+                },
+                "application_instructions": {
+                    "title": "Application Instructions",
+                    "template": "To apply for this position, please submit your resume and cover letter to [email protected] or apply through our website at [website address]. The closing date for applications is [closing date].\n\n[Company Name] is an equal opportunity employer and encourages applications from people of all backgrounds.\n\nThis role is covered by the MA000020 Building and Construction General On-site Award 2020. The terms and conditions of employment will be in accordance with this Award. For further details, refer to the Fair Work Commission website 4."
+                }
+            }
+        },
+        "electrical_electronic": {
+            "title": "Electrical/Electronic Template",
+            "sections": {
+                "company_info": {
+                    "title": "Company Information",
+                    "template": "[Company Name] - [Location]\n[About Us]"
+                },
+                "responsibilities": {
+                    "title": "Key Responsibilities",
+                    "template": "• Manage and oversee electrical aspects of building and construction projects\n• Develop and review electrical designs and specifications\n• Liaise with clients, contractors, and other stakeholders\n• Ensure projects are delivered on time, within budget, and to the required standards\n• Provide technical support and guidance to the construction team\n• Monitor and ensure compliance with relevant Australian standards and regulations"
+                },
+                "essential_requirements": {
+                    "title": "Essential Requirements",
+                    "template": "• Bachelor's degree in Electrical Engineering\n• Minimum of [Number] years of experience as an Electrical Engineer in the construction industry\n• Strong knowledge of AS/NZS 3000 wiring rules and other relevant standards\n• Experience in the design and implementation of electrical systems for commercial or industrial buildings\n• Excellent project management and communication skills"
+                },
+                "desirable_requirements": {
+                    "title": "Desirable Requirements",
+                    "template": "• Chartered Professional Engineer (CPEng) status\n• Experience with specific software such as AutoCAD or Revit\n• Experience in renewable energy projects or building management systems"
+                },
+                "salary_benefits": {
+                    "title": "Salary & Benefits",
+                    "template": "[Insert salary range or specific salary details. Ensure base rate meets or exceeds the minimum for the relevant classification as per Clause 19 and the Pay Guide 8. Include any benefits such as superannuation, professional memberships, or flexible work arrangements.]"
+                },
+                "project_details": {
+                    "title": "Project Details",
+                    "template": "[Project Details] (If applicable, e.g., \"The successful candidate will work on a range of commercial building projects across.\")"
+                },
+                "application_instructions": {
+                    "title": "Application Instructions",
+                    "template": "Interested candidates are invited to apply by sending their resume and cover letter to [email protected] or through our online portal at [website address]. Applications close on [closing date].\n\n[Company Name] values diversity and inclusion and encourages applications from all qualified individuals.\n\nThis role is covered by the MA000020 Building and Construction General On-site Award 2020. The terms and conditions of employment will be in accordance with this Award. For further details, refer to the Fair Work Commission website 4."
+                }
+            }
+        }
+    }
+} 

@@ -1,0 +1,279 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2024-03-20",
+    "notes": "Configuration for the pay calculator form and calculations"
+  },
+  "employee_info": {
+    "title": "Employee Information",
+    "fields": [
+      {
+        "id": "name",
+        "label": "Employee Name",
+        "type": "text",
+        "required": true,
+        "placeholder": "Enter employee name"
+      },
+      {
+        "id": "classification",
+        "label": "Classification",
+        "type": "select",
+        "required": true,
+        "options": [
+          {
+            "value": "CW/ECW 1",
+            "label": "CW/ECW 1 - Level a",
+            "base_rate": 25.88,
+            "hint": "Basic level classification"
+          },
+          {
+            "value": "CW/ECW 2",
+            "label": "CW/ECW 2",
+            "base_rate": 26.76,
+            "hint": "Intermediate level classification"
+          },
+          {
+            "value": "CW/ECW 3",
+            "label": "CW/ECW 3",
+            "base_rate": 27.89,
+            "hint": "Advanced level classification"
+          },
+          {
+            "value": "CW/ECW 4",
+            "label": "CW/ECW 4",
+            "base_rate": 29.04,
+            "hint": "Senior level classification"
+          },
+          {
+            "value": "CW/ECW 5",
+            "label": "CW/ECW 5",
+            "base_rate": 29.85,
+            "hint": "Expert level classification"
+          }
+        ]
+      },
+      {
+        "id": "employment_type",
+        "label": "Employment Type",
+        "type": "select",
+        "required": true,
+        "options": [
+          {
+            "value": "full_time",
+            "label": "Full Time",
+            "hint": "38 hours per week"
+          },
+          {
+            "value": "part_time",
+            "label": "Part Time",
+            "hint": "Less than 38 hours per week"
+          },
+          {
+            "value": "casual",
+            "label": "Casual",
+            "hint": "25% casual loading applies"
+          }
+        ]
+      }
+    ]
+  },
+  "hours_worked": {
+    "title": "Hours Worked",
+    "fields": [
+      {
+        "id": "week_starting",
+        "label": "Week Starting",
+        "type": "date",
+        "required": true,
+        "hint": "Select the start of the pay week"
+      },
+      {
+        "id": "ordinary_hours",
+        "label": "Ordinary Hours",
+        "type": "number",
+        "required": true,
+        "min": 0,
+        "max": 38,
+        "step": 0.5,
+        "hint": "Standard hours worked (max 38 per week)"
+      },
+      {
+        "id": "overtime_hours",
+        "label": "Overtime Hours",
+        "type": "number",
+        "required": true,
+        "min": 0,
+        "step": 0.5,
+        "hint": "Hours worked beyond ordinary hours"
+      }
+    ]
+  },
+  "overtime_rules": {
+    "weekday": {
+      "rate": 1.5,
+      "description": "First 2 hours overtime on weekdays",
+      "meal_break_after": 4
+    },
+    "weekend": {
+      "rate": 2.0,
+      "description": "Overtime on weekends",
+      "meal_break_after": 4
+    },
+    "public_holiday": {
+      "rate": 2.5,
+      "description": "Overtime on public holidays",
+      "meal_break_after": 4
+    }
+  },
+  "allowances": {
+    "title": "Allowances",
+    "description": "Select applicable allowances",
+    "sections": [
+      {
+        "id": "industry_allowance",
+        "title": "Industry Allowance",
+        "type": "radio",
+        "options": [
+          {
+            "value": "general",
+            "label": "General Building",
+            "amount": 61.94,
+            "period": "per week"
+          },
+          {
+            "value": "residential",
+            "label": "Residential Building",
+            "amount": 49.55,
+            "period": "per week"
+          }
+        ]
+      },
+      {
+        "id": "tool_allowance",
+        "title": "Tool Allowance",
+        "type": "radio",
+        "options": [
+          {
+            "value": "none",
+            "label": "None",
+            "amount": 0,
+            "period": "per week"
+          },
+          {
+            "value": "carpenter",
+            "label": "Carpenter/Joiner",
+            "amount": 38.67,
+            "period": "per week"
+          }
+        ]
+      }
+    ]
+  },
+  "classifications": [
+    {
+      "id": "cw1",
+      "name": "CW/ECW 1",
+      "base_rate": 24.08,
+      "description": "Construction Worker Level 1"
+    },
+    {
+      "id": "cw2",
+      "name": "CW/ECW 2",
+      "base_rate": 25.41,
+      "description": "Construction Worker Level 2"
+    },
+    {
+      "id": "cw3",
+      "name": "CW/ECW 3",
+      "base_rate": 26.74,
+      "description": "Construction Worker Level 3"
+    },
+    {
+      "id": "cw4",
+      "name": "CW/ECW 4",
+      "base_rate": 28.07,
+      "description": "Construction Worker Level 4"
+    }
+  ],
+  "employment_types": [
+    {
+      "id": "permanent",
+      "name": "Permanent Full-time",
+      "description": "Permanent full-time employment"
+    },
+    {
+      "id": "casual",
+      "name": "Casual",
+      "description": "Casual employment with 25% loading"
+    },
+    {
+      "id": "part_time",
+      "name": "Part-time",
+      "description": "Part-time employment"
+    }
+  ],
+  "allowances": {
+    "industry": [
+      {
+        "id": "industry_1",
+        "name": "Industry Allowance",
+        "amount": 1.15,
+        "description": "Per shift worked",
+        "frequency": "per_shift"
+      },
+      {
+        "id": "industry_2",
+        "name": "Special Industry Allowance",
+        "amount": 2.30,
+        "description": "Per shift worked",
+        "frequency": "per_shift"
+      }
+    ],
+    "tools": [
+      {
+        "id": "tool_1",
+        "name": "Tool Allowance",
+        "amount": 1.05,
+        "description": "Per day worked",
+        "frequency": "per_day"
+      },
+      {
+        "id": "tool_2",
+        "name": "Special Tool Allowance",
+        "amount": 2.10,
+        "description": "Per day worked",
+        "frequency": "per_day"
+      }
+    ],
+    "meal": [
+      {
+        "id": "meal_1",
+        "name": "Meal Allowance",
+        "amount": 17.55,
+        "description": "When working overtime",
+        "frequency": "per_shift",
+        "conditions": ["overtime_required"]
+      }
+    ],
+    "travel": [
+      {
+        "id": "travel_1",
+        "name": "Travel Allowance",
+        "amount": 0.78,
+        "description": "Per kilometer traveled",
+        "frequency": "per_km",
+        "conditions": ["travel_required"]
+      }
+    ]
+  },
+  "meal_break_rules": {
+    "duration": 30,
+    "paid": false,
+    "required_after_hours": 4
+  },
+  "travel_rules": {
+    "min_distance": 50,
+    "rate_per_km": 0.78,
+    "includes_return": true
+  }
+} 

@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="payrate-container">
+    <div class="payrate-wrapper">
+        <div class="payrate-section">
+            <h1>Pay Rate Finder</h1>
+            
+            <!-- Progress indicator -->
+            <div class="progress-bar">
+                <div class="progress" style="width: 80%"></div>
+                <span class="progress-text">Question 4 of 5</span>
+            </div>
+
+            <!-- Question section -->
+            <div class="question-container">
+                <h2>What qualifications do you have?</h2>
+                <div class="options-container">
+                    <button class="option-button" data-value="None">
+                        No Formal Qualifications
+                        <span class="option-description">On-the-job experience only</span>
+                    </button>
+                    <button class="option-button" data-value="Certificate">
+                        Trade Certificate
+                        <span class="option-description">Certificate III in Construction or related field</span>
+                    </button>
+                    <button class="option-button" data-value="Advanced">
+                        Advanced Trade Qualifications
+                        <span class="option-description">Certificate IV, Diploma or advanced certifications</span>
+                    </button>
+                    <button class="option-button" data-value="Specialized">
+                        Specialized Certifications
+                        <span class="option-description">Industry-specific certifications and licenses</span>
+                    </button>
+                    <button class="option-button" data-value="Management">
+                        Management Qualifications
+                        <span class="option-description">Diploma or higher in construction management</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="navigation-buttons">
+                <button class="nav-button back-button">Back</button>
+                <button class="nav-button next-button" disabled="disabled">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add script tag -->
+<script src="{{ url_for('static', filename='js/payrate.js') }}"></script>
+{% endblock %} 

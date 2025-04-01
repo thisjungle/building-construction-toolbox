@@ -1,0 +1,68 @@
+<!-- Employee Profile Modal -->
+<div class="modal" id="employeeProfileModal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">Employee Profile</h5>
+            <button type="button" class="modal-close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="profile-sections">
+                <!-- Basic Information -->
+                <div class="section">
+                    <h6 class="section-title">Basic Information</h6>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Name:</label>
+                            <span id="profile-name"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Date of Birth:</label>
+                            <span id="profile-dob"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Start Date:</label>
+                            <span id="profile-start-date"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Employment Details -->
+                <div class="section">
+                    <h6 class="section-title">Employment Details</h6>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Employment Type:</label>
+                            <span id="profile-employment-type"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Classification:</label>
+                            <span id="profile-classification"></span>
+                        </div>
+                        <div class="info-item">
+                            <label>Industry Sector:</label>
+                            <span id="profile-industry"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Allowances -->
+                <div class="section">
+                    <h6 class="section-title">Allowances</h6>
+                    <div class="allowances-grid" id="profile-allowances">
+                        <!-- Allowances will be populated dynamically -->
+                    </div>
+                    <div class="allowances-total">
+                        <label>Total Allowances:</label>
+                        <span id="profile-allowances-total">$0.00</span>
+                    </div>
+                </div>
+
+                <!-- Actions -->
+                <div class="profile-actions">
+                    <button class="btn outline" onclick="editEmployee(currentProfileId)">Edit Employee</button>
+                    <button class="btn primary" onclick="goToAllowances(currentProfileId)">Manage Allowances</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

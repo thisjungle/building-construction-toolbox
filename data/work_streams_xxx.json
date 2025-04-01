@@ -1,0 +1,80 @@
+{
+  "Fabrication_Sector": {
+    "Qualifications_and_Skills": {
+      "Basic_Level": [
+        "High School Diploma or equivalent",
+        "Basic welding and fabrication certification",
+        "Ability to read simple technical drawings",
+        "Basic proficiency with fabrication tools"
+      ],
+      "Mid_Level": [
+        "Diploma or vocational certification in fabrication or mechanical engineering",
+        "Advanced welding certifications (MIG, TIG)",
+        "Proficiency in reading and interpreting technical drawings and blueprints",
+        "Competency in CNC machinery operations",
+        "Experience with quality control procedures"
+      ],
+      "Senior_Level": [
+        "Degree or advanced diploma in Mechanical or Structural Engineering",
+        "Professional certification in fabrication management",
+        "Expert-level proficiency in CAD software",
+        "Extensive knowledge of fabrication processes and standards",
+        "Strong leadership and project management skills"
+      ]
+    },
+    "Experience_Requirements": {
+      "Basic_Level": [
+        "0-2 years hands-on experience in a fabrication workshop",
+        "Basic experience with welding and fabrication tasks"
+      ],
+      "Mid_Level": [
+        "2-5 years practical experience in fabrication",
+        "Experience operating advanced fabrication machinery",
+        "Proven ability to supervise small fabrication teams"
+      ],
+      "Senior_Level": [
+        "5+ years experience in fabrication management or supervisory roles",
+        "Extensive project management and planning experience",
+        "Track record of successful fabrication projects"
+      ]
+    }
+  },
+
+  "Civil_Construction_Sector": {
+    "Qualifications_and_Skills": {
+      "Basic_Level": [
+        "High School Diploma or equivalent",
+        "Basic construction site safety training",
+        "Familiarity with construction site equipment and tools"
+      ],
+      "Mid_Level": [
+        "Diploma or vocational certification in civil engineering or construction management",
+        "Competency in construction management software",
+        "Ability to manage site logistics and operations",
+        "Proven knowledge of construction regulations and standards"
+      ],
+      "Senior_Level": [
+        "Degree or higher qualification in Civil or Structural Engineering",
+        "Professional Engineer (PE) or Certified Construction Manager (CCM) certification",
+        "Advanced project management capabilities",
+        "Comprehensive understanding of construction law and regulatory compliance"
+      ]
+    },
+    "Experience_Requirements": {
+      "Basic_Level": [
+        "0-2 years practical construction experience",
+        "Exposure to basic construction site operations"
+      ],
+      "Mid_Level": [
+        "2-5 years of progressive construction experience",
+        "Experience managing construction tasks or small teams",
+        "Knowledge of quality control and inspection processes"
+      ],
+      "Senior_Level": [
+        "5+ years experience in construction management or supervisory positions",
+        "Demonstrated experience overseeing complex construction projects",
+        "Proven success in regulatory compliance and safety management"
+      ]
+    }
+  }
+}

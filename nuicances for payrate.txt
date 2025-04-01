@@ -1,0 +1,52 @@
+et me analyze the current implementation against the MA00020 award requirements to identify any missing nuances:
+Break Times and Meal Breaks:
+We don't enforce the 30-minute unpaid meal break after 5 hours of work
+We don't handle the requirement for a 10-minute paid rest break after 4 hours
+We don't account for the 20-minute paid crib break for shiftworkers
+Overtime Rules:
+We don't enforce the maximum daily hours limit (10 hours per day)
+We don't handle the requirement for written agreement for overtime
+We don't account for the 12-hour maximum shift length
+We don't enforce the 8-hour break between shifts
+Weekend and Public Holiday Work:
+We don't enforce the requirement for written agreement for weekend work
+We don't handle the minimum 4-hour engagement for weekend work
+We don't account for the requirement for 24-hour notice for public holiday work
+Allowances:
+We don't handle the different tool allowance rates for different trades
+We don't account for the requirement to provide tools to avoid tool allowance
+We don't handle the different meal allowance rates for overtime vs. shiftwork
+We don't enforce the minimum distance requirement for travel allowance
+Shiftwork:
+We don't handle shiftwork loading rates
+We don't account for the 6-hour minimum shift length
+We don't handle the requirement for 24-hour notice of shift changes
+We don't enforce the maximum 8-hour shift length for shiftworkers
+Casual Employment:
+We don't handle the minimum 4-hour engagement for casuals
+We don't enforce the 2-hour minimum engagement for casuals on weekends
+We don't account for the requirement for written agreement for casual conversion
+Part-time Employment:
+We don't enforce the minimum 16-hour weekly engagement
+We don't handle the requirement for written agreement on hours
+We don't account for the maximum 38-hour weekly limit
+General Requirements:
+We don't enforce the maximum 38-hour weekly limit
+We don't handle the requirement for written agreement for averaging hours
+We don't account for the requirement for 24-hour notice of roster changes
+We don't enforce the maximum 12-hour shift length
+Special Conditions:
+We don't handle the different rates for work in remote locations
+We don't account for the special provisions for work in extreme weather
+We don't handle the different rates for work in confined spaces
+We don't account for the special provisions for work at heights
+Leave and Absences:
+We don't handle the impact of leave on pay calculations
+We don't account for the requirement to pay for public holidays not worked
+We don't handle the impact of personal leave on pay calculations
+Would you like me to implement any of these missing nuances? We can prioritize the most important ones first, such as:
+Break times and meal breaks
+Overtime rules and limits
+Allowance conditions
+Employment type specific requirements
+Let me know which aspects you'd like to address first.

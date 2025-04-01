@@ -1,0 +1,168 @@
+{% extends "base.html" %}
+
+{% block title %}Pay Rate Calculator{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/calculator.css') }}">
+{% endblock %}
+
+{% block header %}
+<header class="site-header">
+    <nav class="main-nav">
+        <div class="container">
+            <a href="/" class="nav-logo">Building Construction Employee Helper</a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/employees" class="nav-link">Employees</a></li>
+                <li><a href="/allowances" class="nav-link">Allowances</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+{% endblock %}
+
+{% block content %}
+    <div class="main-content">
+        <div class="page-container">
+            <h2 class="question">{{ prompt }}</h2>
+            
+            <form method="POST" class="options-form">
+                {% if is_multi_select %}
+                    {% for option in options %}
+                    <div class="option-card">
+                        <input type="checkbox" name="answer" value="{{ option.value }}" id="{{ option.value }}">
+                        <label for="{{ option.value }}">
+                            <h3>{{ option.title | safe }}</h3>
+                            <p>{{ option.description }}</p>
+                        </label>
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    {% for option in options %}
+                    <div class="option-card">
+                        <input type="radio" name="answer" value="{{ option.value }}" id="{{ option.value }}" required>
+                        <label for="{{ option.value }}">
+                            <h3 style="white-space: pre-line;">{{ option.title }}</h3>
+                            <p>{{ option.description }}</p>
+                        </label>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+
+                <div class="navigation-buttons">
+                    <a href="javascript:history.back()" class="nav-button back-button">← Back</a>
+                    <button type="submit" class="nav-button next-button">Next →</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        .main-content {
+            padding-top: 80px;
+        }
+
+        .page-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .question {
+            font-size: 24px;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .option-card {
+            margin-bottom: 15px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .option-card:hover {
+            background-color: #f8f9fa;
+        }
+
+        .option-card input {
+            margin-right: 10px;
+        }
+
+        .option-card label {
+            display: inline-block;
+            width: calc(100% - 30px);
+            cursor: pointer;
+        }
+
+        .navigation-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding: 0 20px;
+        }
+
+        .nav-button {
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .back-button {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        .back-button:hover {
+            background-color: #5a6268;
+        }
+
+        .next-button {
+            background-color: #007bff;
+            color: white;
+            width: auto;
+        }
+
+        .next-button:hover {
+            background-color: #0056b3;
+        }
+
+        .option-card h3 {
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .option-card p {
+            margin-top: 8px;
+            color: #666;
+        }
+
+        .wage-info {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 4px;
+        }
+
+        .industry-allowance {
+            color: #28a745;
+            font-weight: 500;
+        }
+    </style>
+{% endblock %}
+
+{% block footer %}
+<footer class="site-footer">
+    <div class="container">
+        <p>&copy; 2023 Building Construction Employee Helper. All rights reserved.</p>
+    </div>
+</footer>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{{ url_for('static', filename='js/calculator.js') }}"></script>
+{% endblock %} 

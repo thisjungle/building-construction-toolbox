@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quick Guide to Employment Types</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #007bff;
+            color: white;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+        .card h2 {
+            margin: 0;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        .card p {
+            text-align: center;
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+        .details {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            opacity: 0;
+            padding: 20px;
+            transition: opacity 0.3s;
+        }
+        .card:hover .details {
+            opacity: 1;
+        }
+        .details p {
+            margin: 10px 0;
+            font-size: 0.9em;
+        }
+        .details h3 {
+            margin-top: 0;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Quick Guide to Employment Types</h1>
+<div class="grid" id="cardsContainer">
+    <!-- Cards will be generated here -->
+</div>
+
+<script>
+    fetch('employment_types.json')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('cardsContainer');
+
+            data.employment_types.forEach(type => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h2>${type.type} ${type.emoji}</h2>
+                    <p>${type.description}</p>
+                    <p><strong>Best For:</strong> ${type.best_for}</p>
+                    <p><strong>Key Benefit:</strong> ${type.key_benefit}</p>
+                    <p><strong>Watch Out:</strong> ${type.watch_out}</p>
+                    <div class="details">
+                        <h3>References in the Award:</h3>
+                        ${type.award_references.map(ref => `
+                            <p><strong>${ref.clause}:</strong> ${ref.text}</p>
+                        `).join('')}
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+        })
+        .catch(error => console.error('Error loading JSON:', error));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprehensive Pay Rate Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #00539C;
+      color: white;
+      text-align: center;
+      padding: 1em 0;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 2em;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    section {
+      margin-bottom: 2em;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 0.5em;
+      text-align: center;
+    }
+    th {
+      background-color: #f4f4f4;
+    }
+    input[type="number"] {
+      width: 80px;
+      padding: 0.3em;
+    }
+    button {
+      background-color: #00539C;
+      color: white;
+      padding: 1em;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #003d72;
+    }
+    #output {
+      background: #e6f7ff;
+      padding: 1em;
+      border-radius: 4px;
+    }
+    .result-item {
+      margin-bottom: 1em;
+      font-weight: bold;
+    }
+    .daily-breakdown {
+      margin-top: 1em;
+      padding: 1em;
+      background: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Comprehensive Pay Rate Calculator</h1>
+  </header>
+  <main>
+    <section>
+      <form id="payRateForm">
+        <label for="classification">Employee Classification:</label>
+        <select id="classification" name="classification" required></select>
+
+        <label for="employmentType">Employment Type:</label>
+        <select id="employmentType" name="employmentType" required>
+          <option value="casual">Casual</option>
+          <option value="full-time">Full-Time</option>
+          <option value="part-time">Part-Time</option>
+          <option value="apprentice">Apprentice</option>
+        </select>
+
+        <h3>Daily Timesheet</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Regular Hours</th>
+              <th>Overtime Hours</th>
+              <th>Shift Type</th>
+              <th>Conditions</th>
+            </tr>
+          </thead>
+          <tbody id="timesheet">
+            <tr>
+              <td>Monday</td>
+              <td><input type="number" class="regular-hours" min="0" value="0"></td>
+              <td><input type="number" class="overtime-hours" min="0" value="0"></td>
+              <td>
+                <select class="shift-type">
+                  <option value="none">None</option>
+                  <option value="nightShift">Night Shift</option>
+                  <option value="afternoonShift">Afternoon Shift</option>
+                </select>
+              </td>
+              <td>
+                <select class="conditions">
+                  <option value="none">None</option>
+                  <option value="heightWork">Height Work</option>
+                  <option value="confinedSpace">Confined Space</option>
+                  <option value="tools">Tools</option>
+                </select>
+              </td>
+            </tr>
+            <!-- Repeat rows for other days -->
+            <tr>
+              <td>Tuesday</td>
+              <td><input type="number" class="regular-hours" min="0" value="0"></td>
+              <td><input type="number" class="overtime-hours" min="0" value="0"></td>
+              <td>
+                <select class="shift-type">
+                  <option value="none">None</option>
+                  <option value="nightShift">Night Shift</option>
+                  <option value="afternoonShift">Afternoon Shift</option>
+                </select>
+              </td>
+              <td>
+                <select class="conditions">
+                  <option value="none">None</option>
+                  <option value="heightWork">Height Work</option>
+                  <option value="confinedSpace">Confined Space</option>
+                  <option value="tools">Tools</option>
+                </select>
+              </td>
+            </tr>
+            <!-- Add more rows as needed for each day -->
+          </tbody>
+        </table>
+
+        <h3>Other Conditions</h3>
+        <label>
+          <input type="checkbox" id="inclementWeather"> Inclement Weather
+        </label>
+        <label>
+          <input type="checkbox" id="travelAllowance"> Travel Allowance
+        </label>
+
+        <button type="submit">Calculate</button>
+      </form>
+    </section>
+    <section>
+      <h2>Pay Breakdown</h2>
+      <div id="output"></div>
+    </section>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const form = document.getElementById("payRateForm");
+        const output = document.getElementById("output");
+
+        // Load JSON
+        fetch("award-data.json")
+          .then((res) => res.json())
+          .then((data) => setupForm(data));
+
+        function setupForm(data) {
+          const classificationSelect = document.getElementById("classification");
+          data.classifications.forEach((cls) => {
+            const option = document.createElement("option");
+            option.value = cls.level;
+            option.textContent = `${cls.name} - $${cls.baseRate}/hr`;
+            classificationSelect.appendChild(option);
+          });
+
+          form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            calculatePay(data);
+          });
+        }
+
+        function calculatePay(data) {
+          const classification = document.getElementById("classification").value;
+          const employmentType = document.getElementById("employmentType").value;
+          const rows = document.querySelectorAll("#timesheet tr");
+
+          let totalPay = 0;
+          let dailyBreakdown = "";
+
+          rows.forEach((row, index) => {
+            const day = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"][index];
+            const regularHours = +row.querySelector(".regular-hours").value;
+            const overtimeHours = +row.querySelector(".overtime-hours").value;
+            const shiftType = row.querySelector(".shift-type").value;
+            const condition = row.querySelector(".conditions").value;
+
+            const baseRate = data.classifications.find((cls) => cls.level === classification).baseRate;
+            let dayPay = baseRate * regularHours;
+
+            if (overtimeHours > 0) {
+              dayPay += baseRate * overtimeHours * data.penaltyRates.overtime;
+            }
+
+            if (shiftType !== "none") {
+              dayPay *= data.penaltyRates[shiftType];
+            }
+
+            if (condition !== "none") {
+              dayPay += data.allowances[condition];
+            }
+
+            dailyBreakdown += `
+              <div class="daily-breakdown">
+                <strong>${day}</strong>: 
+                Regular Pay: $${(baseRate * regularHours).toFixed(2)}, 
+                Overtime Pay: $${(baseRate * overtimeHours * data.penaltyRates.overtime).toFixed(2)}, 
+                Condition Allowance: $${condition !== "none" ? data.allowances[condition].toFixed(2) : "0.00"}, 
+                Total: $${dayPay.toFixed(2)}
+              </div>
+            `;
+
+            totalPay += dayPay;
+          });
+
+          const inclementWeather = document.getElementById("inclementWeather").checked;
+          const travelAllowance = document.getElementById("travelAllowance").checked;
+
+          if (inclementWeather) {
+            totalPay += data.allowances.inclementWeather;
+          }
+          if (travelAllowance) {
+            totalPay += data.allowances.travel;
+          }
+
+          output.innerHTML = `
+            ${dailyBreakdown}
+            <div class="result-item"><strong>Total Weekly Pay: $${totalPay.toFixed(2)}</strong></div>
+          `;
+        }
+      });
+    </script>
+  </main>
+</body>
+</html>

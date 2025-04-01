@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Classification Level Viewer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .stream-selector {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .level-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .level-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .level-card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .section {
+            margin-top: 15px;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .section-content {
+            margin-left: 15px;
+        }
+        .section-content ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .stream-selector select {
+            padding: 8px;
+            margin-right: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        .engineering-streams {
+            display: none;
+            margin-top: 10px;
+        }
+        .match-indicator {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .match-bar {
+            height: 8px;
+            background-color: #ecf0f1;
+            border-radius: 4px;
+            flex-grow: 1;
+            margin-left: 10px;
+        }
+        .match-value {
+            background-color: #2ecc71;
+            height: 100%;
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .skill-rating {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        
+        .stars {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        
+        .star {
+            color: #ddd;
+            transition: color 0.2s;
+        }
+        
+        .star.filled {
+            color: #f1c40f;
+        }
+        
+        .qualification-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        
+        .qualification-status {
+            margin-left: 10px;
+            font-size: 20px;
+        }
+        
+        .status-verified {
+            color: #2ecc71;
+        }
+        
+        .status-pending {
+            color: #f1c40f;
+        }
+        
+        .status-missing {
+            color: #e74c3c;
+        }
+        
+        .career-path {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .career-path-arrow {
+            color: #3498db;
+            margin: 0 10px;
+        }
+        
+        .next-requirements {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        
+        .role-matcher {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+        }
+        
+        .role-input {
+            margin-bottom: 10px;
+        }
+        
+        .role-input select,
+        .role-input input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .match-percentage {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="stream-selector">
+            <h2>Select Your Stream</h2>
+            <select id="streamSelect" onchange="handleStreamChange()">
+                <option value="">All Sectors</option>
+                <option value="General Construction">General Construction</option>
+                <option value="Civil Construction">Civil Construction</option>
+                <option value="Engineering Construction">Engineering Construction</option>
+            </select>
+            
+            <div id="engineeringStreams" class="engineering-streams">
+                <select id="engStreamSelect" onchange="updateLevels()">
+                    <option value="Electrical">Electrical</option>
+                    <option value="Mechanical">Mechanical</option>
+                    <option value="Fabrication">Fabrication</option>
+                </select>
+            </div>
+        </div>
+
+        <div id="levelCards" class="level-cards">
+            <!-- Level cards will be populated here -->
+        </div>
+    </div>
+
+    <template id="levelCardTemplate">
+        <div class="level-card">
+            <h3>Level {level}</h3>
+            
+            <!-- Role Matcher -->
+            <div class="role-matcher">
+                <h4>Match Your Profile</h4>
+                <div class="role-input">
+                    <label>Current Role:</label>
+                    <select class="current-role">
+                        <!-- Populated dynamically -->
+                    </select>
+                </div>
+                <div class="role-input">
+                    <label>Years Experience:</label>
+                    <input type="number" min="0" max="50" class="years-exp">
+                </div>
+            </div>
+
+            <!-- Skills Rating -->
+            <div class="section">
+                <div class="section-title">Rate Your Skills:</div>
+                <div class="skills-content">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Qualifications Checker -->
+            <div class="section">
+                <div class="section-title">Qualifications:</div>
+                <div class="qualifications-content">
+                    <!-- Populated dynamically -->
+                </div>
+                <button class="upload-qual-btn">Upload Qualification</button>
+            </div>
+
+            <!-- Career Pathway -->
+            <div class="career-path">
+                <h4>Career Progression</h4>
+                <div class="pathway-visualization">
+                    <!-- Populated dynamically -->
+                </div>
+                <div class="next-requirements">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+
+            <div class="match-indicator">
+                <span class="match-percentage">0% Match</span>
+                <div class="match-bar">
+                    <div class="match-value"></div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script>
+        function handleStreamChange() {
+            const streamSelect = document.getElementById('streamSelect');
+            const engineeringStreams = document.getElementById('engineeringStreams');
+            
+            if (streamSelect.value === 'Engineering Construction') {
+                engineeringStreams.style.display = 'block';
+            } else {
+                engineeringStreams.style.display = 'none';
+            }
+            
+            updateLevels();
+        }
+
+        function updateLevels() {
+            const streamSelect = document.getElementById('streamSelect');
+            const engStreamSelect = document.getElementById('engStreamSelect');
+            let selectedStream = streamSelect.value;
+            
+            if (selectedStream === 'Engineering Construction') {
+                selectedStream = `Engineering Construction.${engStreamSelect.value}`;
+            }
+            
+            // Clear existing cards
+            const levelCards = document.getElementById('levelCards');
+            levelCards.innerHTML = '';
+            
+            // Create cards for levels 1-9
+            for (let i = 1; i <= 9; i++) {
+                fetch('/get_stream_data', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        stream: selectedStream,
+                        level: i
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const card = createLevelCard(i, data);
+                    levelCards.appendChild(card);
+                });
+            }
+        }
+
+        function createLevelCard(level, data) {
+            const template = document.getElementById('levelCardTemplate');
+            const card = template.content.cloneNode(true);
+            const levelCard = card.querySelector('.level-card');
+            
+            // Set level number
+            levelCard.querySelector('h3').textContent = `Level ${level}`;
+            
+            // Populate skills rating
+            const skillsContent = levelCard.querySelector('.skills-content');
+            data.skills.forEach(skill => {
+                const skillDiv = document.createElement('div');
+                skillDiv.className = 'skill-rating';
+                skillDiv.innerHTML = `
+                    <span>${skill}</span>
+                    <div class="stars">
+                        ${Array(5).fill().map((_, i) => 
+                            `<span class="star" data-rating="${i+1}">★</span>`
+                        ).join('')}
+                    </div>
+                `;
+                skillsContent.appendChild(skillDiv);
+            });
+            
+            // Populate qualifications
+            const qualsContent = levelCard.querySelector('.qualifications-content');
+            data.qualifications.forEach(qual => {
+                const qualDiv = document.createElement('div');
+                qualDiv.className = 'qualification-item';
+                qualDiv.innerHTML = `
+                    <span>${qual}</span>
+                    <span class="qualification-status status-missing">✗</span>
+                `;
+                qualsContent.appendChild(qualDiv);
+            });
+            
+            // Populate career pathway
+            const pathwayDiv = levelCard.querySelector('.pathway-visualization');
+            const nextLevel = level < 9 ? level + 1 : null;
+            pathwayDiv.innerHTML = `
+                Level ${level} 
+                ${nextLevel ? `<span class="career-path-arrow">→</span> Level ${nextLevel}` : '(Highest Level)'}
+            `;
+            
+            if (nextLevel) {
+                const nextReqs = levelCard.querySelector('.next-requirements');
+                nextReqs.innerHTML = `
+                    <strong>Required for next level:</strong>
+                    <ul>
+                        ${data.qualifications.map(qual => `<li>${qual}</li>`).join('')}
+                    </ul>
+                `;
+            }
+            
+            // Set up event listeners
+            setupSkillRating(levelCard);
+            setupQualificationUpload(levelCard);
+            setupRoleMatcher(levelCard, data);
+            
+            return levelCard;
+        }
+
+        function setupSkillRating(card) {
+            const stars = card.querySelectorAll('.star');
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const rating = this.dataset.rating;
+                    const starsContainer = this.parentElement;
+                    starsContainer.querySelectorAll('.star').forEach(s => {
+                        s.classList.toggle('filled', s.dataset.rating <= rating);
+                    });
+                    updateMatchPercentage(card);
+                });
+            });
+        }
+
+        function setupQualificationUpload(card) {
+            const uploadBtn = card.querySelector('.upload-qual-btn');
+            uploadBtn.addEventListener('click', function() {
+                // Simulate file upload
+                const qualStatuses = card.querySelectorAll('.qualification-status');
+                qualStatuses[Math.floor(Math.random() * qualStatuses.length)].className = 
+                    'qualification-status status-verified';
+                updateMatchPercentage(card);
+            });
+        }
+
+        function setupRoleMatcher(card, data) {
+            const roleSelect = card.querySelector('.current-role');
+            const yearsInput = card.querySelector('.years-exp');
+            
+            // Populate roles dropdown
+            data.roles.forEach(role => {
+                const option = document.createElement('option');
+                option.value = role;
+                option.textContent = role;
+                roleSelect.appendChild(option);
+            });
+            
+            // Add event listeners
+            roleSelect.addEventListener('change', () => updateMatchPercentage(card));
+            yearsInput.addEventListener('input', () => updateMatchPercentage(card));
+        }
+
+        function updateMatchPercentage(card) {
+            // Calculate match based on:
+            // 1. Skill ratings
+            // 2. Verified qualifications
+            // 3. Role match
+            // 4. Years experience
+            
+            const skillRatings = Array.from(card.querySelectorAll('.stars'))
+                .map(stars => {
+                    const filled = stars.querySelectorAll('.star.filled').length;
+                    return filled / 5;
+                });
+            
+            const qualifications = Array.from(card.querySelectorAll('.qualification-status'))
+                .filter(status => status.classList.contains('status-verified')).length;
+            
+            const yearsExp = parseInt(card.querySelector('.years-exp').value) || 0;
+            
+            // Calculate weighted average
+            const skillsWeight = 0.4;
+            const qualsWeight = 0.3;
+            const expWeight = 0.3;
+            
+            const skillsScore = skillRatings.reduce((a, b) => a + b, 0) / skillRatings.length;
+            const qualsScore = qualifications / card.querySelectorAll('.qualification-status').length;
+            const expScore = Math.min(yearsExp / 5, 1); // Cap at 5 years
+            
+            const matchPercentage = Math.round(
+                (skillsScore * skillsWeight + 
+                 qualsScore * qualsWeight + 
+                 expScore * expWeight) * 100
+            );
+            
+            card.querySelector('.match-percentage').textContent = `${matchPercentage}% Match`;
+            card.querySelector('.match-value').style.width = `${matchPercentage}%`;
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,137 @@
+{
+  "levels": [
+    {
+      "level": "CW/ECW 1",
+      "business_title": "Entry Level Tradesperson",
+      "summary_tags": [
+        {
+          "text": "Supervision Required",
+          "icon": "🎯"
+        },
+        {
+          "text": "Basic Trade Skills",
+          "icon": "📚"
+        },
+        {
+          "text": "Team Member",
+          "icon": "👥"
+        }
+      ],
+      "business_description": "An entry-level position requiring supervision. Suitable for workers beginning their trade career who can perform basic tasks under guidance."
+    },
+    {
+      "level": "CW/ECW 2",
+      "business_title": "Developing Tradesperson",
+      "summary_tags": [
+        {
+          "text": "Limited Supervision",
+          "icon": "👀"
+        },
+        {
+          "text": "Growing Skills",
+          "icon": "📈"
+        },
+        {
+          "text": "Trade Knowledge",
+          "icon": "🛠️"
+        }
+      ],
+      "business_description": "A developing tradesperson who can work with limited supervision. Has basic trade knowledge and is building their skill set."
+    },
+    {
+      "level": "CW/ECW 3",
+      "business_title": "Skilled Tradesperson",
+      "summary_tags": [
+        {
+          "text": "Independent Worker",
+          "icon": "💪"
+        },
+        {
+          "text": "Trade Qualified",
+          "icon": "📜"
+        },
+        {
+          "text": "Problem Solver",
+          "icon": "🔧"
+        }
+      ],
+      "business_description": "A qualified tradesperson who can work independently. Possesses comprehensive trade knowledge and can handle complex tasks."
+    },
+    {
+      "level": "CW/ECW 4",
+      "business_title": "Advanced Tradesperson",
+      "summary_tags": [
+        {
+          "text": "Highly Skilled",
+          "icon": "⭐"
+        },
+        {
+          "text": "Team Leader",
+          "icon": "👥"
+        },
+        {
+          "text": "Technical Expert",
+          "icon": "🔬"
+        }
+      ],
+      "business_description": "An experienced tradesperson with advanced skills. Can lead small teams and handle specialized technical work."
+    },
+    {
+      "level": "CW/ECW 5",
+      "business_title": "Senior Tradesperson",
+      "summary_tags": [
+        {
+          "text": "Project Leader",
+          "icon": "📋"
+        },
+        {
+          "text": "Advanced Skills",
+          "icon": "🌟"
+        },
+        {
+          "text": "Mentor",
+          "icon": "🎓"
+        }
+      ],
+      "business_description": "A senior tradesperson who can manage complex projects and mentor others. Has extensive experience and specialized technical knowledge."
+    },
+    {
+      "level": "CW/ECW 6",
+      "business_title": "Technical Specialist",
+      "summary_tags": [
+        {
+          "text": "Technical Leader",
+          "icon": "🎯"
+        },
+        {
+          "text": "Project Manager",
+          "icon": "📊"
+        },
+        {
+          "text": "Expert Skills",
+          "icon": "🏆"
+        }
+      ],
+      "business_description": "A technical specialist who manages major projects and leads teams. Has expert-level skills and extensive industry experience."
+    },
+    {
+      "level": "CW/ECW 7",
+      "business_title": "Senior Technical Specialist",
+      "summary_tags": [
+        {
+          "text": "Senior Leader",
+          "icon": "👑"
+        },
+        {
+          "text": "Strategic Planner",
+          "icon": "🎯"
+        },
+        {
+          "text": "Industry Expert",
+          "icon": "💫"
+        }
+      ],
+      "business_description": "A senior technical specialist who manages complex operations and provides strategic leadership. Has comprehensive industry expertise."
+    }
+  ]
+} 

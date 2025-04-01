@@ -1,0 +1,38 @@
+<!-- Modal Component -->
+<div class="modal" id="{% block modal_id %}{% endblock %}">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>
+                {% block modal_title %}{% endblock %}
+            </h2>
+            <span class="close-button" onclick="closeModal('{% block modal_close_id %}{% endblock %}')">&times;</span>
+        </div>
+        <div class="modal-body">
+            {% block modal_content %}{% endblock %}
+        </div>
+    </div>
+</div>
+
+<!-- Help Modal -->
+<div id="helpModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>
+                <span class="emoji-md" data-emoji="HELP"></span>
+                Help & Documentation
+            </h2>
+            <span class="close-button" onclick="closeModal('helpModal')">&times;</span>
+        </div>
+        <div class="modal-body">
+            {% block help_content %}
+            <div class="help-section">
+                <h3>
+                    <span class="emoji-sm" data-emoji="HOW_TO"></span>
+                    How to Use
+                </h3>
+                <p>This section provides help and guidance for using the current page.</p>
+            </div>
+            {% endblock %}
+        </div>
+    </div>
+</div> 

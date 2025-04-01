@@ -1,0 +1,114 @@
+{
+    "Basic_Earthworks": [
+      "Clearing and grubbing land",
+      "Site grading and leveling",
+      "Excavation and trenching",
+      "Backfilling and compaction",
+      "Setting out survey points and benchmarks",
+      "Supporting scaffold erection",
+      "Assisting with concrete mixing and pouring",
+      "Moving earth materials on site",
+      "Loading and unloading construction materials",
+      "Transporting soil and debris",
+      "Assist with excavation work",
+      "Use basic hand tools",
+      "Follow safety guidelines",
+      "Help with site cleanup",
+      "Support drainage installation"
+    ],
+  
+    "Basic_Material_Handling_Functions": [
+      "Operating basic machinery (excavators, loaders)",
+      "Operating basic construction tools",
+      "Basic equipment maintenance",
+      "Moving construction materials manually",
+      "Stacking and organizing supplies"
+    ],
+  
+    "Plant_Operation": [
+      "Operating excavators and loaders",
+      "Operating machinery and equipment requiring skill",
+      "Basic equipment maintenance",
+      "Relocating heavy machinery",
+      "Managing equipment logistics",
+      "Operate heavy machinery",
+      "Perform equipment maintenance",
+      "Follow safety procedures",
+      "Complete daily logs",
+      "Conduct pre-start checks"
+    ],
+  
+    "Earthworks": [
+      "Earthworks operations",
+      "Site preparation",
+      "Installing underground utilities",
+      "Road construction and paving",
+      "Relocating bulk earth materials",
+      "Moving materials between construction zones",
+      "Operate excavation equipment",
+      "Perform site leveling",
+      "Install drainage systems",
+      "Conduct soil compaction",
+      "Implement erosion control measures"
+    ],
+  
+    "Complex_Civil_Operations": [
+      "Constructing foundations and slabs",
+      "Installing precast concrete components",
+      "Utility relocation",
+      "Concrete quality testing",
+      "Conducting material testing",
+      "Performing structural inspections",
+      "Transporting complex structural components",
+      "Manage complex civil construction projects",
+      "Coordinate multiple work crews",
+      "Oversee quality control processes",
+      "Review and approve technical drawings",
+      "Implement safety management systems"
+    ],
+  
+    "Advanced_Civil_Operations": [
+      "Developing detailed project budgets",
+      "Permitting and regulatory compliance",
+      "Securing project funding",
+      "Conducting feasibility studies",
+      "Quality audits",
+      "Ensuring compliance with construction standards",
+      "Supervise civil construction teams",
+      "Interpret technical drawings",
+      "Conduct site inspections",
+      "Coordinate with contractors",
+      "Monitor project timelines"
+    ],
+  
+    "Specialist_Civil_Work": [
+      "Steel structure erection oversight",
+      "Structural reinforcement and retrofitting",
+      "Fireproofing structural elements",
+      "Completing final inspections and approvals",
+      "Implementing comprehensive safety plans",
+      "Managing occupational health programs"
+    ],
+  
+    "Civil_Supervision": [
+      "Supervising and training construction teams",
+      "Resolving onsite conflicts",
+      "Managing stakeholder relationships",
+      "Conducting site safety inspections",
+      "Incident investigation and reporting",
+      "Evaluating team performance"
+    ],
+  
+    "Civil_Management": [
+      "Managing civil projects",
+      "Leading civil teams",
+      "Preparing daily progress reports",
+      "Managing project documentation",
+      "Documenting project changes and variations",
+      "Preparing final handover documentation",
+      "Preparing project closeout documents",
+      "Coordinating movement of materials across project sites",
+      "Managing logistics for material transportation"
+    ]
+  }
+  

@@ -1,0 +1,47 @@
+/* ===========================================
+   Typography Styles
+   ========================================== */
+/* Headings */
+h2 { 
+    font-size: var(--font-size-base);
+    font-weight: var(--font-semibold);
+}
+
+h3, h4 { 
+    font-size: var(--font-size-base);
+    font-weight: var(--font-medium);
+}
+
+/* Text Sizes */
+.text-small {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-normal);
+}
+
+p, body {
+    font-size: var(--font-size-base);
+    font-weight: var(--font-normal);
+    line-height: 1.6;
+}
+
+/* Emoji Sizes */
+.emoji-sm {
+    font-size: var(--font-size-sm);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emoji-md {
+    font-size: var(--font-size-md);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.emoji-lg {
+    font-size: var(--font-size-lg);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+} 

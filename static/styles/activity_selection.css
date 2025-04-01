@@ -1,0 +1,295 @@
+.activity_selection_container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Stream Selection Styles */
+.stream_selection {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stream_options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+    position: relative;
+    padding-right: 320px; /* Make room for tooltips */
+}
+
+.stream_option {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    padding-right: 0;
+}
+
+.stream_option:hover {
+    background-color: #f5f5f5;
+}
+
+.stream_option input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+.stream_name {
+    font-weight: 500;
+}
+
+
+
+/* Activity Selection Styles */
+.activity_selection {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.activity_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.activity_filters {
+    display: flex;
+    gap: 15px;
+}
+
+.activity_filters select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.activity_grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.activity_card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.activity_card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.activity_card.selected {
+    border-color: #007bff;
+    background: #f8f9fa;
+}
+
+.activity_card h3 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.activity_card .level {
+    display: inline-block;
+    padding: 4px 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.activity_card .description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.activity_card .indicative_tasks {
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.activity_card .indicative_tasks ul {
+    margin: 5px 0;
+    padding-left: 20px;
+}
+
+.activity_card .frequency_buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.activity_frequency {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.frequency_btn {
+    padding: 6px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.frequency_btn:hover {
+    background: #f5f5f5;
+}
+
+.frequency_btn.active {
+    background: #007bff;
+    color: white;
+    border-color: #0056b3;
+}
+
+/* Activity Summary Styles */
+.activity_summary {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+.activity_summary h3 {
+    margin: 0 0 15px 0;
+    color: #333;
+}
+
+.selected_activities {
+    margin-bottom: 20px;
+}
+
+.activity_stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stat_label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.stat_value {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.level_breakdown {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.level_breakdown h4 {
+    margin: 0 0 15px 0;
+    color: #333;
+}
+
+.level_stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.level_stat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.level_bar {
+    flex: 1;
+    height: 8px;
+    background: #e9ecef;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.level_fill {
+    height: 100%;
+    background: #007bff;
+    transition: width 0.3s ease;
+}
+
+.level_score {
+    min-width: 45px;
+    text-align: right;
+    color: #6c757d;
+}
+
+#selectedActivities {
+    margin-top: 20px;
+}
+
+.frequency_section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.frequency_section h4 {
+    margin: 0 0 10px 0;
+    color: #495057;
+}
+
+.frequency_section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.frequency_section li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.frequency_section li:last-child {
+    border-bottom: none;
+}
+
+.activity_name {
+    font-weight: 500;
+}
+
+.activity_level {
+    color: #6c757d;
+    font-size: 0.9em;
+} 

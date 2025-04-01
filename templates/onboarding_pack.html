@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}Onboarding Pack{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/layout.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/onboarding.css') }}">
+{% endblock %}
+
+{% block header %}
+<header class="main-header">
+    <nav class="nav-container">
+        <a href="{{ url_for('main.home') }}" class="nav-link">Home</a>
+        <div class="nav-actions">
+            <button id="printPack" class="btn btn-primary">Print Pack</button>
+            <button id="downloadPDF" class="btn btn-secondary">Download PDF</button>
+        </div>
+    </nav>
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="onboarding-pack">
+    <div class="pack-header">
+        <h1>Onboarding Pack</h1>
+        <div class="position-info">
+            <h2 id="positionTitle">Position Title</h2>
+            <p id="positionDetails">Position Details</p>
+        </div>
+    </div>
+
+    <div class="pack-content">
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <h2>Welcome to Our Team</h2>
+            <p>Welcome to our company! We're excited to have you join our team. This onboarding pack contains all the information you need to get started in your new role.</p>
+        </section>
+
+        <!-- Position Details -->
+        <section class="position-section">
+            <h2>Position Details</h2>
+            <div id="positionDetailsContent">
+                <!-- Position details will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Required Documents -->
+        <section class="documents-section">
+            <h2>Required Documents</h2>
+            <div id="requiredDocuments">
+                <!-- Required documents will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Induction Requirements -->
+        <section class="induction-section">
+            <h2>Induction Requirements</h2>
+            <div id="inductionRequirements">
+                <!-- Induction requirements will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Equipment Requirements -->
+        <section class="equipment-section">
+            <h2>Equipment Requirements</h2>
+            <div id="equipmentRequirements">
+                <!-- Equipment requirements will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="contact-section">
+            <h2>Contact Information</h2>
+            <div class="contact-details">
+                <p><strong>HR Department:</strong> hr@company.com</p>
+                <p><strong>Direct Supervisor:</strong> supervisor@company.com</p>
+                <p><strong>Emergency Contact:</strong> emergency@company.com</p>
+            </div>
+        </section>
+    </div>
+
+    <div class="pack-footer">
+        <p>Generated on: <span id="generationDate"></span></p>
+        <p>Confidential - For Internal Use Only</p>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/onboarding.js') }}"></script>
+{% endblock %} 

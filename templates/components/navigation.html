@@ -1,0 +1,33 @@
+<!-- Navigation Component -->
+<nav class="home-link">
+    <button class="nav-menu-button" id="navTrigger">
+        <span class="emoji-md" data-emoji="NAV_MENU"></span>
+    </button>
+    <div class="nav-menu">
+        <a href="{{ url_for('index') }}" {% if request.endpoint == 'index' %}class="current"{% endif %}>
+            <span class="emoji-md" data-emoji="HOME"></span>
+            <span class="link-text">Home</span>
+        </a>
+        
+        <a href="{{ url_for('levels_classification.levels_classification') }}" {% if request.endpoint == 'levels_classification.levels_classification' %}class="current"{% endif %}>
+            <span class="emoji-md" data-emoji="PAY_LEVELS"></span>
+            <span class="link-text">Pay Levels</span>
+        </a>
+        <a href="{{ url_for('allowances.index') }}" {% if request.endpoint == 'allowances.index' %}class="current"{% endif %}>
+            <span class="emoji-md" data-emoji="ALLOWANCES"></span>
+            <span class="link-text">Allowances</span>
+        </a>
+        <a href="{{ url_for('position_creation') }}" {% if request.endpoint == 'position_creation' %}class="current"{% endif %}>
+            <span class="emoji-md" data-emoji="CREATE_POSITION"></span>
+            <span class="link-text">Create a Role</span>
+        </a>
+        <a href="{{ url_for('pay_calc.index') }}" {% if request.endpoint == 'pay_calc.index' %}class="current"{% endif %}>
+            <span class="emoji-md" data-emoji="PAY_CALCULATOR"></span>
+            <span class="link-text">Pay Calculator</span>
+        </a>
+        <a href="{{ url_for('award_primer.index') }}" {% if request.endpoint == 'award_primer.index' %}class="current"{% endif %}>
+            <span class="emoji-md" data-emoji="AWARD"></span>
+            <span class="link-text">Easy Award Guide</span>
+        </a>
+    </div>
+</nav> 

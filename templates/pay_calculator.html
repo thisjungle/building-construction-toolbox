@@ -1,0 +1,468 @@
+{% extends "base.html" %}
+
+{% block title %}Pay Calculator{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/components/forms.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/components/header.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/pay_calculator_form.css') }}">
+{% endblock %}
+
+{% block header %}
+<header class="module-header">
+    <div class="header-content">
+        <!-- Left side -->
+        <div class="header-main">
+            {% include 'components/navigation.html' %}
+            <div class="header-title">
+                <div class="header-title-content">
+                    <span class="emoji-md" data-emoji="PAY_CALCULATOR"></span>
+                    <span>Pay Calculator</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle section -->
+        <div class="header-middle">
+            <div class="name-input-container">
+                <input type="text" 
+                       class="employee-name-input" 
+                       placeholder="Enter employee name..." 
+                       value="{{ employee_name if employee_name else '' }}">
+            </div>
+            <div class="total-amount-container">
+                <span class="total-label">Total Pay:</span>
+                <span class="total-value" id="headerTotalAmount">$0.00</span>
+            </div>
+        </div>
+
+        <!-- Right side -->
+        <div class="header-actions">
+            <button class="btn btn-ghost" id="exportBtn">
+                <span class="btn-text">Download PDF</span>
+            </button>
+            <button class="help-button" onclick="openModal('helpModal')">
+                <span class="emoji-md" data-emoji="HELP"></span>
+            </button>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <!-- Form Panel -->
+    <div class="form-panel">
+        <form id="payCalculatorForm" class="calculator-form">
+            <!-- Employee Information -->
+            <div class="form-section">
+                <h3>
+                    <span class="emoji">👤</span>
+                    Employee Information
+                </h3>
+                <div class="form-group">
+                    <label for="classification">Classification Level</label>
+                    <select id="classification" name="classification" required>
+                        <option value="">Select classification</option>
+                        <option value="CW/ECW 1">CW/ECW 1 - Construction Worker Level 1</option>
+                        <option value="CW/ECW 2">CW/ECW 2 - Construction Worker Level 2</option>
+                        <option value="CW/ECW 3">CW/ECW 3 - Construction Worker Level 3</option>
+                        <option value="CW/ECW 4">CW/ECW 4 - Construction Worker Level 4</option>
+                        <option value="CW/ECW 5">CW/ECW 5 - Construction Worker Level 5</option>
+                    </select>
+                </div>
+                <div class="form-group" id="levelGroup" style="display: none;">
+                    <label for="level">Level (CW/ECW 1 only)</label>
+                    <select id="level" name="level">
+                        <option value="">Select level</option>
+                        <option value="1">Level 1 - Entry level</option>
+                        <option value="2">Level 2 - Basic skills</option>
+                        <option value="3">Level 3 - Intermediate skills</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="employmentType">Employment Type</label>
+                    <select id="employmentType" name="employmentType" required>
+                        <option value="">Select employment type</option>
+                        <option value="full_time">Full Time</option>
+                        <option value="part_time">Part Time</option>
+                        <option value="casual">Casual</option>
+                    </select>
+                </div>
+                <div class="form-group" id="partTimeHours" style="display: none;">
+                    <label for="agreedHours">Agreed Weekly Hours (Part-time)</label>
+                    <input type="number" 
+                           id="agreedHours" 
+                           name="agreedHours" 
+                           min="16" 
+                           max="38" 
+                           step="0.5">
+                </div>
+            </div>
+
+            <!-- Work Pattern -->
+            <div class="form-section">
+                <h3>
+                    <span class="emoji">🔄</span>
+                    Work Pattern
+                </h3>
+                <div class="form-group">
+                    <label for="shiftwork">Are you working shiftwork?</label>
+                    <select id="shiftwork" name="shiftwork" required>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group" id="shiftType" style="display: none;">
+                    <label for="shiftType">Shift Type</label>
+                    <select id="shiftType" name="shiftType">
+                        <option value="morning">Morning (6:00 AM - 2:00 PM)</option>
+                        <option value="afternoon">Afternoon (2:00 PM - 10:00 PM)</option>
+                        <option value="night">Night (10:00 PM - 6:00 AM)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="workLocation">Work Location</label>
+                    <select id="workLocation" name="workLocation" required>
+                        <option value="metro">Metropolitan Area</option>
+                        <option value="regional">Regional Area</option>
+                        <option value="remote">Remote Location</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Hours Worked -->
+            <div class="form-section">
+                <h3>
+                    <span class="emoji">⏰</span>
+                    Hours Worked
+                </h3>
+                <div class="form-group">
+                    <label for="ordinaryHours">Ordinary Hours</label>
+                    <input type="number" 
+                           id="ordinaryHours" 
+                           name="ordinaryHours" 
+                           min="0" 
+                           max="38" 
+                           step="0.5" 
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="overtimeHours">Overtime Hours</label>
+                    <input type="number" 
+                           id="overtimeHours" 
+                           name="overtimeHours" 
+                           min="0" 
+                           max="10" 
+                           step="0.5" 
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="weekendHours">Weekend Hours</label>
+                    <input type="number" 
+                           id="weekendHours" 
+                           name="weekendHours" 
+                           min="0" 
+                           step="0.5" 
+                           required>
+                </div>
+                <div class="form-group">
+                    <label for="publicHolidayHours">Public Holiday Hours</label>
+                    <input type="number" 
+                           id="publicHolidayHours" 
+                           name="publicHolidayHours" 
+                           min="0" 
+                           step="0.5" 
+                           required>
+                </div>
+            </div>
+
+            <!-- Weekly Hours -->
+            <div class="form-section">
+                <h3>
+                    <span class="emoji">📅</span>
+                    Weekly Hours
+                </h3>
+                <div class="form-group">
+                    <label for="averagingArrangement">Working Under Averaging Arrangement?</label>
+                    <select id="averagingArrangement" name="averagingArrangement" required>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                    <div class="help-text">4-week averaging period</div>
+                </div>
+                <div class="form-group" id="averagingPeriodGroup" style="display: none;">
+                    <label for="averagingPeriod">Averaging Period (weeks)</label>
+                    <input type="number" 
+                           id="averagingPeriod" 
+                           name="averagingPeriod" 
+                           min="1" 
+                           max="4" 
+                           value="4">
+                </div>
+                <div class="form-group">
+                    <label for="weeklyHours">Total Weekly Hours</label>
+                    <input type="number" 
+                           id="weeklyHours" 
+                           name="weeklyHours" 
+                           min="0" 
+                           max="38" 
+                           step="0.5" 
+                           required>
+                    <div class="help-text">Maximum 38 hours per week (unless averaging)</div>
+                </div>
+            </div>
+
+            <!-- Break Times -->
+            <div class="form-section">
+                <h3>
+                    <span class="emoji">☕</span>
+                    Break Times
+                </h3>
+                <div class="form-group">
+                    <label for="mealBreak">Meal Break Taken?</label>
+                    <select id="mealBreak" name="mealBreak" required>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                    <div class="help-text">Required after 5 hours of work</div>
+                </div>
+                <div class="form-group">
+                    <label for="restBreak">Rest Break Taken?</label>
+                    <select id="restBreak" name="restBreak" required>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                    <div class="help-text">Required after 4 hours of work</div>
+                </div>
+                <div class="form-group" id="cribBreakGroup" style="display: none;">
+                    <label for="cribBreak">Crib Break Taken?</label>
+                    <select id="cribBreak" name="cribBreak">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                    <div class="help-text">Required for shiftworkers</div>
+                </div>
+            </div>
+
+            <!-- Special Conditions -->
+            <div class="form-section">
+                <h3>
+                    <span class="emoji">⚠️</span>
+                    Special Conditions
+                </h3>
+                <div class="form-group">
+                    <label for="confinedSpace">Working in Confined Space?</label>
+                    <select id="confinedSpace" name="confinedSpace" required>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="workingAtHeights">Working at Heights?</label>
+                    <select id="workingAtHeights" name="workingAtHeights" required>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="extremeWeather">Working in Extreme Weather?</label>
+                    <select id="extremeWeather" name="extremeWeather" required>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Allowances -->
+            <div class="form-section">
+                <h3>
+                    <span class="emoji">💰</span>
+                    Allowances
+                </h3>
+                <div class="form-group">
+                    <label for="toolAllowance">Tool Allowance Required?</label>
+                    <select id="toolAllowance" name="toolAllowance" required>
+                        <option value="no">No (Employer provides tools)</option>
+                        <option value="yes">Yes (Employee provides tools)</option>
+                    </select>
+                </div>
+                <div class="form-group" id="tradeGroup" style="display: none;">
+                    <label for="trade">Trade</label>
+                    <select id="trade" name="trade">
+                        <option value="">Select trade</option>
+                        <option value="carpenter">Carpenter</option>
+                        <option value="bricklayer">Bricklayer</option>
+                        <option value="plumber">Plumber</option>
+                        <option value="electrician">Electrician</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="industryAllowance">Industry Allowance Required?</label>
+                    <select id="industryAllowance" name="industryAllowance" required>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="mealAllowance">Meal Allowance Required?</label>
+                    <select id="mealAllowance" name="mealAllowance" required>
+                        <option value="no">No</option>
+                        <option value="overtime">Yes - Overtime</option>
+                        <option value="shiftwork">Yes - Shiftwork</option>
+                        <option value="remote">Yes - Remote Work</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="travelDistance">Travel Distance (km)</label>
+                    <input type="number" 
+                           id="travelDistance" 
+                           name="travelDistance" 
+                           min="0" 
+                           step="0.1" 
+                           required>
+                </div>
+            </div>
+
+            <!-- Agreements -->
+            <div class="form-section">
+                <h3>
+                    <span class="emoji">📝</span>
+                    Required Agreements
+                </h3>
+                <div class="form-group">
+                    <label for="overtimeAgreement">Written Overtime Agreement?</label>
+                    <select id="overtimeAgreement" name="overtimeAgreement" required>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="weekendAgreement">Written Weekend Work Agreement?</label>
+                    <select id="weekendAgreement" name="weekendAgreement" required>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="publicHolidayAgreement">Written Public Holiday Agreement?</label>
+                    <select id="publicHolidayAgreement" name="publicHolidayAgreement" required>
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">
+                    <span class="emoji">💵</span>
+                    Calculate Pay
+                </button>
+                <button type="reset" class="btn btn-secondary">
+                    <span class="emoji">🔄</span>
+                    Reset
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Results Panel -->
+    <div class="results-panel">
+        <div class="results-content">
+            <div class="results-header">
+                <span class="emoji-md">📋</span>
+                <h3>Summary</h3>
+            </div>
+            <div class="results-body">
+                <div class="summary-item">
+                    <span class="label">Base Pay</span>
+                    <span class="value" id="basePay">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Overtime</span>
+                    <span class="value" id="overtimePay">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Weekend Hours</span>
+                    <span class="value" id="weekendPay">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Public Holiday</span>
+                    <span class="value" id="publicHolidayPay">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Shift Loading</span>
+                    <span class="value" id="shiftLoading">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Industry Allowance</span>
+                    <span class="value" id="industryAllowance">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Tool Allowance</span>
+                    <span class="value" id="toolAllowance">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Meal Allowance</span>
+                    <span class="value" id="mealAllowance">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Travel Allowance</span>
+                    <span class="value" id="travelAllowance">$0.00</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Special Conditions</span>
+                    <span class="value" id="specialConditions">$0.00</span>
+                </div>
+                <div class="summary-item total">
+                    <span class="label">Total Pay</span>
+                    <span class="value" id="totalPay">$0.00</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Help Modal -->
+<div id="helpModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>
+                <span class="emoji-md" data-emoji="PAY_CALCULATOR"></span>
+                Pay Calculator Help
+            </h2>
+            <span class="close-button" onclick="closeModal('helpModal')">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="help-section">
+                <h3><i class="fas fa-info-circle"></i> Introduction</h3>
+                <p>The Pay Calculator helps you calculate the correct pay rate for employees based on their classification level, employment type, and other factors. This tool ensures compliance with the Building and Construction Industry Award.</p>
+            </div>
+
+            <div class="help-section">
+                <h3><i class="fas fa-tools"></i> How to Use This Tool</h3>
+                <p>Follow these steps to calculate pay:</p>
+                <ol>
+                    <li>Enter the employee's name</li>
+                    <li>Select their classification level</li>
+                    <li>Choose their employment type</li>
+                    <li>Enter any additional details (hours, allowances, etc.)</li>
+                    <li>Review the calculated pay breakdown</li>
+                </ol>
+            </div>
+
+            <div class="help-section">
+                <h3><i class="fas fa-gavel"></i> Important Note</h3>
+                <p>This tool provides guidance only. Always verify calculations against the official award document and consult with relevant authorities for specific cases.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/pay_calculator.js') }}"></script>
+{% endblock %} 

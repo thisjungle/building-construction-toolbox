@@ -1,0 +1,376 @@
+/* ===========================================
+   Allowances Form Layout
+   ========================================== */
+
+/* Main Layout */
+.main-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-lg);
+    margin: 0 auto;
+    padding: 0;
+    max-width: var(--container-width);
+}
+
+/* Option Row Layout */
+.option-row-1 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.option-amount {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    color: var(--gray-700);
+}
+
+.amount-value {
+    font-weight: var(--font-medium);
+}
+
+.period-text {
+    font-size: 0.9rem;
+}
+
+/* Results Panel Specific */
+.results-panel {
+    width: 400px;
+    background: white;
+    box-shadow: var(--shadow-sm);
+    border-radius: var(--border-radius);
+    margin-left: var(--spacing-lg);
+}
+
+.results-content {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+}
+
+.results-header {
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.results-header h3 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.results-body {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+/* Allowance Items */
+.allowance-category {
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm);
+    background-color: var(--gray-50);
+    border-radius: var(--border-radius);
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+}
+
+.allowance-item {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: white;
+    border-radius: var(--border-radius-sm);
+    margin-bottom: 2px;
+    box-shadow: var(--shadow-xs);
+}
+
+.allowance-title {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--gray-800);
+}
+
+.allowance-amount {
+    padding-left: var(--spacing-lg);
+    color: var(--gray-800);
+    margin: 0.25rem 0;
+    font-weight: var(--font-medium);
+}
+
+.allowance-period {
+    padding-left: var(--spacing-lg);
+    color: var(--gray-600);
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+/* Weekly Calculation Display */
+.calculation-display {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 2px;
+    padding-left: var(--spacing-lg);
+}
+
+/* Total Section */
+.total-section {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--gray-200);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.total-section h4 {
+    color: var(--gray-800);
+    font-size: var(--font-size-base);
+    margin: 0;
+}
+
+.total-section p {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0;
+    font-size: var(--font-size-lg);
+}
+
+.total-section .amount {
+    color: var(--primary-color);
+    font-weight: var(--font-semibold);
+}
+
+/* Form Panel */
+.question-group {
+    margin-bottom: var(--spacing-x3);
+    background-color: var(--gray-25);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.group-header {
+    display: flex;
+    align-items: center;    
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Section titles */
+.group-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+    margin: 0;
+}
+
+/* Hint row */
+.option-row-2 {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-left: 1.5rem;
+}
+
+/* Options Container */
+.options-container {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    border: 4px solid var(--gray-200);
+    border-top: 4px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#totalAmount,
+#currentAllowanceTotal {
+    font-weight: var(--font-semibold);
+}
+
+/* ==========================================
+   Media Queries
+   ========================================== */
+@media (max-width: 992px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .results-panel {
+        width: 100%;
+        margin-left: 0;
+        margin-top: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-panel,
+    .results-panel {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    .main-content {
+        padding: var(--spacing-sm);
+    }
+    
+    .form-panel,
+    .results-panel {
+        padding: var(--spacing-md);
+    }
+}
+
+/* Form validation styles */
+.error {
+    border-color: #dc3545 !important;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+/* Animation styles */
+.fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.highlight {
+    animation: highlight 1s ease-in-out;
+}
+
+@keyframes highlight {
+    0% {
+        background-color: transparent;
+    }
+    50% {
+        background-color: rgba(255, 255, 0, 0.2);
+    }
+    100% {
+        background-color: transparent;
+    }
+}
+
+/* Summary item animations */
+.summary-item {
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: var(--gray-50);
+    border-radius: var(--border-radius);
+}
+
+.summary-item.fade-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Loading spinner animation */
+.loading-spinner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Form field focus effects */
+.form-control:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-rgb), 0.1);
+}
+
+/* Results panel animations */
+.results-panel {
+    transition: transform 0.3s ease-in-out;
+}
+
+.results-panel:hover {
+    box-shadow: var(--shadow-md);
+}
+
+/* Summary item hover effects */
+.summary-item:hover {
+    background-color: var(--gray-50);
+}
+
+/* Total section highlight */
+.total-section:hover {
+    background-color: var(--gray-50);
+}
+
+/* Remove tooltip styles */
+.tooltip,
+.tooltip-content,
+.tooltip-header,
+.tooltip-section,
+.award-references,
+.award-reference {
+    display: none !important;
+}
+

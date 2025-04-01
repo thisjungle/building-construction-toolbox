@@ -1,0 +1,108 @@
+{% extends "base.html" %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/paychecker.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="calculator-container">
+    <form id="payRateForm">
+        <div class="form-group">
+            <label for="classification">Employee Classification:</label>
+            <select id="classification" name="classification" required>
+                <option value="CW/ECW 1">CW/ECW 1 - $25.88/hr</option>
+                <option value="CW/ECW 2">CW/ECW 2 - $26.76/hr</option>
+                <option value="CW/ECW 3">CW/ECW 3 - $27.89/hr</option>
+                <option value="CW/ECW 4">CW/ECW 4 - $29.04/hr</option>
+                <option value="CW/ECW 5">CW/ECW 5 - $29.85/hr</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="employmentType">Employment Type:</label>
+            <select id="employmentType" name="employmentType" required>
+                <option value="casual">Casual</option>
+                <option value="full-time">Full-Time</option>
+                <option value="part-time">Part-Time</option>
+                <option value="apprentice">Apprentice</option>
+            </select>
+        </div>
+
+        <h3>Daily Timesheet</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Regular Hours</th>
+                    <th>Overtime Hours</th>
+                    <th>Shift Type</th>
+                    <th>Conditions</th>
+                </tr>
+            </thead>
+            <tbody id="timesheet">
+                <!-- Days of the week -->
+                {% for day in ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] %}
+                <tr>
+                    <td>{{ day }}</td>
+                    <td><input type="number" class="regular-hours" min="0" value="0"></td>
+                    <td><input type="number" class="overtime-hours" min="0" value="0"></td>
+                    <td>
+                        <select class="shift-type">
+                            <option value="none">None</option>
+                            <option value="nightShift">Night Shift</option>
+                            <option value="afternoonShift">Afternoon Shift</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select class="conditions">
+                            <option value="none">None</option>
+                            <option value="heightWork">Height Work</option>
+                            <option value="confinedSpace">Confined Space</option>
+                            <option value="tools">Tools</option>
+                        </select>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h3>Other Conditions</h3>
+        <div class="conditions-group">
+            <label>
+                <input type="checkbox" id="inclementWeather"> Inclement Weather
+            </label>
+            <label>
+                <input type="checkbox" id="travelAllowance"> Travel Allowance
+            </label>
+        </div>
+
+        <button type="submit" class="calculate-btn">Calculate</button>
+    </form>
+
+    <div id="output"></div>
+</div>
+
+
+<div>
+<p>this no handled in this tool</p>
+<ul>
+    <li>Piece Rates: The tool does not calculate or handle piece rate arrangements, as outlined in Clause 19.6. These agreements require manual validation to ensure compliance with the Award's minimum pay requirements.</li>
+    <li>Carpenter-Diver Specific Provisions: The tool does not account for the unique hourly rate divisor (31 instead of 38) applicable to carpenter-divers under Clause 19.3(a)(iii). Calculations for this specialized classification must be done separately.</li>
+    <li>piece rate agreement</li>
+    <li>piece rate agreement</li>
+    <li>piece rate agreement</li>
+    <li>piece rate agreement</li>
+    <li>piece rate agreement</li>
+    <li>piece rate agreement</li>
+
+
+</ul>
+
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/paychecker.js') }}"></script>
+{% endblock %} 

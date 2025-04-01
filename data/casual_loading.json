@@ -1,0 +1,14 @@
+{
+  "casual_loading": {
+    "rate": 0.25,
+    "description": "A 25% loading applied to the ordinary hourly rate for casual workers.",
+    "applies_to": [
+      "base hourly rate",
+      "overtime rates",
+      "penalty rates"
+    ],
+    "conditions": [
+      "Casual loading is included before applying overtime or penalty multipliers."
+    ]
+  }
+}

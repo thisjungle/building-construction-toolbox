@@ -1,0 +1,139 @@
+{
+    "classifications": {
+      "CW/ECW 9":  { "weekly": 1207.80, "hourly": 31.78 },
+      "CW/ECW 8":  { "weekly": 1186.90, "hourly": 31.23 },
+      "CW/ECW 7":  { "weekly": 1158.70, "hourly": 30.49 },
+      "CW/ECW 6":  { "weekly": 1126.50, "hourly": 29.64 },
+      "CW/ECW 5":  { "weekly": 1097.30, "hourly": 28.88 },
+      "CW/ECW 4":  { "weekly": 1064.80, "hourly": 28.02 },
+      "CW/ECW 3":  { "weekly": 1032.30, "hourly": 27.17 },
+      "CW/ECW 2":  { "weekly": 1003.10, "hourly": 26.40 },
+      "CW/ECW 1d": { "weekly": 983.30,  "hourly": 25.88 },
+      "CW/ECW 1c": { "weekly": 966.00,  "hourly": 25.42 },
+      "CW/ECW 1b": { "weekly": 953.20,  "hourly": 25.08 },
+      "CW/ECW 1a": { "weekly": 934.80,  "hourly": 24.60 }
+    },
+  
+    "leading_hand_percentages": {
+      "1_person": 2.4,
+      "2_to_5": 5.3,
+      "6_to_10": 6.7,
+      "more_than_10": 9.0
+    },
+  
+    "mobile_crane_extra_per_40t_over_100": 24.78,
+  
+    "apprenticeship_data": {
+      "standard_weekly_for_apprentices": 1097.30,
+      "four_year_post_2014": {
+        "not_completed_year12": { "Stage1": 50, "Stage2": 60, "Stage3": 75, "Stage4": 90 },
+        "completed_year12":    { "Stage1": 55, "Stage2": 65, "Stage3": 75, "Stage4": 90 }
+      },
+      "three_year_post_2014": {
+        "Stage1": 55,
+        "Stage2": 75,
+        "Stage3": 90
+      },
+      "electrotechnology_post_2014": {
+        "not_completed_year12": { "Year1": 50, "Year2": 60, "Year3": 75, "Year4": 90 },
+        "completed_year12":    { "Year1": 55, "Year2": 65, "Year3": 75, "Year4": 90 }
+      },
+      "four_year_pre_2014":  {
+        "Year1": 45, "Year2": 55, "Year3": 75, "Year4": 90
+      },
+      "three_year_pre_2014": {
+        "Year1": 55, "Year2": 75, "Year3": 90
+      }
+    },
+  
+    "expense_related_allowances": {
+      "tools_table": {
+        "carpenter_joiner_stonemason_tilelayer": 38.67,
+        "caster_plasterer_floorlayer": 31.99,
+        "bricklayer": 27.45,
+        "roof_tiler_metal_trades": 20.25,
+        "signwriter_painter_glazier": 9.28
+      },
+      "meal_allowance": 18.51,
+      "max_tool_reimbursement": 2242
+    },
+  
+    "other_allowances": {
+      "underground": {
+        "weekly": 18.58,
+        "daily": 4.13
+      },
+      "multistorey": {
+        "up_to_15": 0.71,
+        "16_to_30": 0.84,
+        "31_to_45": 1.30,
+        "46_to_60": 1.68,
+        "61_plus": 2.06,
+        "service_core_increment": 0.87
+      },
+      "laser_safety_officer_per_day": 3.64,
+      "carpenter_diver_per_hr": 1.22,
+      "first_aid": {
+        "basic_cert_per_day": 3.72,
+        "higher_cert_per_day": 5.88
+      },
+      "aircon_refrig_weekly": 81.55,
+      "electrician_licence_weekly": 33.03,
+      "in_charge_of_plant_weekly": 48.52,
+      "special_rates_general": {
+        "compute_quantities_per_day": 6.33,
+        "scaffolding_rigging_cert_per_hr": 0.87
+      }
+    },
+  
+    "work_categories": {
+      "general_building_and_construction": {
+        "description": "Activities including building erection, demolition, and renovation.",
+        "allowance": {
+          "amount": 61.94,
+          "clause": "Clause 22.1(a)",
+          "stream": "General Construction"
+        }
+      },
+      "civil_construction": {
+        "description": "Earthmoving, plant operation, and related activities.",
+        "allowance": {
+          "amount": 61.94,
+          "clause": "Clause 22.1(a)",
+          "stream": "Civil Construction"
+        }
+      },
+      "residential_building_and_construction": {
+        "description": "Single or dual occupancy residential buildings, non-multistorey.",
+        "allowance": {
+          "amount": 49.55,
+          "clause": "Clause 22.1(b)",
+          "stream": "General Construction"
+        }
+      },
+      "multistorey_building_construction": {
+        "description": "Buildings with five or more storeys.",
+        "allowance": {
+          "amount": 61.94,
+          "range": "$0.71/hour to $2.06/hour",
+          "details": [
+            { "floors": "1-15", "rate": 0.71 },
+            { "floors": "16-30", "rate": 0.84 },
+            { "floors": "31-45", "rate": 1.30 },
+            { "floors": "46-60", "rate": 1.68 },
+            { "floors": "61+",  "rate": 2.06 }
+          ],
+          "clause": "Clause 23.3(e)",
+          "stream": "General Construction"
+        }
+      },
+      "engineering_construction": {
+        "description": "Working with electric devices and systems, mechanical systems and machinery, or fabrication and metalwork activities.",
+        "allowance": {
+          "amount": 61.94,
+          "clause": "Clause 22.1(a)"
+        }
+      }
+    }
+  }
+  

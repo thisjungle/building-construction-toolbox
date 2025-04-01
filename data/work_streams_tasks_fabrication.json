@@ -1,0 +1,76 @@
+{
+    "Basic_Welding": [
+      "Tack welding",
+      "Basic metal fabrication",
+      "Operating basic welding equipment",
+      "Performing simple weld repairs",
+      "Assisting in welding inspections",
+      "Maintaining basic welding tools"
+    ],
+  
+    "Metal_Work": [
+      "Sheet metal work",
+      "Metal polishing",
+      "Cutting and shaping metal sheets",
+      "Drilling and punching metal components",
+      "Metal grinding",
+      "Performing basic surface finishing"
+    ],
+  
+    "Structural_Fabrication": [
+      "Structural steel erection",
+      "Complex metal fabrication",
+      "Fabricating steel beams and columns",
+      "Installing structural support systems",
+      "Conducting structural assembly",
+      "Inspecting fabricated structures"
+    ],
+  
+    "Complex_Fabrication": [
+      "Complex fabrication tasks",
+      "Specialized welding techniques",
+      "Fabrication of custom components",
+      "Performing precision metalwork",
+      "Advanced component assembly",
+      "Inspecting precision fabrication"
+    ],
+  
+    "Advanced_Fabrication": [
+      "Designing fabrication work",
+      "Implementing complex structures",
+      "Managing advanced welding operations",
+      "Fabrication project planning and execution",
+      "Creating detailed fabrication plans",
+      "Performing structural integrity analysis"
+    ],
+  
+    "Specialist_Fabrication": [
+      "Specialist fabrication projects",
+      "Complex structural work",
+      "Fabricating specialized structural components",
+      "Quality control of specialist fabrication tasks",
+      "Custom fabrication of industrial components",
+      "Managing specialized material handling"
+    ],
+  
+    "Fabrication_Supervision": [
+      "Supervising fabrication work",
+      "Coordinating fabrication teams",
+      "Ensuring quality and safety compliance",
+      "Training and mentoring fabrication staff",
+      "Conducting regular fabrication audits",
+      "Managing fabrication workflow"
+    ],
+  
+    "Fabrication_Management": [
+      "Managing fabrication projects",
+      "Leading fabrication teams",
+      "Budgeting and resource allocation for fabrication",
+      "Preparing fabrication project reports",
+      "Handling client communications",
+      "Managing fabrication schedules and deadlines",
+      "Procurement of fabrication materials",
+      "Overseeing fabrication equipment maintenance"
+    ]
+  }
+  

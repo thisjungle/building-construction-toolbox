@@ -1,0 +1,136 @@
+{
+  "clauses": {
+    "employment_types": {
+      "full_time": {
+        "clause_number": "10.1",
+        "parent_section": "Types of Employment",
+        "context": "Full-time employment definition and conditions",
+        "text": "Full-time employment means employment for an average of 38 ordinary hours per week.",
+        "references": [
+          {
+            "clause": "10.1(a)",
+            "text": "Full-time employment means employment for an average of 38 ordinary hours per week."
+          },
+          {
+            "clause": "10.1(b)",
+            "text": "A full-time employee is entitled to the terms and conditions of this award that apply to full-time employees."
+          }
+        ]
+      },
+      "part_time": {
+        "clause_number": "10.2",
+        "parent_section": "Types of Employment",
+        "context": "Part-time employment definition and conditions",
+        "text": "Part-time employment means employment for fewer than 38 ordinary hours per week.",
+        "references": [
+          {
+            "clause": "10.2(a)",
+            "text": "Part-time employment means employment for fewer than 38 ordinary hours per week."
+          },
+          {
+            "clause": "10.2(b)",
+            "text": "A part-time employee is entitled to the same terms and conditions as a full-time employee on a pro-rata basis."
+          }
+        ]
+      },
+      "casual": {
+        "clause_number": "10.3",
+        "parent_section": "Types of Employment",
+        "context": "Casual employment definition and conditions",
+        "text": "Casual employment means employment where the employee has no firm advance commitment to continuing and indefinite work.",
+        "references": [
+          {
+            "clause": "10.3(a)",
+            "text": "Casual employment means employment where the employee has no firm advance commitment to continuing and indefinite work."
+          },
+          {
+            "clause": "10.3(b)",
+            "text": "A casual employee is entitled to a casual loading of 25% in addition to the minimum hourly rate."
+          }
+        ]
+      }
+    },
+    "work_streams": {
+      "civil_construction": {
+        "clause_number": "4.2",
+        "parent_section": "Coverage",
+        "context": "Civil construction work definition",
+        "text": "Civil construction work means the construction, alteration, maintenance or repair of civil and/or mechanical engineering projects, structures or works.",
+        "references": [
+          {
+            "clause": "4.2(a)",
+            "text": "Civil construction work means the construction, alteration, maintenance or repair of civil and/or mechanical engineering projects, structures or works."
+          },
+          {
+            "clause": "4.2(b)",
+            "text": "Civil construction work includes but is not limited to: roads, highways, bridges, tunnels, dams, pipelines, railways, airports, harbours, wharves, and other civil engineering projects."
+          }
+        ]
+      },
+      "fabrication": {
+        "clause_number": "4.3",
+        "parent_section": "Coverage",
+        "context": "Metal fabrication work definition",
+        "text": "Metal fabrication work means the fabrication, assembly, erection, installation, maintenance, repair or dismantling of metal structures.",
+        "references": [
+          {
+            "clause": "4.3(a)",
+            "text": "Metal fabrication work means the fabrication, assembly, erection, installation, maintenance, repair or dismantling of metal structures."
+          },
+          {
+            "clause": "4.3(b)",
+            "text": "Metal fabrication work includes but is not limited to: structural steel, plate work, pressure vessels, tanks, piping, and other metal products."
+          }
+        ]
+      },
+      "electrical": {
+        "clause_number": "4.4",
+        "parent_section": "Coverage",
+        "context": "Electrical work definition",
+        "text": "Electrical work means the installation, maintenance, repair or testing of electrical equipment or systems.",
+        "references": [
+          {
+            "clause": "4.4(a)",
+            "text": "Electrical work means the installation, maintenance, repair or testing of electrical equipment or systems."
+          },
+          {
+            "clause": "4.4(b)",
+            "text": "Electrical work includes but is not limited to: power systems, lighting, control systems, and electrical machinery."
+          }
+        ]
+      },
+      "mechanical": {
+        "clause_number": "4.5",
+        "parent_section": "Coverage",
+        "context": "Mechanical work definition",
+        "text": "Mechanical work means the installation, maintenance, repair or testing of mechanical equipment or systems.",
+        "references": [
+          {
+            "clause": "4.5(a)",
+            "text": "Mechanical work means the installation, maintenance, repair or testing of mechanical equipment or systems."
+          },
+          {
+            "clause": "4.5(b)",
+            "text": "Mechanical work includes but is not limited to: HVAC systems, industrial machinery, pumps, and mechanical plant."
+          }
+        ]
+      },
+      "general": {
+        "clause_number": "4.6",
+        "parent_section": "Coverage",
+        "context": "General building work definition",
+        "text": "General building work means the construction, alteration, maintenance or repair of buildings and structures.",
+        "references": [
+          {
+            "clause": "4.6(a)",
+            "text": "General building work means the construction, alteration, maintenance or repair of buildings and structures."
+          },
+          {
+            "clause": "4.6(b)",
+            "text": "General building work includes but is not limited to: residential, commercial, and industrial buildings."
+          }
+        ]
+      }
+    }
+  }
+} 

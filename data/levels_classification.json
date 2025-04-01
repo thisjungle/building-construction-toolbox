@@ -1,0 +1,443 @@
+  {
+  "classifications": [
+    {
+      "level": "CW/ECW 1",
+      "clause_reference": "Schedule B—Classification Structure and Definitions",
+      "definition": "Construction Worker Level 1 means an employee who works under general supervision in one or more skill streams contained within this award.",
+      "qualifications": [
+        "Successfully completed a construction skills test equivalent to the required competency standards",
+        "Successfully completed a relevant structured training program equivalent to the required competency standards",
+        "Successfully completed an Engineering Construction Industry Skills Certificate Level 1",
+        "Obtained skills through work experience subject to competency testing"
+      ],
+      "skills": [
+        "Works under general supervision",
+        "Performs work to the extent of their skills, competence and training",
+        "Exercises discretion within their level of training",
+        "Responsible for the quality of their own work",
+        "Works either individually or in a team environment",
+        "Identifies basic faults in materials and equipment",
+        "Interacts harmoniously with employees of other companies on-site",
+        "Adapts to a changing work environment",
+        "Communicates essential information",
+        "Works from instructions and procedures articulated in written, spoken and/or diagrammatic form"
+      ],
+      "indicative_tasks": [
+        "Uses precision measuring instruments",
+        "Basic material handling functions",
+        "Operate small plant and pneumatic machinery",
+        "Inventory and store control",
+        "Operate a range of hand tools and oxy welding equipment",
+        "Knowledge of the construction process and understands the sequencing of construction functions",
+        "Provide first aid assistance to other employees",
+        "Sheet metal soldering",
+        "Tack welding",
+        "Operation of mobile equipment including forklifts, hand trolleys, pallet trucks, overhead cranes and winch operation",
+        "Ability to measure accurately",
+        "Assists one or more tradespersons"
+      ],
+      "sub_levels": [
+        {
+          "name": "CW/ECW 1 (level a)",
+          "description": "New entrant (upon commencement in the industry)",
+          "weekly_rate": 934.80,
+          "experience_required": "0 months",
+          "training_requirements": "Basic induction and safety training"
+        },
+        {
+          "name": "CW/ECW 1 (level b)",
+          "description": "After 3 months in the industry",
+          "weekly_rate": 953.20,
+          "experience_required": "3 months",
+          "training_requirements": "Basic skills training and safety procedures"
+        },
+        {
+          "name": "CW/ECW 1 (level c)",
+          "description": "After 12 months in the industry",
+          "weekly_rate": 966.00,
+          "experience_required": "12 months",
+          "training_requirements": "Intermediate skills training and safety procedures"
+        },
+        {
+          "name": "CW/ECW 1 (level d)",
+          "description": "Upon fulfilling the substantive requirements of Construction Worker 1",
+          "weekly_rate": 983.30,
+          "experience_required": "24 months",
+          "training_requirements": "Advanced skills training and safety procedures"
+        }
+      ],
+      "broadbanded_classifications": [
+        "Aircon group 2",
+        "Assistant powder monkey",
+        "Concrete cutting or drilling machine operator",
+        "Adult trainee terrazzo worker",
+        "Fencer",
+        "Geotextile/geomembrane worker level 1",
+        "Welder 2nd class",
+        "Tradesperson's labourer"
+      ]
+    },
+    {
+      "level": "CW/ECW 2",
+      "clause_reference": "Schedule B—Classification Structure and Definitions",
+      "definition": "Construction Worker Level 2 means an employee who works under limited supervision in one or more skill streams contained within this award.",
+      "qualifications": [
+        "Successfully completed a Construction Skills Test equivalent to required competency standards",
+        "Completed relevant structured training equivalent to required competency standards",
+        "Successfully completed an Engineering Construction Industry Certificate Level 2",
+        "Obtained skills equivalent through work experience subject to competency testing"
+      ],
+      "skills": [
+        "Works under limited supervision",
+        "Exercises discretion within their level of training",
+        "Responsible for the quality of their own work",
+        "May supervise CW/ECW 1 employees",
+        "Can interpret basic plans and drawings",
+        "Applies quality control to own work",
+        "Works safely and understands safety procedures",
+        "Exercises discretion within their skill level",
+        "Anticipates and plans for constant changes to the work environment"
+      ],
+      "indicative_tasks": [
+        "Calculates safe loads and stress factors",
+        "Measures accurately using specialised equipment",
+        "Performs non-trades maintenance of relevant plant and equipment",
+        "Materials handling",
+        "Operates machinery and equipment requiring the exercise of skill and knowledge beyond CW/ECW 1",
+        "Uses measuring and levelling instruments",
+        "Performs basic quality checks on the work of others",
+        "Oxy acetylene cutting",
+        "Anticipates and plans for constant changes to the work environment"
+      ],
+      "weekly_rate": 1003.10,
+      "broadbanded_classifications": [
+        "Scaffolder",
+        "Concrete batcher",
+        "Foundation shaft worker",
+        "Steelfixer",
+        "Traffic controller",
+        "Storeperson",
+        "Concrete finisher",
+        "Forklift over 4500kg",
+        "Powder monkey",
+        "Tool sharpener"
+      ]
+    },
+    {
+      "level": "CW/ECW 3",
+      "clause_reference": "Schedule B—Classification Structure and Definitions",
+      "definition": "Construction Worker Level 3 means a tradesperson level or equivalent skills, works individually or in a team environment.",
+      "qualifications": [
+        "Completed a relevant trade apprenticeship or its AQF equivalent",
+        "Successfully completed a Construction Skills Test for this level",
+        "Successfully completed required competency standards",
+        "Successfully completed an Engineering Construction Industry Certificate Level 3"
+      ],
+      "skills": [
+        "Trade level skills or equivalent",
+        "Understands and applies quality control",
+        "Works with minimal supervision",
+        "May supervise CW/ECW 1 and 2 level employees",
+        "Higher level measuring and calculation skills",
+        "Can inspect products/materials for conformity with standards",
+        "Allocates functions within a WAT",
+        "Production sequencing and materials handling",
+        "Trade skills associated with certificated trades"
+      ],
+      "indicative_tasks": [
+        "Allocates functions within a WAT",
+        "Production sequencing and materials handling of a level more advanced than CW/ECW 2",
+        "Trade skills associated with certificated trades within the scope of this award",
+        "Has a sound understanding of the construction process",
+        "Specialised materials handling",
+        "Operates machinery and equipment requiring the exercise of skill and knowledge beyond CW/ECW 2",
+        "Performs work which is incidental or peripheral to the primary tasks and facilitates the completion of the whole task",
+        "Sheetmetal fabrication",
+        "System assembly",
+        "Welding and cutting",
+        "Mechanical installation"
+      ],
+      "weekly_rate": 1032.30,
+      "broadbanded_classifications": [
+        "Bricklayer",
+        "Carpenter",
+        "Electric motor attendant",
+        "Fitter",
+        "Forklift driver",
+        "Painter",
+        "Sheetmetal worker 1st class",
+        "Tilelayer",
+        "Welder 1st class",
+        "Air compressor operator",
+        "Air-conditioning tradesperson",
+        "All winch driver",
+        "Artificial stoneworker",
+        "Battery fitter",
+        "Bitumen sprayer",
+        "Boilermaker and/or structural steel tradesperson",
+        "Bridge and wharf carpenter",
+        "Caster",
+        "Concrete finisher, powered",
+        "Concrete spreader, powered",
+        "Crawler tractor with power operated attachments",
+        "Crusher operator aggregate",
+        "Drainer",
+        "Dumper, rear and bottom",
+        "Electrical fitter",
+        "Electrical mechanic",
+        "Fixer",
+        "Floor layer specialist",
+        "Floorsander",
+        "Form setter",
+        "Gardener",
+        "Geotextile/geomembrane worker level 3",
+        "Glazier",
+        "Hand sprayer, lance type",
+        "Joiner",
+        "Locksmith",
+        "Machinist",
+        "Marble and slateworker",
+        "Marker off",
+        "Mobile concrete line pump operator",
+        "Mobile hydraulic platform operator",
+        "Motor mechanic",
+        "Operator, drilling machine",
+        "Operator, pneumatic tyred tractor",
+        "Operators of other cranes up to and including 5 ton",
+        "Painter",
+        "Paviour",
+        "Pipe layer",
+        "Plant mechanic",
+        "Plasterer",
+        "Prefab tradesperson",
+        "Qualified/trade cook",
+        "Quarryworker",
+        "Refrigeration mechanic",
+        "Renderer in pipes, tunnels, or covered drains",
+        "Rigger",
+        "Dogger",
+        "Roller, vibrating",
+        "Roof fixer",
+        "Rooftiler",
+        "Second driver—Navvy and dragline or dredge-type excavator",
+        "Serviceperson",
+        "Shophand",
+        "Slate ridge or roof fixer",
+        "Stonemason",
+        "Timberperson",
+        "Tradesperson (radio)",
+        "Tradesperson (precast concrete manufacture)",
+        "Tradesperson landscaper",
+        "Trenching machine",
+        "Welder special class"
+      ]
+    },
+    {
+      "level": "CW/ECW 4",
+      "clause_reference": "Schedule B—Classification Structure and Definitions",
+      "definition": "Construction Worker Level 4 means an employee who has higher trade skills or technical skills beyond base trade level.",
+      "qualifications": [
+        "Trade qualification plus additional training",
+        "Equivalent to Certificate III plus additional modules",
+        "Experience demonstrating higher level skills beyond CW/ECW 3"
+      ],
+      "skills": [
+        "Advanced trade and non-trade skills",
+        "Works with limited supervision",
+        "Provides guidance as part of a work team",
+        "Implements quality control techniques",
+        "Exercises discretion within scope of this grade",
+        "Plans and organizes complex tasks"
+      ],
+      "indicative_tasks": [
+        "Exercises precision trade and non-trade skills using various materials and specialised techniques at a higher level than CW/ECW 3",
+        "Operates and maintains plant and machinery",
+        "Is able to plan construction sequencing"
+      ],
+      "weekly_rate": 1064.80,
+      "examples": [
+        "Special class tradesperson",
+        "Qualified plant operator (more complex equipment)",
+        "Letter cutter",
+        "Marker/setter out",
+        "Specialized equipment operator"
+      ]
+    },
+    {
+      "level": "CW/ECW 5",
+      "clause_reference": "Schedule B—Classification Structure and Definitions",
+      "definition": "Construction Worker Level 5 means an employee who is a highly skilled tradesperson or technician with additional technical knowledge.",
+      "qualifications": [
+        "Trade qualification plus substantial additional training",
+        "Equivalent to Certificate III plus 6 additional modules towards advanced certification",
+        "Experience demonstrating specialized skills"
+      ],
+      "skills": [
+        "Exercises high level technical skills",
+        "Provides trade guidance and assistance",
+        "Assists in training of others",
+        "Understands and implements quality control",
+        "Works with limited supervision",
+        "Can work on complex technical problems"
+      ],
+      "indicative_tasks": [
+        "Exercises precision trade and/or operative skills using various materials and specialised techniques at a higher level than CW/ECW 4",
+        "Operates and maintains complex plant and machinery",
+        "Is able to plan complex construction sequencing",
+        "Performs operations on a CAD/CAM terminal in the performance of routine modifications to NC/CNC programs",
+        "Installs, repairs, maintains, tests, modifies, commissions and/or fault finds on complex machinery and equipment which utilises hydraulic and/or pneumatic principles",
+        "Works on complex or intricate circuitry which involves examining, diagnosing and modifying systems comprising inter-connected circuits"
+      ],
+      "weekly_rate": 1097.30,
+      "examples": [
+        "Special class trades with additional skills",
+        "Refractory bricklayer",
+        "Advanced equipment operator",
+        "Technical specialist",
+        "Highly specialized plant operator"
+      ]
+    },
+    {
+      "level": "CW/ECW 6",
+      "clause_reference": "Schedule B—Classification Structure and Definitions",
+      "definition": "Construction Worker Level 6 means an employee who is an advanced tradesperson or technician with comprehensive skills.",
+      "qualifications": [
+        "Trade qualification plus extensive additional training",
+        "Equivalent to Certificate III plus 9 additional modules towards advanced qualification",
+        "Substantial experience demonstrating advanced technical capabilities"
+      ],
+      "skills": [
+        "Exercises advanced technical skills",
+        "Provides complex trade guidance",
+        "Provides training in conjunction with supervisors",
+        "Develops and implements quality control",
+        "Works with minimal supervision",
+        "Plans and organizes substantial work activities"
+      ],
+      "indicative_tasks": [
+        "Operates plant and equipment at a higher level of skill than CW/ECW 5",
+        "Exercises high precision trade and/or operative skills using various materials and specialised techniques at a higher level than CW/ECW 5",
+        "Implements quality control techniques",
+        "Plans complex construction sequencing",
+        "Works on machines or equipment which utilise complex mechanic or hydraulic and/or pneumatic circuitry and controls or a combination thereof",
+        "Works on machinery or equipment which utilises complex electrical/electronic circuitry and controls",
+        "Works on instruments which make up a complex control system which utilises some combination of electrical/electronic, mechanical or fluid power principles",
+        "Applies advanced computer numerical control techniques in machining or cutting or welding or fabrication",
+        "Exercises intermediate CAD/CAM skills in the performance of routine modifications to programs",
+        "Works on complex or intricate interconnected electrical circuits at a level above CW/ECW 5",
+        "Works on complex radio/communication equipment"
+      ],
+      "weekly_rate": 1126.50,
+      "examples": [
+        "Advanced special class tradesperson",
+        "Electronics tradesperson",
+        "Instrumentation and control technician",
+        "Highly specialized equipment operator",
+        "Advanced technical specialist"
+      ]
+    },
+    {
+      "level": "CW/ECW 7",
+      "clause_reference": "Schedule B—Classification Structure and Definitions",
+      "definition": "Construction Worker Level 7 means an employee who is a highly advanced tradesperson or technician with comprehensive skills and significant responsibilities.",
+      "qualifications": [
+        "Trade qualification plus substantial specialized training",
+        "Equivalent to Certificate III plus 10.5 modules towards advanced qualification",
+        "Extensive experience with proven specialized expertise"
+      ],
+      "skills": [
+        "Exercises highly advanced technical skills",
+        "Provides complex training and guidance",
+        "Contributes to design of work processes",
+        "Prepares complex reports and documentation",
+        "May assist in supervision of teams",
+        "Works autonomously on complex tasks"
+      ],
+      "indicative_tasks": [
+        "Works on plant and equipment at a higher level of skill than CW/ECW 6",
+        "Exercises high precision trade and/or operative skills using various materials and specialised techniques at a higher level than CW/ECW 6",
+        "Implements quality control techniques",
+        "Plans complex construction sequencing",
+        "Works on machines or equipment which utilise complex mechanic or hydraulic and/or pneumatic circuitry and controls or a combination thereof",
+        "Works on machinery or equipment which utilises complex electrical/electronic circuitry and controls",
+        "Works on instruments which make up a complex control system which utilises some combination of electrical/electronic mechanical or fluid power principles",
+        "Applies advanced computer numerical control techniques in machining or cutting or welding or fabrication",
+        "Exercises intermediate CAD/CAM skills in the performance of routine modifications to programs",
+        "Working on complex or intricate interconnected electrical circuits at a level above CW/ECW6",
+        "Working on complex radio/communication equipment"
+      ],
+      "weekly_rate": 1158.70,
+      "examples": [
+        "Highly advanced specialist tradesperson",
+        "Sub-foreperson",
+        "Specialized technical roles",
+        "Advanced crane operator",
+        "Dogger-crane hand (fixed cranes)"
+      ]
+    },
+    {
+      "level": "CW/ECW 8",
+      "clause_reference": "Schedule B—Classification Structure and Definitions",
+      "definition": "Construction Worker Level 8 means an employee who is an advanced technical specialist or supervisory role with substantial responsibilities.",
+      "qualifications": [
+        "Trade qualification plus extensive specialized training",
+        "Equivalent to Certificate III plus 12 modules towards advanced qualification",
+        "Comprehensive experience with proven leadership capability"
+      ],
+      "skills": [
+        "Designs training programs",
+        "Applies quality control systems",
+        "Prepares detailed technical reports",
+        "Contributes to work design and planning",
+        "Performs maintenance planning",
+        "Exercises broad discretion within area of expertise"
+      ],
+      "indicative_tasks": [
+        "Works on plant and equipment at a higher level of skill than CW/ECW 7",
+        "Exercises high precision trade and/or operative skills using various materials and specialised techniques at a higher level than CW/ECW 7",
+        "Implements quality control programs",
+        "Plans complex construction sequencing",
+        "Works on combinations of machines or equipment which utilises complex electrical or electronic, mechanical or fluid power principles",
+        "Works on instruments which make up a complex control system which utilises some combination of electrical, electronic, mechanical or fluid power principles and electronic circuitry containing complex analogue and/or digital control systems utilising integrated circuitry",
+        "Applies computer integrated manufacturing techniques involving a higher level of computer operating and programming skills than for CW/ECW 7",
+        "Works on various forms of machinery and equipment which are electronically controlled by complex digital and/or analogue control systems using integrated circuitry"
+      ],
+      "weekly_rate": 1186.90,
+      "examples": [
+        "Foreperson",
+        "Carpenter-diver",
+        "Technical specialist with supervisory duties",
+        "Project coordinator"
+      ]
+    },
+    {
+      "level": "ECW 9",
+      "clause_reference": "Schedule B—Classification Structure and Definitions",
+      "definition": "Engineering Construction Worker Level 9 means an employee who is the highest level technical specialist (typically in engineering construction only).",
+      "qualifications": [
+        "Trade qualification plus comprehensive specialized training",
+        "Equivalent to Certificate III plus 15 modules towards advanced qualification",
+        "Comprehensive experience with proven high-level technical capabilities"
+      ],
+      "skills": [
+        "Provides high-level technical guidance",
+        "Prepares detailed technical reports",
+        "Comprehensive understanding of complex systems",
+        "Provides specialized training",
+        "Works with complete autonomy on complex projects"
+      ],
+      "indicative_tasks": [
+        "Through a systems approach able to exercise high level diagnostic skills on complex forms of machinery, equipment or instruments which utilise some combination of electrical, electronic, mechanical or fluid power principles",
+        "Set up, commission, maintain and operate sophisticated maintenance, production and test equipment and/or systems involving the application of computer operating skills at a higher level than CW/ECW8",
+        "Works on various forms of machinery and equipment electronically controlled by complex digital and/or analogue control systems using integrated circuitry",
+        "Works on complex electronics or instruments or communications equipment or control systems which utilise electronic principles and electronic circuitry containing complex analogue and/or digital control systems using integrated circuitry"
+      ],
+      "weekly_rate": 1207.80,
+      "examples": [
+        "Advanced engineering technician",
+        "Highest level technical specialist",
+        "Engineering technician with substantial experience"
+      ]
+    }
+  ]
+} 

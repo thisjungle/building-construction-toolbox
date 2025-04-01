@@ -1,0 +1,268 @@
+{% extends "base.html" %}
+
+{% block title %}Role Creator{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/components/layout.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/components/forms.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/components/panels.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/position_creation.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/info_panel.css') }}">
+<style>
+.option-content {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    padding: 16px;
+}
+
+.radio-wrapper {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.title {
+    font-weight: 600;
+    color: var(--gray-900);
+}
+
+.description {
+    color: var(--gray-600);
+}
+
+.icons-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+}
+
+.info-trigger,
+.hint-emoji {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.info-panel-content {
+    background: var(--gray-50);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 500px;
+    padding: 24px;
+    margin: 2rem auto;
+    position: relative;
+    z-index: 1000;
+}
+</style>
+{% endblock %}
+
+{% block header %}
+<header class="module-header">
+    <div class="header-content">
+        <!-- Left side -->
+        <div class="header-main">
+            {% include 'components/navigation.html' %}
+            <div class="header-title">
+                <div class="header-title-content">
+                    <span class="emoji-md" data-emoji="CREATE_POSITION"></span>
+                    <span>Create a Role</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right side -->
+        <div class="header-actions">
+            <button class="btn btn-ghost">
+                <span class="btn-text">Download PDF</span>
+            </button>
+            <button class="help-button" onclick="openModal('helpModal')">
+                <span class="emoji-md" data-emoji="HELP"></span>
+            </button>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="main-content">
+    <!-- Position Creation Form -->
+    <div class="form-container">
+        <!-- Employment Type Section -->
+        <div class="form-group employment-section">
+            <div class="section-header">
+               
+                <h3>What type of work arrangement do you need?</h3>
+            </div>
+            <div class="radio-group" id="employmentOptions"></div>
+            <div class="employer-field" id="employer-field" style="display: none;">
+                <label for="employer-name">Employer Name:</label>
+                <input type="text" id="employer-name" placeholder="Enter employer name">
+                <div class="field-error"></div>
+            </div>
+        </div>
+
+        <!-- Experience Level Section -->
+        <div class="form-group experience-section">
+            <div class="section-header">
+                <h3>How many years of experience is required?</h3>
+            </div>
+            <div id="experienceOptions" class="options-container"></div>
+        </div>
+
+        <!-- Work Streams Section -->
+        <div class="form-group sectors-section">
+            <div class="section-header">
+                <h3>What type of work will they be doing?</h3>
+            </div>
+            <div id="sectorsOptions" class="options-container"></div>
+        </div>
+
+        <!-- Main Job Duties Section -->
+        <div class="form-group activities-section">
+            <div class="section-header">
+                <h3>What will their main job duties be?</h3>
+            </div>
+            <div id="activitiesList" class="options-container"></div>
+        </div>
+
+        <!-- Specific Daily Tasks Section -->
+        <div class="form-group specific-tasks-section">
+            <div class="section-header">
+                <h3>What specific daily tasks will they do?</h3>
+            </div>
+            <div class="specific-tasks-container"></div>
+        </div>
+
+        <!-- Supervision Level Section -->
+        <div class="form-group supervision-section">
+            <div class="section-header">
+                <span class="emoji">👥</span>
+                <h3>How much guidance will they need?</h3>
+            </div>
+            <div class="radio-group" id="supervisionOptions"></div>
+            <div class="supervision-summary" id="supervisionSummary"></div>
+        </div>
+
+        <!-- Autonomy & Responsibility Section -->
+        <div class="form-group autonomy-section">
+            <div class="section-header">
+                <span class="emoji">🎯</span>
+                <h3>How much freedom will they have?</h3>
+            </div>
+            <div class="radio-group" id="autonomyOptions"></div>
+            <div class="autonomy-summary" id="autonomySummary"></div>
+        </div>
+    </div>
+    
+    <!-- Results Panel -->
+    <div class="results-panel">
+        <div class="results-content">
+            <div class="results-header">
+                <span class="emoji-md" data-emoji="CREATE_POSITION"></span>
+                <h3>New Role</h3>
+            </div>
+            <div class="results-body">
+                <div class="no-selections">
+                    <p>Select employment type to start the process</p>
+                </div>
+                <div class="description-text"></div>
+                <div class="employment-summary"></div>
+                <div class="job-posting-actions" style="display: none;">
+                    <button class="btn btn-primary" id="createJobPosting">
+                        <span class="btn-text">Create Job Posting</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Help Modal -->
+<div id="helpModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>
+                <span class="emoji-md" data-emoji="CREATE_POSITION"></span>
+                How to Create a Position
+            </h2>
+            <span class="close-button" onclick="closeModal('helpModal')">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="help-section">
+                <h3>
+                    <span class="emoji-sm" data-emoji="HOW_TO"></span>
+                    How to Use
+                </h3>
+                <p>Follow these steps to create a position:</p>
+                <ol>
+                    <li>Select the type of employment (Full-time, Part-time, or Casual)</li>
+                    <li>Choose the sector that apply to the position</li>
+                    <li>Select the activities that best describe the role</li>
+                    <li>Choose specific tasks within each activity</li>
+                </ol>
+                <p>The system will automatically calculate the appropriate classification level based on your selections.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block modals %}
+<!-- Info Panel -->
+<div class="info-overlay"></div>
+<div class="info-panel">
+    <div class="info-panel-content">
+        <div class="info-header">
+            <div class="info-title">
+                <span class="title-text"></span>
+            </div>
+            <button class="close-info">×</button>
+        </div>
+        <div class="info-panel-body">
+            <div class="info-section info-description">
+                <strong>Description</strong>
+                <p class="description-text"></p>
+            </div>
+            <div class="info-section info-best-for">
+                <strong>Best For</strong>
+                <p class="best-for-text"></p>
+            </div>
+            <div class="info-section info-key-benefit">
+                <strong>Key Benefit</strong>
+                <p class="key-benefit-text"></p>
+            </div>
+            <div class="info-section info-watch-out">
+                <strong>Watch Out</strong>
+                <p class="watch-out-text"></p>
+            </div>
+            <div class="info-section info-award-refs">
+                <strong>Award References</strong>
+                <ul class="award-refs-list"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/position_data.js') }}"></script>
+<script src="{{ url_for('static', filename='js/position_summary.js') }}"></script>
+<script src="{{ url_for('static', filename='js/position_activities.js') }}"></script>
+<script src="{{ url_for('static', filename='js/position_creation.js') }}"></script>
+{% endblock %} 

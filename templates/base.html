@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Building Construction Employee Helper - Calculate allowances and manage employee information">
+    <title>{% block title %}Building Construction Employee Helper{% endblock %}</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Base styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}">
+    
+    <!-- Component Styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/components/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/components/navigation.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/components/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/components/modal.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/components/buttons.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/components/forms.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/components/panels.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/components/typography.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/components/tooltip.css') }}">
+    
+    <!-- Page Specific Styles -->
+    {% block styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/components/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/components/navigation.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/components/footer.css') }}">
+    {% endblock %}
+</head>
+
+<body class="{% block body_class %}{% endblock %}">
+    <!-- Header -->
+    {% block header %}
+        {% include 'components/header.html' %}
+    {% endblock %}
+
+    <!-- Main Content -->
+    <main class="content-wrapper">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    {% include 'components/footer.html' %}
+
+    <!-- Modals -->
+    {% block modals %}{% endblock %}
+
+    <!-- Base Scripts -->
+    <script src="{{ url_for('static', filename='js/config/emoji.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/config/initEmojis.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/navigation.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/components/header.js') }}"></script>
+    
+    <!-- Page Specific Scripts -->
+    {% block scripts %}{% endblock %}
+    
+    <!-- Modal Script (loaded last) -->
+    <script src="{{ url_for('static', filename='js/modal.js') }}"></script>
+</body>
+</html> 

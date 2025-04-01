@@ -1,0 +1,50 @@
+<!-- Header Component -->
+<header class="module-header">
+    <div class="header-content">
+        <!-- Left side -->
+        <div class="header-main">
+            {% include 'components/navigation.html' %}
+            <div class="header-title">
+                {% block header_title %}{% endblock %}
+            </div>
+        </div>
+
+        <!-- Middle section -->
+        <div class="header-middle">
+            {% block header_middle %}{% endblock %}
+        </div>
+
+        <!-- Right side -->
+        <div class="header-actions">
+            {% block header_actions %}{% endblock %}
+            <!-- Default Help Button -->
+            <button class="help-button" onclick="showHelpModal()">
+                <span class="emoji-md" data-emoji="HELP"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<!-- Help Modal -->
+<div id="helpModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>
+                <span class="emoji-md" data-emoji="HELP"></span>
+                Help & Documentation
+            </h2>
+            <span class="close-button" onclick="closeModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+            {% block help_content %}
+            <div class="help-section">
+                <h3>
+                    <span class="emoji-sm" data-emoji="HOW_TO"></span>
+                    How to Use
+                </h3>
+                <p>This section provides help and guidance for using the current page.</p>
+            </div>
+            {% endblock %}
+        </div>
+    </div>
+</div> 

@@ -1,0 +1,306 @@
+{% extends "base.html" %}
+
+{% block title %}Award Primer{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/award_primer.css') }}">
+{% endblock %}
+
+{% block header %}
+<header class="module-header">
+    <div class="header-content">
+        <!-- Left side -->
+        <div class="header-main">
+            {% include 'components/navigation.html' %}
+            <div class="header-title">
+                <div class="header-title-content">
+                    <span class="emoji-md" data-emoji="AWARD"></span>
+                    <span>Easy Award Guide</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right side -->
+        <div class="header-actions">
+            <button class="help-button" onclick="openModal('helpModal')">
+                <span class="emoji-md" data-emoji="HELP"></span>
+            </button>
+        </div>
+    </div>
+</header>
+{% endblock %}
+
+{% block content %}
+<div class="award-primer">
+    <div class="award-header">
+        <div class="award-title">
+            <span class="emoji-md" data-emoji="BOOK"></span>
+            <h1>Building and Construction General On-site Award 2020</h1>
+        </div>
+        <div class="award-update">
+            Last Update: August 2024
+        </div>
+    </div>
+
+    <div class="award-content">
+        <div class="award-section">
+            <h2 class="section-title">
+                <span class="emoji-md" data-emoji="COVERAGE"></span>
+                Who Does This Apply To?
+            </h2>
+            <div class="section-content">
+                <p>This award covers a wide range of businesses and workers in the building and construction industry. This includes companies that do:</p>
+                <ul>
+                    <li>General building work (like houses and offices)</li>
+                    <li>Civil construction (like roads and bridges)</li>
+                    <li>Metal and engineering construction</li>
+                </ul>
+                <p>If you have employees who are:</p>
+                <ul>
+                    <li>Labourers</li>
+                    <li>Tradespeople (like carpenters and bricklayers)</li>
+                    <li>People who operate machinery on site</li>
+                    <li>Labour hire workers placed with construction companies</li>
+                </ul>
+                <p>This award likely applies to them.</p>
+            </div>
+            <div class="section-learn-more">
+                <button class="btn btn-primary" onclick="openModal('detailsModal')">
+                    <span class="emoji-md" data-emoji="INFO"></span>
+                    <span>Learn More</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="award-section">
+            <h2 class="section-title">
+                <span class="emoji-md" data-emoji="PAY"></span>
+                What About Pay?
+            </h2>
+            <div class="section-content">
+                <p>The award sets the minimum amount you need to pay your employees. There are different pay levels depending on:</p>
+                <ul>
+                    <li>The job they do</li>
+                    <li>Their skills and qualifications</li>
+                </ul>
+                <p>For example, a general labourer might have a different minimum wage than a qualified carpenter.</p>
+                <p>There are also extra payments called allowances that might apply in certain situations:</p>
+                <ul>
+                    <li>Leading hand allowance for employees in charge of a team</li>
+                    <li>Some jobs in the residential building sector might have rates that already include industry or tool allowances</li>
+                </ul>
+            </div>
+            <div class="section-learn-more">
+                <button class="btn btn-primary" onclick="openModal('payModal')">
+                    <span class="emoji-md" data-emoji="INFO"></span>
+                    <span>Learn More</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="award-section">
+            <h2 class="section-title">
+                <span class="emoji-md" data-emoji="HOURS"></span>
+                Working Hours and Overtime
+            </h2>
+            <div class="section-content">
+                <p>While the award doesn't specifically say what standard hours are, it does have rules about overtime. Higher rates of pay apply for:</p>
+                <ul>
+                    <li>Working more than usual hours on weekdays</li>
+                    <li>Working on Saturdays, Sundays, or public holidays</li>
+                </ul>
+                <p>For example:</p>
+                <ul>
+                    <li>Overtime on weekdays: 1.5x normal rate for first couple of hours, then 2x rate after that</li>
+                    <li>Sundays and public holidays: Usually have even higher penalty rates</li>
+                </ul>
+            </div>
+            <div class="section-learn-more">
+                <button class="btn btn-primary" onclick="openModal('hoursModal')">
+                    <span class="emoji-md" data-emoji="INFO"></span>
+                    <span>Learn More</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="award-section">
+            <h2 class="section-title">
+                <span class="emoji-md" data-emoji="CALENDAR"></span>
+                Leave Entitlements
+            </h2>
+            <div class="section-content">
+                <p>The award ensures employees get time off through various leave types:</p>
+                <ul>
+                    <li>Annual leave (paid holidays)</li>
+                    <li>Personal/carer's leave (for sickness or caring for family)</li>
+                    <li>Compassionate leave (for bereavement)</li>
+                    <li>Parental leave</li>
+                </ul>
+            </div>
+            <div class="section-learn-more">
+                <button class="btn btn-primary" onclick="openModal('leaveModal')">
+                    <span class="emoji-md" data-emoji="INFO"></span>
+                    <span>Learn More</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="award-section">
+            <h2 class="section-title">
+                <span class="emoji-md" data-emoji="WARNING"></span>
+                Important Updates
+            </h2>
+            <div class="section-content">
+                <p>The award gets updated from time to time. The most recent update was in August 2024, which included:</p>
+                <ul>
+                    <li>Updates to definitions</li>
+                    <li>Rules around casual employment</li>
+                    <li>New "right to disconnect" rule (employees don't have to respond to work calls/emails outside work hours)</li>
+                </ul>
+            </div>
+            <div class="section-learn-more">
+                <button class="btn btn-primary" onclick="openModal('updatesModal')">
+                    <span class="emoji-md" data-emoji="INFO"></span>
+                    <span>Learn More</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="quick-reference">
+        <h3>
+            <span class="emoji-md" data-emoji="CLIPBOARD"></span>
+            Quick Reference
+        </h3>
+        <div class="quick-reference-grid">
+            <div class="quick-reference-item">
+                <h4>Award Name</h4>
+                <p>Building and Construction General On-site Award 2020</p>
+            </div>
+            <div class="quick-reference-item">
+                <h4>Last Updated</h4>
+                <p>August 2024</p>
+            </div>
+            <div class="quick-reference-item">
+                <h4>Coverage</h4>
+                <p>General building, civil construction, engineering</p>
+            </div>
+            <div class="quick-reference-item">
+                <h4>Key Features</h4>
+                <p>Minimum standards for pay rates, working conditions, leave entitlements</p>
+            </div>
+            <div class="quick-reference-item">
+                <h4>Work Types</h4>
+                <p>General building, civil construction, engineering</p>
+            </div>
+            <div class="quick-reference-item">
+                <h4>Employee Types</h4>
+                <p>Labourers, tradespeople, machine operators</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Details Modal -->
+<div id="detailsModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>
+                <span class="emoji-lg" data-emoji="COVERAGE"></span>
+                Who Does This Award Apply To?
+            </h2>
+            <button class="close-button" onclick="closeModal('detailsModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="coverage-details">
+                <p>This award applies to a wide range of businesses and the people they employ in the building and construction world. This includes companies involved in:</p>
+
+                <div class="coverage-section">
+                    <h3>General Building and Construction</h3>
+                    <p>This is your everyday construction work, like building houses, apartments, offices, and shops. It also covers renovations, repairs, demolitions, and even landscaping work done as part of a building project.</p>
+                    <div class="example-box">
+                        <strong>Example:</strong> A company that builds new homes or renovates existing ones, and their employees like carpenters, bricklayers, and general labourers, would likely be covered.
+                    </div>
+                </div>
+
+                <div class="coverage-section">
+                    <h3>Civil Construction</h3>
+                    <p>This involves bigger projects like roads, bridges, tunnels, railways, water and sewerage systems, and even sports stadiums.</p>
+                    <div class="example-box">
+                        <strong>Example:</strong> A company constructing a new highway or a team working on building a bridge would fall under this category.
+                    </div>
+                </div>
+
+                <div class="coverage-section">
+                    <h3>Metal and Engineering Construction</h3>
+                    <p>This covers large industrial and commercial projects, including factories, power plants, and installing things like lifts and escalators.</p>
+                    <div class="example-box">
+                        <strong>Example:</strong> A business that fabricates and installs steel structures for a warehouse, and their boilermakers and welders, would likely be covered.
+                    </div>
+                </div>
+
+                <div class="coverage-section">
+                    <h3>Specific Worker Types</h3>
+                    <p>Specifically, if you employ people who work on-site as:</p>
+                    <ul>
+                        <li>Labourers</li>
+                        <li>Trade workers (like carpenters, plumbers, electricians, painters, bricklayers, and roof tilers)</li>
+                        <li>Machine operators (like excavators and forklifts)</li>
+                    </ul>
+                    <p>This award is likely relevant. Even if you use a labour hire company to get workers for your construction projects, those workers are also covered by this award.</p>
+                </div>
+
+                <div class="important-note">
+                    <h3>Important Note</h3>
+                    <p>There are some exceptions. For example, managers and some administrative staff might not be covered by this specific award. There might be other awards that apply to different types of work within the broader industry, such as the Timber Award or the Electrical Award. If you're unsure, it's always best to check the full award details or get advice.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Help Modal -->
+<div id="helpModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>
+                <span class="emoji-md" data-emoji="AWARD_DUMMIES"></span>
+                Award Primer Help
+            </h2>
+            <button class="close-button" onclick="closeModal('helpModal')">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="help-section">
+                <h3>Introduction</h3>
+                <p>The Award Primer provides a simplified overview of the Building and Construction General On-site Award 2020. This guide helps you understand the key aspects of the award without getting lost in the legal details.</p>
+            </div>
+
+            <div class="help-section">
+                <h3>How to Use</h3>
+                <ul>
+                    <li>Read through the overview section to understand the basic concepts</li>
+                    <li>Use the "Learn More" button to explore detailed coverage information</li>
+                    <li>Check the Key Features panel for quick reference</li>
+                    <li>Use the Quick Reference section for important details</li>
+                </ul>
+            </div>
+
+            <div class="help-section">
+                <h3>Important Notes</h3>
+                <ul>
+                    <li>This is a simplified guide and should not be used as legal advice</li>
+                    <li>Always refer to the full award for complete details</li>
+                    <li>The award is regularly updated - check for the latest version</li>
+                    <li>Some provisions may vary based on specific circumstances</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script src="{{ url_for('static', filename='js/award_primer.js') }}"></script>
+{% endblock %} 

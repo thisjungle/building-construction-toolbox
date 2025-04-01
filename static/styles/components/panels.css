@@ -1,0 +1,74 @@
+/* ===========================================
+   Panel Styles
+   ========================================== */
+/* Base Panel */
+.panel {
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    padding: var(--spacing-lg);
+}
+
+/* Form and Results Panels */
+.form-panel,
+.results-panel {
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+}
+
+.results-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.results-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.results-header h3 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+    margin: 0;
+}
+
+.results-body {
+    flex: 1;
+    background: white;
+}
+
+/* Section Headers */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+}
+
+.section-header h2,
+.section-header h3 {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-semibold);
+    color: var(--gray-900);
+    margin: 0;
+}
+
+/* Value Display */
+.value-display {
+    display: flex;
+    align-items: baseline;
+    gap: var(--spacing-xs);
+    white-space: nowrap;
+}
+
+.value {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-semibold);
+    color: var(--primary-color);
+} 

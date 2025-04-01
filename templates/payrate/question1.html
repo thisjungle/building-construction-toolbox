@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="payrate-container">
+    <div class="payrate-wrapper">
+        <div class="payrate-section">
+            <h1>Pay Rate Finder</h1>
+            
+            <!-- Progress indicator -->
+            <div class="progress-bar">
+                <div class="progress" style="width: 20%"></div>
+                <span class="progress-text">Question 1 of 6</span>
+            </div>
+
+            <!-- Question section -->
+            <div class="question-container">
+                <h2>What type of construction work do you do?</h2>
+                <div class="options-container">
+                    <button class="option-button" data-value="general_building_and_construction">
+                        General Building and Construction
+                        <span class="option-description">Building erection, demolition, and renovation</span>
+                    </button>
+                    <button class="option-button" data-value="civil_construction">
+                        Civil Construction
+                        <span class="option-description">Earthmoving, plant operation, and related activities</span>
+                    </button>
+                    <button class="option-button" data-value="residential_building_and_construction">
+                        Residential Building
+                        <span class="option-description">Single or dual occupancy residential buildings</span>
+                    </button>
+                    <button class="option-button" data-value="multistorey_building_construction">
+                        Multi-storey Building
+                        <span class="option-description">Buildings with five or more storeys</span>
+                    </button>
+                    <button class="option-button" data-value="electrical_electronic">
+                        Electrical/Electronic
+                        <span class="option-description">Electrical systems, controls, and electronic equipment</span>
+                    </button>
+                    <button class="option-button" data-value="mechanical">
+                        Mechanical
+                        <span class="option-description">Mechanical systems, equipment, and machinery</span>
+                    </button>
+                    <button class="option-button" data-value="fabrication">
+                        Fabrication
+                        <span class="option-description">Metal fabrication, structural steel work</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Navigation buttons -->
+            <div class="navigation-buttons">
+                <button class="nav-button back-button">Back</button>
+                <button class="nav-button next-button" disabled="disabled">Continue</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Add script tag -->
+<script src="{{ url_for('static', filename='js/payrate.js') }}"></script>
+{% endblock %} 

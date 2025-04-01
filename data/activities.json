@@ -1,0 +1,46 @@
+{
+    "civil_construction": {
+        "activities": [
+            {
+                "id": "cc_basic_earthworks",
+                "title": "Basic Earthworks",
+                "description": "Basic earthmoving and site preparation tasks",
+                "level": "CW1"
+            },
+            {
+                "id": "cc_plant_operation",
+                "title": "Plant Operation",
+                "description": "Operation of construction machinery and equipment",
+                "level": "CW2"
+            },
+            {
+                "id": "cc_advanced_civil",
+                "title": "Advanced Civil Operations",
+                "description": "Complex civil construction activities",
+                "level": "CW3"
+            }
+        ]
+    },
+    "fabrication": {
+        "activities": [
+            {
+                "id": "fab_basic",
+                "title": "Basic Fabrication",
+                "description": "Basic metal fabrication and assembly",
+                "level": "CW1"
+            },
+            {
+                "id": "fab_welding",
+                "title": "Welding Operations",
+                "description": "Various welding techniques and procedures",
+                "level": "CW2"
+            },
+            {
+                "id": "fab_advanced",
+                "title": "Advanced Fabrication",
+                "description": "Complex fabrication and structural work",
+                "level": "CW3"
+            }
+        ]
+    }
+} 

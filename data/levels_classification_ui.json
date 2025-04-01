@@ -1,0 +1,327 @@
+{
+  "ui_enhancements": {
+    "module_requirements": {
+      "CW/ECW 1": {
+        "base_modules": 0,
+        "required_modules": [],
+        "optional_modules": []
+      },
+      "CW/ECW 2": {
+        "base_modules": 0,
+        "required_modules": [],
+        "optional_modules": []
+      },
+      "CW/ECW 3": {
+        "base_modules": 0,
+        "required_modules": [],
+        "optional_modules": []
+      },
+      "CW/ECW 4": {
+        "base_modules": 3,
+        "required_modules": [],
+        "optional_modules": []
+      },
+      "CW/ECW 5": {
+        "base_modules": 6,
+        "required_modules": [],
+        "optional_modules": []
+      },
+      "CW/ECW 6": {
+        "base_modules": 9,
+        "required_modules": [],
+        "optional_modules": []
+      },
+      "CW/ECW 7": {
+        "base_modules": 10.5,
+        "required_modules": [],
+        "optional_modules": []
+      },
+      "CW/ECW 8": {
+        "base_modules": 12,
+        "required_modules": [],
+        "optional_modules": []
+      },
+      "ECW 9": {
+        "base_modules": 15,
+        "required_modules": [],
+        "optional_modules": []
+      }
+    },
+    "stream_requirements": {
+      "CW/ECW 1": {
+        "streams": ["General Construction", "Civil Construction", "Engineering Construction"],
+        "required_streams": 1,
+        "stream_specific_skills": {}
+      },
+      "CW/ECW 2": {
+        "streams": ["General Construction", "Civil Construction", "Engineering Construction"],
+        "required_streams": 1,
+        "stream_specific_skills": {}
+      },
+      "CW/ECW 3": {
+        "streams": ["General Construction", "Civil Construction", "Engineering Construction"],
+        "required_streams": 1,
+        "stream_specific_skills": {}
+      },
+      "CW/ECW 4": {
+        "streams": ["General Construction", "Civil Construction", "Engineering Construction"],
+        "required_streams": 1,
+        "stream_specific_skills": {}
+      },
+      "CW/ECW 5": {
+        "streams": ["General Construction", "Civil Construction", "Engineering Construction"],
+        "required_streams": 1,
+        "stream_specific_skills": {}
+      },
+      "CW/ECW 6": {
+        "streams": ["General Construction", "Civil Construction", "Engineering Construction"],
+        "required_streams": 1,
+        "stream_specific_skills": {}
+      },
+      "CW/ECW 7": {
+        "streams": ["General Construction", "Civil Construction", "Engineering Construction"],
+        "required_streams": 1,
+        "stream_specific_skills": {}
+      },
+      "CW/ECW 8": {
+        "streams": ["General Construction", "Civil Construction", "Engineering Construction"],
+        "required_streams": 1,
+        "stream_specific_skills": {}
+      },
+      "ECW 9": {
+        "streams": ["Engineering Construction"],
+        "required_streams": 1,
+        "stream_specific_skills": {}
+      }
+    },
+    "supervision_requirements": {
+      "CW/ECW 1": {
+        "supervision_level": "General",
+        "description": "Works under general supervision",
+        "can_supervise": [],
+        "supervision_indicators": [
+          "Works under direct supervision",
+          "Requires regular guidance",
+          "Limited decision-making authority"
+        ]
+      },
+      "CW/ECW 2": {
+        "supervision_level": "Limited",
+        "description": "Works under limited supervision",
+        "can_supervise": ["CW/ECW 1"],
+        "supervision_indicators": [
+          "Works with limited supervision",
+          "Can work independently on routine tasks",
+          "May supervise CW/ECW 1 employees"
+        ]
+      },
+      "CW/ECW 3": {
+        "supervision_level": "Minimal",
+        "description": "Works with minimal supervision",
+        "can_supervise": ["CW/ECW 1", "CW/ECW 2"],
+        "supervision_indicators": [
+          "Works with minimal supervision",
+          "Can work independently",
+          "May supervise CW/ECW 1 and 2 level employees"
+        ]
+      },
+      "CW/ECW 4": {
+        "supervision_level": "Limited",
+        "description": "Works with limited supervision",
+        "can_supervise": ["CW/ECW 1", "CW/ECW 2"],
+        "supervision_indicators": [
+          "Works with limited supervision",
+          "Provides guidance as part of a work team",
+          "Exercises discretion within scope of grade"
+        ]
+      },
+      "CW/ECW 5": {
+        "supervision_level": "Limited",
+        "description": "Works with limited supervision",
+        "can_supervise": ["CW/ECW 1", "CW/ECW 2", "CW/ECW 3"],
+        "supervision_indicators": [
+          "Works with limited supervision",
+          "Provides trade guidance and assistance",
+          "Assists in training of others"
+        ]
+      },
+      "CW/ECW 6": {
+        "supervision_level": "Minimal",
+        "description": "Works with minimal supervision",
+        "can_supervise": ["CW/ECW 1", "CW/ECW 2", "CW/ECW 3", "CW/ECW 4"],
+        "supervision_indicators": [
+          "Works with minimal supervision",
+          "Provides complex trade guidance",
+          "Provides training in conjunction with supervisors"
+        ]
+      },
+      "CW/ECW 7": {
+        "supervision_level": "Autonomous",
+        "description": "Works autonomously on complex tasks",
+        "can_supervise": ["CW/ECW 1", "CW/ECW 2", "CW/ECW 3", "CW/ECW 4", "CW/ECW 5"],
+        "supervision_indicators": [
+          "Works autonomously on complex tasks",
+          "May assist in supervision of teams",
+          "Provides complex training and guidance"
+        ]
+      },
+      "CW/ECW 8": {
+        "supervision_level": "Autonomous",
+        "description": "Works autonomously with broad discretion",
+        "can_supervise": ["CW/ECW 1", "CW/ECW 2", "CW/ECW 3", "CW/ECW 4", "CW/ECW 5", "CW/ECW 6"],
+        "supervision_indicators": [
+          "Exercises broad discretion within area of expertise",
+          "Contributes to work design and planning",
+          "Performs maintenance planning"
+        ]
+      },
+      "ECW 9": {
+        "supervision_level": "Autonomous",
+        "description": "Works with complete autonomy on complex projects",
+        "can_supervise": ["CW/ECW 1", "CW/ECW 2", "CW/ECW 3", "CW/ECW 4", "CW/ECW 5", "CW/ECW 6", "CW/ECW 7"],
+        "supervision_indicators": [
+          "Works with complete autonomy on complex projects",
+          "Provides high-level technical guidance",
+          "Provides specialized training"
+        ]
+      }
+    },
+    "classification_rules": {
+      "minimum_requirements": {
+        "CW/ECW 1": {
+          "qualifications": 1,
+          "skills": 5,
+          "tasks": 3
+        },
+        "CW/ECW 2": {
+          "qualifications": 1,
+          "skills": 5,
+          "tasks": 3
+        },
+        "CW/ECW 3": {
+          "qualifications": 1,
+          "skills": 5,
+          "tasks": 3
+        },
+        "CW/ECW 4": {
+          "qualifications": 1,
+          "skills": 4,
+          "tasks": 2
+        },
+        "CW/ECW 5": {
+          "qualifications": 1,
+          "skills": 4,
+          "tasks": 2
+        },
+        "CW/ECW 6": {
+          "qualifications": 1,
+          "skills": 4,
+          "tasks": 2
+        },
+        "CW/ECW 7": {
+          "qualifications": 1,
+          "skills": 4,
+          "tasks": 2
+        },
+        "CW/ECW 8": {
+          "qualifications": 1,
+          "skills": 4,
+          "tasks": 2
+        },
+        "ECW 9": {
+          "qualifications": 1,
+          "skills": 4,
+          "tasks": 2
+        }
+      },
+      "confidence_scoring": {
+        "high_confidence": 0.8,
+        "medium_confidence": 0.6,
+        "low_confidence": 0.4
+      }
+    },
+    "ui_descriptions": {
+      "CW/ECW 1": {
+        "short_description": "Entry level construction worker",
+        "long_description": "An entry-level construction worker who works under general supervision and performs basic construction tasks.",
+        "key_indicators": [
+          "Basic construction skills",
+          "General supervision",
+          "Entry-level qualifications"
+        ]
+      },
+      "CW/ECW 2": {
+        "short_description": "Intermediate construction worker",
+        "long_description": "A construction worker who works under limited supervision and has developed beyond entry-level skills.",
+        "key_indicators": [
+          "Intermediate construction skills",
+          "Limited supervision",
+          "Basic technical knowledge"
+        ]
+      },
+      "CW/ECW 3": {
+        "short_description": "Tradesperson",
+        "long_description": "A qualified tradesperson or equivalent who works with minimal supervision.",
+        "key_indicators": [
+          "Trade qualification",
+          "Minimal supervision",
+          "Technical expertise"
+        ]
+      },
+      "CW/ECW 4": {
+        "short_description": "Advanced tradesperson",
+        "long_description": "An employee with higher trade skills or technical skills beyond base trade level.",
+        "key_indicators": [
+          "Advanced trade skills",
+          "Technical expertise",
+          "Quality control"
+        ]
+      },
+      "CW/ECW 5": {
+        "short_description": "Highly skilled tradesperson",
+        "long_description": "A highly skilled tradesperson or technician with additional technical knowledge.",
+        "key_indicators": [
+          "High-level technical skills",
+          "Training capabilities",
+          "Complex problem solving"
+        ]
+      },
+      "CW/ECW 6": {
+        "short_description": "Advanced technician",
+        "long_description": "An advanced tradesperson or technician with comprehensive skills.",
+        "key_indicators": [
+          "Advanced technical skills",
+          "Training leadership",
+          "Quality control development"
+        ]
+      },
+      "CW/ECW 7": {
+        "short_description": "Highly advanced specialist",
+        "long_description": "A highly advanced tradesperson or technician with comprehensive skills and significant responsibilities.",
+        "key_indicators": [
+          "Highly advanced technical skills",
+          "Process design",
+          "Team supervision"
+        ]
+      },
+      "CW/ECW 8": {
+        "short_description": "Advanced technical specialist",
+        "long_description": "An advanced technical specialist or supervisory role with substantial responsibilities.",
+        "key_indicators": [
+          "Technical leadership",
+          "Training program design",
+          "Work planning"
+        ]
+      },
+      "ECW 9": {
+        "short_description": "Highest level technical specialist",
+        "long_description": "The highest level technical specialist, typically in engineering construction.",
+        "key_indicators": [
+          "Expert technical guidance",
+          "Complex system expertise",
+          "Complete autonomy"
+        ]
+      }
+    }
+  }
+} 

@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2024-01-01",
+    "notes": "Some allowances (expense allowances and multistorey allowance) are not yet incorporated into the form calculation"
+  },
+  "industry": [{
+    "options": [
+      {
+        "title": "General Building and Construction",
+        "value": 61.94,
+        "period": "per week",
+        "hint": "Applies to general building, civil construction, and metal and engineering construction industry"
+      },
+      {
+        "title": "Residential Building and Construction",
+        "value": 49.55,
+        "period": "per week",
+        "hint": "Applies to single or dual occupancy residential building work"
+      }
+    ]
+  }],
+  "tools": [{
+    "options": [
+      {
+        "title": "None",
+        "value": 0.00,
+        "period": "per week",
+        "hint": "No tool allowance"
+      },
+      {
+        "title": "Artificial stoneworker, carpenter, joiner",
+        "value": 38.67,
+        "period": "per week",
+        "hint": "For artificial stoneworkers, carpenters and joiners"
+      },
+      {
+        "title": "Caster, fixer, floorlayer specialist",
+        "value": 31.99,
+        "period": "per week",
+        "hint": "For casters, fixers and floorlayer specialists"
+      },
+      {
+        "title": "Refractory bricklayer or bricklayer",
+        "value": 27.45,
+        "period": "per week",
+        "hint": "For refractory bricklayers and bricklayers"
+      },
+      {
+        "title": "Roof tiler, slate-ridger or roof fixer",
+        "value": 20.25,
+        "period": "per week",
+        "hint": "For roof tilers, slate-ridgers and roof fixers"
+      },
+      {
+        "title": "Signwriter, painter or glazier",
+        "value": 9.28,
+        "period": "per week",
+        "hint": "For signwriters, painters and glaziers"
+      }
+    ]
+  }],
+  "expense_allowances": [
+    {
+      "title": "Meal Allowance",
+      "hint": "Payable when required to work overtime for at least 1.5 hours",
+      "amount": 18.51,
+      "period": "per meal"
+    },
+    {
+      "title": "Compensation for Clothes and Tools",
+      "hint": "Compensation for damage or loss of employee's clothes, spectacles, hearing aids or tools",
+      "rates": [
+        {
+          "condition": "Maximum reimbursement for tool loss",
+          "amount": 2242.00,
+          "period": "per incident",
+          "notes": [
+            "Applies to loss by fire, breaking and entering while securely stored",
+            "Applies to loss during transport at employer's direction",
+            "Applies to accidental loss over water",
+            "Employee must report theft to police",
+            "Tools must be used in course of employment",
+            "Current replacement value applies"
+          ]
+        }
+      ],
+      "special_provisions": [
+        "Acid damage to clothes/equipment to be compensated as agreed",
+        "Employer to pay for toughened glass lenses when required"
+      ]
+    }
+  ],
+  "first_aid": [{
+    "options": [
+      {
+        "title": "None",
+        "value": 0.00,
+        "period": "per week",
+        "hint": "No first aid responsibilities"
+      },
+      {
+        "title": "First Aid - Minimum Qualifications",
+        "value": 18.60,
+        "period": "per week",
+        "hint": "For employees with basic first aid qualifications"
+      },
+      {
+        "title": "First Aid - Advanced Qualifications",
+        "value": 29.40,
+        "period": "per week",
+        "hint": "For employees with advanced first aid qualifications"
+      }
+    ]
+  }],
+  "multistorey_allowance": {
+    "title": "Multistorey Allowance",
+    "amount": 14.20,
+    "period": "per week per floor",
+    "hint": "Additional allowance for working on multistorey buildings"
+  },
+  "other": [{
+    "options": [
+      {
+        "title": "Underground Allowance - Full Week",
+        "value": 18.58,
+        "period": "per week",
+        "hint": "For employees required to work underground (excluding Operator classification)"
+      },
+      {
+        "title": "Underground Allowance - Partial Week",
+        "value": 4.13,
+        "period": "per day",
+        "hint": "For employees working underground 4 days or less per week"
+      },
+      {
+        "title": "Laser Safety Officer",
+        "value": 3.64,
+        "period": "per day",
+        "hint": "For appointed laser safety officers when carrying out these duties"
+      },
+      {
+        "title": "Carpenter-diver",
+        "value": 1.22,
+        "period": "per hour",
+        "hint": "For employees performing carpenter-diver work"
+      },
+      {
+        "title": "Air-conditioning and Refrigeration Industry",
+        "value": 81.55,
+        "period": "per week",
+        "hint": "For air-conditioning tradespersons and refrigeration mechanics for on-site work"
+      },
+      {
+        "title": "Electrician's Licence",
+        "value": 33.03,
+        "period": "per week",
+        "hint": "For electrical tradespersons holding appropriate licence"
+      },
+      {
+        "title": "In Charge of Plant",
+        "value": 48.52,
+        "period": "per week",
+        "hint": "For employees in charge of plant"
+      },
+      {
+        "title": "Computing Quantities",
+        "value": 6.33,
+        "period": "per day",
+        "hint": "For employees regularly computing or estimating materials quantities"
+      },
+      {
+        "title": "Scaffolding/Rigging Certificate",
+        "value": 0.87,
+        "period": "per hour",
+        "hint": "For certified tradespersons when required to act on their certificate"
+      }
+    ]
+  }]
+} 

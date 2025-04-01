@@ -1,0 +1,286 @@
+{
+    "job_posting_templates": {
+        "general_construction": {
+            "title_template": "{level} {stream} Worker",
+            "sections": {
+                "overview": {
+                    "template": "We are seeking a {level} {stream} Worker to join our team. This role involves {frequency} activities in {stream} construction.",
+                    "variables": ["level", "stream", "frequency"]
+                },
+                "key_responsibilities": {
+                    "template": "As a {level} {stream} Worker, you will be responsible for:",
+                    "bullet_points": {
+                        "daily": "Primary daily tasks including {activities}",
+                        "weekly": "Weekly responsibilities such as {activities}",
+                        "monthly": "Monthly duties including {activities}"
+                    }
+                },
+                "required_skills": {
+                    "template": "To be successful in this role, you will need:",
+                    "categories": {
+                        "technical": [
+                            "Proficiency in {stream} construction techniques",
+                            "Ability to read and interpret construction plans",
+                            "Experience with relevant tools and equipment"
+                        ],
+                        "safety": [
+                            "White Card certification",
+                            "First Aid certification",
+                            "Strong understanding of WHS requirements"
+                        ],
+                        "soft_skills": [
+                            "Effective communication skills",
+                            "Team collaboration abilities",
+                            "Problem-solving capabilities"
+                        ]
+                    }
+                },
+                "experience": {
+                    "template": "The ideal candidate will have:",
+                    "requirements": {
+                        "experience": "{level} experience in {stream} construction",
+                        "certifications": "Relevant certifications for {stream} work"
+                    }
+                }
+            }
+        },
+        "civil_construction": {
+            "title_template": "{level} Civil Construction {specialty}",
+            "sections": {
+                "overview": {
+                    "template": "We are seeking a {level} Civil Construction {specialty} to join our team. This role involves {frequency} activities in civil construction projects.",
+                    "variables": ["level", "specialty", "frequency"]
+                },
+                "key_responsibilities": {
+                    "template": "As a {level} Civil Construction {specialty}, you will be responsible for:",
+                    "bullet_points": {
+                        "daily": "Primary daily tasks including {activities}",
+                        "weekly": "Weekly responsibilities such as {activities}",
+                        "monthly": "Monthly duties including {activities}"
+                    }
+                },
+                "required_skills": {
+                    "template": "To be successful in this role, you will need:",
+                    "categories": {
+                        "technical": [
+                            "Civil construction expertise",
+                            "Site preparation and excavation skills",
+                            "Heavy equipment operation experience"
+                        ],
+                        "safety": [
+                            "White Card certification",
+                            "First Aid certification",
+                            "Heavy vehicle license (if applicable)"
+                        ],
+                        "soft_skills": [
+                            "Project coordination abilities",
+                            "Site supervision experience",
+                            "Client communication skills"
+                        ]
+                    }
+                }
+            }
+        },
+        "engineering": {
+            "title_template": "{level} Engineering {specialty}",
+            "sections": {
+                "overview": {
+                    "template": "We are seeking a {level} Engineering {specialty} to join our team. This role involves {frequency} activities in engineering projects.",
+                    "variables": ["level", "specialty", "frequency"]
+                },
+                "key_responsibilities": {
+                    "template": "As a {level} Engineering {specialty}, you will be responsible for:",
+                    "bullet_points": {
+                        "daily": "Primary daily tasks including {activities}",
+                        "weekly": "Weekly responsibilities such as {activities}",
+                        "monthly": "Monthly duties including {activities}"
+                    }
+                },
+                "required_skills": {
+                    "template": "To be successful in this role, you will need:",
+                    "categories": {
+                        "technical": [
+                            "Engineering principles and practices",
+                            "Technical drawing interpretation",
+                            "Specialized equipment operation"
+                        ],
+                        "safety": [
+                            "White Card certification",
+                            "First Aid certification",
+                            "Industry-specific safety certifications"
+                        ],
+                        "soft_skills": [
+                            "Technical documentation",
+                            "Project management",
+                            "Team leadership"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "contract_requirements": {
+        "sections": {
+            "classification": {
+                "template": "This position is classified as {level} under the Building and Construction General On-site Award 2020",
+                "variables": ["level"],
+                "sub_levels": {
+                    "CW1": {
+                        "a": {
+                            "description": "New entrant (upon commencement in the industry)",
+                            "weekly_rate": 934.80,
+                            "experience_required": "0 months",
+                            "training_requirements": "Basic induction and safety training"
+                        },
+                        "b": {
+                            "description": "After 3 months in the industry",
+                            "weekly_rate": 953.20,
+                            "experience_required": "3 months",
+                            "training_requirements": "Basic skills training and safety procedures"
+                        },
+                        "c": {
+                            "description": "After 12 months in the industry",
+                            "weekly_rate": 966.00,
+                            "experience_required": "12 months",
+                            "training_requirements": "Intermediate skills training and safety procedures"
+                        },
+                        "d": {
+                            "description": "Upon fulfilling the substantive requirements of Construction Worker 1",
+                            "weekly_rate": 983.30,
+                            "experience_required": "24 months",
+                            "training_requirements": "Advanced skills training and safety procedures"
+                        }
+                    }
+                },
+                "engineering_levels": {
+                    "ECW9": {
+                        "description": "Highest level technical specialist (Engineering Construction only)",
+                        "weekly_rate": 1207.80,
+                        "experience_required": "Extensive experience with proven high-level technical capabilities",
+                        "training_requirements": "Trade qualification plus comprehensive specialized training (Certificate III plus 15 modules)"
+                    }
+                }
+            },
+            "remuneration": {
+                "base_rate": "Based on {level} classification",
+                "allowances": {
+                    "template": "In addition to base rate, the following allowances apply:",
+                    "variables": ["allowances"]
+                }
+            },
+            "conditions": {
+                "template": "Employment conditions are governed by the Building and Construction General On-site Award 2020",
+                "sections": [
+                    {
+                        "title": "Hours of Work",
+                        "clauses": [
+                            "Standard hours: 38 hours per week",
+                            "Overtime rates: 150% for first 2 hours, 200% thereafter",
+                            "Weekend work: 200% for Saturday, 250% for Sunday",
+                            "Public holidays: 250% with paid day off in lieu",
+                            "Shift work provisions where applicable",
+                            "RDO (Rostered Day Off) system may apply"
+                        ]
+                    },
+                    {
+                        "title": "Leave Entitlements",
+                        "clauses": [
+                            "Annual leave: 4 weeks per year",
+                            "Personal leave: 10 days per year",
+                            "Long service leave as per state legislation",
+                            "Parental leave: 12 months unpaid with right to request extension",
+                            "Bereavement leave: 2 days paid leave for immediate family",
+                            "Jury service leave: Paid leave for jury duty"
+                        ]
+                    },
+                    {
+                        "title": "Superannuation",
+                        "clauses": [
+                            "Contributions: 11% of ordinary time earnings",
+                            "Choice of superannuation fund",
+                            "SG Act compliance",
+                            "Additional superannuation contributions may apply for overtime",
+                            "Portability of superannuation benefits"
+                        ]
+                    },
+                    {
+                        "title": "Redundancy",
+                        "clauses": [
+                            "Severance pay based on length of service",
+                            "Notice period requirements",
+                            "Alternative employment provisions",
+                            "Job search leave: 1 day per week during notice period",
+                            "Retraining leave: Up to 8 hours per week during notice period"
+                        ]
+                    },
+                    {
+                        "title": "Work Health and Safety",
+                        "clauses": [
+                            "Right to cease unsafe work",
+                            "Health and safety representatives",
+                            "Personal protective equipment provided",
+                            "Regular safety training and updates",
+                            "Workplace consultation on safety matters"
+                        ]
+                    },
+                    {
+                        "title": "Dispute Resolution",
+                        "clauses": [
+                            "Grievance and dispute resolution procedure",
+                            "Right to union representation",
+                            "Fair Work Commission jurisdiction",
+                            "Protected industrial action rights",
+                            "Consultation on major workplace changes"
+                        ]
+                    },
+                    {
+                        "title": "Additional Benefits",
+                        "clauses": [
+                            "Tool allowance where applicable",
+                            "Travel allowance for work away from usual location",
+                            "Meal allowance for overtime work",
+                            "First aid allowance for qualified first aiders",
+                            "Height money for work at heights"
+                        ]
+                    }
+                ]
+            }
+        }
+    },
+    "onboarding_requirements": {
+        "categories": {
+            "safety": {
+                "required_certifications": [
+                    "White Card",
+                    "First Aid Certificate",
+                    "Stream-specific safety certifications"
+                ],
+                "safety_equipment": [
+                    "PPE requirements",
+                    "Safety documentation"
+                ]
+            },
+            "training": {
+                "mandatory": [
+                    "Company safety induction",
+                    "Stream-specific training"
+                ],
+                "recommended": [
+                    "Additional certifications",
+                    "Skill development programs"
+                ]
+            },
+            "documentation": {
+                "required": [
+                    "Employment contract",
+                    "Tax file number",
+                    "Superannuation details"
+                ],
+                "stream_specific": [
+                    "Equipment licenses",
+                    "Specialized certifications"
+                ]
+            }
+        }
+    }
+} 
