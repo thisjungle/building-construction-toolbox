@@ -13,7 +13,8 @@ let state = {
         startDate: '01/01/2024',
         email: 'john.smith@example.com',
         phone: '0400 000 000'
-    }
+    },
+    currentSection: 'employment'
 };
 
 // Cache for activities data
@@ -64,6 +65,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         // Set up event listeners
         setupEventListeners();
+        setupInteractiveFeatures();
 
         // Populate test data
         await populateTestData();
@@ -556,19 +558,53 @@ function updateResults() {
     const rateKey = classification.level === 'CW1' ? `${baseKey} - Level d` : baseKey;
     const rates = minimumRates?.minimum_rates[rateKey];
 
-    // Get associated broadband classifications for the current level and streams
-    let roleSelectHTML = '';
-    if (broadbandClassifications && broadbandClassifications[baseKey]) {
-        const relevantBroadbands = [];
-        state.selectedStreams.forEach(stream => {
-            const streamBroadbands = broadbandClassifications[baseKey][stream];
-            if (streamBroadbands) {
-                relevantBroadbands.push(...streamBroadbands);
-            }
-        });
+    // Create results HTML
+    const resultsContent = document.querySelector('.results-content');
+    if (resultsContent) {
+        // Update the summary buttons at the top
+        const summaryHTML = `
+            <div class="results-header">
+                <span class="emoji-md" data-emoji="CREATE_POSITION"></span>
+                <h3>New Role</h3>
+            </div>
+            <div class="results-body">
+                <div class="result-item employment-summary button-style" data-section="employment">
+                    <div class="label">Employment Type</div>
+                    <div class="value">${state.employmentType || 'Not selected'}</div>
+                </div>
+                <div class="result-item experience-summary button-style" data-section="experience">
+                    <div class="label">Experience Level</div>
+                    <div class="value">${state.experienceLevel || 'Not selected'}</div>
+                </div>
+                <div class="result-item sectors-summary button-style" data-section="sectors">
+                    <div class="label">Work Stream</div>
+                    <div class="value">${Array.from(state.selectedStreams).join(', ') || 'Not selected'}</div>
+                </div>
+                <div class="summary-details">
+                    <p>
+                        <strong>Job Duties:</strong>
+                        <span class="selection-info" title="${selectedDuties.join('\n')}">${selectedDuties.length} selected</span>
+                    </p>
+                    <p>
+                        <strong>Specific Tasks:</strong>
+                        <span class="selection-info" title="${selectedTasks.join('\n')}">${selectedTasks.length} selected</span>
+                    </p>
+                    <p>
+                        <strong>Classification Level:</strong>
+                        <span class="selection-info" title="${details}">${classification.level} - ${classification.confidenceText}</span>
+                    </p>
+                    ${rates ? `
+                    <p>
+                        <strong>Base Pay (Minimum):</strong> $${rates.weekly_rate.toFixed(2)} per week ($${rates.hourly_rate.toFixed(2)}/hour)
+                    </p>
+                    ` : ''}
+                </div>
+            </div>`;
 
-        if (relevantBroadbands.length > 0) {
-            roleSelectHTML = `
+        resultsContent.innerHTML = summaryHTML;
+
+        // Add the rest of the content to descriptionText
+        descriptionText.innerHTML = `
             <div class="role-title-section">
                 <p>
                     <strong>Role Title:</strong>
@@ -584,146 +620,26 @@ function updateResults() {
                         </div>
                     </div>
                 </p>
+            </div>
+            <!-- Rest of the sections -->
+            <div class="qualifications-section">
+                <p>
+                    <strong>Required Qualifications and Licenses:</strong>
+                    <div class="qualifications-placeholder">
+                        Required qualifications to be determined based on role and work streams
+                    </div>
+                </p>
+            </div>
+            <!-- ... rest of your existing sections ... -->
+            <div class="onboarding-button-section">
+                <button class="btn btn-primary" id="createOnboardingPack">
+                    Create Onboarding Pack
+                </button>
             </div>`;
-        }
+
+        // Set up the click handlers for the new buttons
+        setupInteractiveFeatures();
     }
-    
-    // Create results HTML with plain text
-    let resultsHTML = `
-        <p>
-            <strong>Employment Type:</strong> ${state.employmentType}
-        </p>
-        <p>
-            <strong>Experience Level:</strong> ${state.experienceLevel}
-        </p>
-        <p>
-            <strong>Work Streams:</strong> ${Array.from(state.selectedStreams).join(', ')}
-        </p>
-        <p>
-            <strong>Job Duties:</strong>
-            <span class="selection-info" title="${selectedDuties.join('\n')}">${selectedDuties.length} selected</span>
-        </p>
-        <p>
-            <strong>Specific Tasks:</strong>
-            <span class="selection-info" title="${selectedTasks.join('\n')}">${selectedTasks.length} selected</span>
-        </p>
-        <p>
-            <strong>Classification Level:</strong>
-            <span class="selection-info" title="${details}">${classification.level} - ${classification.confidenceText}</span>
-        </p>`;
-
-    // Add pay information if rates are available
-    if (rates) {
-        resultsHTML += `
-        <p>
-            <strong>Base Pay (Minimum):</strong> $${rates.weekly_rate.toFixed(2)} per week ($${rates.hourly_rate.toFixed(2)}/hour)
-        </p>`;
-    }
-
-    // Add role selection
-    resultsHTML += roleSelectHTML;
-
-    // Add Required Qualifications and Licenses section with placeholder
-    resultsHTML += `
-    <div class="qualifications-section">
-        <p>
-            <strong>Required Qualifications and Licenses:</strong>
-            <div class="qualifications-placeholder">
-                Required qualifications to be determined based on role and work streams
-            </div>
-        </p>
-    </div>`;
-
-    // Add Shift Work Required section with placeholder
-    resultsHTML += `
-    <div class="shift-work-section">
-        <p>
-            <strong>Shift Work Required:</strong>
-            <div class="shift-work-placeholder">
-                Shift work requirements to be determined based on role and work streams
-            </div>
-        </p>
-    </div>`;
-
-    // Add Allowances section with placeholder
-    resultsHTML += `
-    <div class="allowances-section">
-        <p>
-            <strong>Allowances:</strong>
-            <div class="allowances-placeholder">
-                Applicable allowances to be determined based on role and work streams
-            </div>
-        </p>
-    </div>`;
-
-    // Add Work Location/Site Type section with placeholder
-    resultsHTML += `
-    <div class="work-location-section">
-        <p>
-            <strong>Work Location/Site Type:</strong>
-            <div class="work-location-placeholder">
-                Site-specific requirements and inductions to be determined based on work location and type
-            </div>
-        </p>
-    </div>`;
-
-    // Add Personal and Admin Details section
-    resultsHTML += `
-    <div class="personal-details-section">
-        <p>
-            <strong>Personal and Admin Details:</strong>
-            <div class="personal-details-content">
-                <div class="detail-row">
-                    <span class="detail-label">Name:</span>
-                    <input type="text" 
-                           class="detail-input" 
-                           value="${state.personalDetails?.name || 'John Smith'}"
-                           placeholder="Enter name">
-                </div>
-                <div class="detail-row">
-                    <span class="detail-label">Start Date:</span>
-                    <input type="text" 
-                           class="detail-input" 
-                           value="${state.personalDetails?.startDate || '01/01/2024'}"
-                           placeholder="DD/MM/YYYY">
-                </div>
-                <div class="detail-row">
-                    <span class="detail-label">Email:</span>
-                    <input type="email" 
-                           class="detail-input" 
-                           value="${state.personalDetails?.email || 'john.smith@example.com'}"
-                           placeholder="Enter email">
-                </div>
-                <div class="detail-row">
-                    <span class="detail-label">Contact Number:</span>
-                    <input type="tel" 
-                           class="detail-input" 
-                           value="${state.personalDetails?.phone || '0400 000 000'}"
-                           placeholder="Enter contact number">
-                </div>
-            </div>
-        </p>
-    </div>`;
-
-    // Add Create Onboarding Pack button
-    resultsHTML += `
-    <div class="onboarding-button-section">
-        <button class="btn btn-primary" id="createOnboardingPack">
-            Create Onboarding Pack
-        </button>
-    </div>`;
-
-    descriptionText.innerHTML = resultsHTML;
-    initializeRoleAutocomplete();
-
-    // Add event listeners for all input fields
-    const inputs = document.querySelectorAll('.detail-input');
-    inputs.forEach(input => {
-        input.addEventListener('change', (e) => {
-            const field = e.target.closest('.detail-row').querySelector('.detail-label').textContent.replace(':', '').toLowerCase();
-            state.personalDetails[field] = e.target.value;
-        });
-    });
 }
 
 // Add autocomplete functionality
@@ -1107,6 +1023,100 @@ function initializeActivityCheckboxes() {
     elements.activitiesList.addEventListener('change', (e) => {
         if (e.target.name === 'activity') {
             handleActivityChange(e);
+        }
+    });
+}
+
+// Add new interactive features
+function setupInteractiveFeatures() {
+    console.log('Setting up interactive features...'); // Debug log
+
+    // Add click handlers to all result items in the results panel
+    document.querySelectorAll('.results-panel .result-item').forEach(item => {
+        console.log('Adding click handler to:', item.className); // Debug log
+        
+        item.addEventListener('click', (e) => {
+            const section = item.dataset.section;
+            console.log('Result item clicked:', section); // Debug log
+            e.preventDefault();
+            e.stopPropagation(); // Prevent event bubbling
+            showOnlySection(section);
+        });
+
+        // Make it visually clear it's clickable
+        item.style.cursor = 'pointer';
+    });
+}
+
+function showOnlySection(section) {
+    console.log('Showing section:', section); // Debug log
+
+    // Hide all form groups first
+    document.querySelectorAll('.form-group').forEach(group => {
+        group.style.display = 'none';
+        group.classList.remove('focused');
+    });
+
+    // Show only the target section
+    const targetSection = document.querySelector(`.form-group[data-section="${section}"]`);
+    if (targetSection) {
+        console.log('Found target section:', targetSection); // Debug log
+        targetSection.style.display = 'block';
+        targetSection.classList.add('focused');
+        
+        // Scroll the section into view
+        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+        console.warn('Form group not found for section:', section); // Debug log
+    }
+
+    // Update active states in results panel
+    document.querySelectorAll('.result-item').forEach(item => {
+        item.classList.toggle('active', item.dataset.section === section);
+    });
+
+    state.currentSection = section;
+    updateProgressIndicator();
+}
+
+function showAllSections() {
+    document.querySelectorAll('.form-group').forEach(group => {
+        group.style.display = 'block';
+        group.classList.remove('focused');
+    });
+}
+
+function focusSection(section) {
+    showAllSections();
+    
+    // Add focus to selected section
+    const formGroup = document.querySelector(`.form-group[data-section="${section}"]`);
+    const resultItem = document.querySelector(`.result-item[data-section="${section}"]`);
+    
+    if (formGroup && resultItem) {
+        formGroup.classList.add('focused');
+        resultItem.classList.add('active');
+        
+        // Scroll form group into view
+        formGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    state.currentSection = section;
+    updateProgressIndicator();
+}
+
+function updateProgressIndicator() {
+    const sections = ['employment', 'experience', 'sectors'];
+    document.querySelectorAll('.progress-dot').forEach(dot => {
+        const section = dot.dataset.section;
+        const index = sections.indexOf(section);
+        const currentIndex = sections.indexOf(state.currentSection);
+
+        dot.classList.remove('active', 'completed');
+        if (index === currentIndex) {
+            dot.classList.add('active');
+        } else if (index < currentIndex) {
+            dot.classList.add('completed');
         }
     });
 } 
